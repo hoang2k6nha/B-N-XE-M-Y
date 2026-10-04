@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trả Góp Xe Máy - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  /* === HERO BANNER === */
+  .inst-hero {
+    background: radial-gradient(circle at center top, rgba(255,60,0,0.15) 0%, rgba(10,10,15,1) 70%);
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .inst-hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
+  .inst-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+  /* === LAYOUT === */
+  .inst-page { padding: 60px 0; }
+  .inst-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 992px) {
+    .inst-layout { grid-template-columns: 1fr; }
+  }
+
+  /* === GLASS BOX === */
+  .glass-box {
+    background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  
+  .box-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .box-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,60,0,0.1);
+    color: var(--accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  .box-title { font-size: 24px; font-weight: 800; margin: 0; }
+  .box-desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+  /* === FORM ELEMENTS === */
+  .modern-form-group { margin-bottom: 24px; }
+  .modern-label { display: block; font-size: 14px; font-weight: 600; color: #ccc; margin-bottom: 10px; }
+  .modern-input, .modern-select {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  .modern-input:focus, .modern-select:focus {
+    border-color: var(--accent);
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 4px rgba(255,60,0,0.15);
+  }
+  .modern-select option { background: var(--card); color: #fff; }
+  .vehicle-price-display {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    padding: 10px 0;
+  }
+
+  /* === ESTIMATE BOX === */
+  .estimate-box {
+    background: linear-gradient(135deg, rgba(255,60,0,0.05), rgba(255,140,0,0.05));
+    border: 1px solid rgba(255,60,0,0.2);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 32px 0;
+  }
+  .est-title { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1.5px; margin-bottom: 20px; display: block; }
+  .est-row { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 15px; color: #ddd; }
+  .est-row strong { color: #fff; font-weight: 700; }
+  .est-row.total { font-size: 22px; font-weight: 800; color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px dashed rgba(255,255,255,0.2); align-items: center; }
+  .est-row.total span:last-child { color: var(--accent); font-size: 28px; }
+
+  /* === BUTTON === */
+  .modern-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(255,60,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .modern-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(255,60,0,0.4); }
+  .modern-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* === ALERTS & STATUS === */
+  .alert { padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; font-size: 14px; }
+  .alert-danger { background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.3); color: #ff8888; }
+  .alert-info { background: rgba(0,102,255,0.1); border: 1px solid rgba(0,102,255,0.3); color: #88ccff; }
+  
+  .history-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; margin-bottom: 20px; transition: all 0.3s; }
+  .history-item:hover { border-color: rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); }
+  .h-header { display: flex; justify-content: space-between; margin-bottom: 16px; align-items: flex-start; }
+  .h-name { font-weight: 800; font-size: 18px; margin-bottom: 4px; }
+  .h-code { font-size: 13px; color: var(--muted); }
+  .h-status { padding: 6px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; border: 1px solid currentColor; }
+  .status-active { background: rgba(0,204,102,0.1); color: #00cc66; }
+  .status-defaulted { background: rgba(255,60,0,0.1); color: var(--accent); }
+  .status-pending { background: rgba(255,170,0,0.1); color: #ffaa00; }
+  
+  .h-details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .h-detail-item { font-size: 13px; color: #ccc; }
+  .h-detail-item strong { color: #fff; font-size: 14px; display: block; margin-top: 4px; }
+  
+  .h-action { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; text-align: right; }
+  .btn-outline-sm { display: inline-block; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+  .btn-outline-sm:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .glass-box { padding: 24px; }
+    .inst-hero h1 { font-size: 36px; }
+    .h-details { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/installment.html" style="color:var(--accent)">Trả Góp</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="inst-hero">
+  <div class="container">
+    <h1 class="gradient-text">Hồ Sơ Trả Góp & Tín Dụng</h1>
+    <p>Trải nghiệm mua sắm siêu xe dễ dàng hơn bao giờ hết. Lãi suất ưu đãi từ 0%, xét duyệt online nhanh chóng qua hệ thống CIC.</p>
+  </div>
+</div>
+
+<div class="inst-page">
+  <div class="container inst-layout">
+    
+    <!-- LEFT COLUMN: NỘP HỒ SƠ -->
+    <div class="glass-box">
+      <div class="box-header">
+        <div class="box-icon">📝</div>
+        <div>
+          <h2 class="box-title">Tạo Hồ Sơ Mới</h2>
+          <div class="box-desc">Hoàn thiện thông tin để hệ thống xét duyệt khoản vay của bạn</div>
+        </div>
+      </div>
+      
+      <div id="kyc-alert"></div>
+      
+      <form id="loanForm" onsubmit="handleApply(event)">
+        <div class="modern-form-group">
+          <label class="modern-label">1. Chọn xe muốn mua trả góp</label>
+          <select id="productSelect" class="modern-select" required onchange="calcLoan()">
+            <option value="">-- Đang tải danh sách xe --</option>
+          </select>
+        </div>
+        
+        <div class="modern-form-group">
+          <label class="modern-label">Giá niêm yết</label>
+          <div id="vehiclePrice" class="vehicle-price-display">0 đ</div>
+        </div>
+        
+        <div class="modern-form-group" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <label class="modern-label">2. Số tiền trả trước (VNĐ)</label>
+            <input type="number" id="prepayment" class="modern-input" required min="0" oninput="calcLoan()" placeholder="Tối thiểu 20%">
+          </div>
+          <div>
+            <label class="modern-label">3. Thời hạn vay</label>
+            <select id="duration" class="modern-select" onchange="calcLoan()">
+              <option value="6">6 tháng</option>
+              <option value="12" selected>12 tháng</option>
+              <option value="24">24 tháng</option>
+              <option value="36">36 tháng</option>
+              <option value="48">48 tháng</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modern-form-group">
+          <label class="modern-label">4. Công ty Tài chính (Bên cho vay)</label>
+          <select id="finance_company" class="modern-select" onchange="calcLoan()">
+            <option value="Home Credit">Home Credit (Lãi 1.8%/tháng)</option>
+            <option value="FE Credit">FE Credit (Lãi 2.5%/tháng)</option>
+            <option value="HD Saison">HD Saison (Lãi 1.6%/tháng)</option>
+            <option value="MotoZone Finance" selected>MotoZone Finance (Đặc quyền VIP từ 0%)</option>
+          </select>
+        </div>
+        
+        <div class="estimate-box">
+          <span class="est-title">DỰ TOÁN KHOẢN VAY CHI TIẾT</span>
+          <div class="est-row">
+            <span>Khoản vay gốc:</span>
+            <strong id="calc-loan">0 đ</strong>
+          </div>
+          <div class="est-row">
+            <span>Lãi suất áp dụng:</span>
+            <strong id="calc-rate" style="color:var(--accent)">0% / tháng</strong>
+          </div>
+          <div class="est-row total">
+            <span>Đóng mỗi tháng:</span>
+            <span id="calc-monthly">0 đ</span>
+          </div>
+        </div>
+        
+        <button type="submit" class="modern-btn" id="submitBtn">
+          <span>Nộp Hồ Sơ Xét Duyệt</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+    
+    <!-- RIGHT COLUMN: LỊCH SỬ KHOẢN VAY & ĐIỂM TÍN DỤNG -->
+    <div style="display:flex; flex-direction:column; gap:40px;">
+      
+      <!-- Điểm tín dụng -->
+      <div class="glass-box" style="padding:32px;">
+        <div class="box-header" style="margin-bottom:20px; padding-bottom:16px;">
+          <div class="box-icon" style="width:40px;height:40px;font-size:20px;">🛡️</div>
+          <div>
+            <h2 class="box-title" style="font-size:20px;">Hồ Sơ Tín Dụng</h2>
+          </div>
+        </div>
+        <div id="credit-info">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Danh sách hợp đồng -->
+      <div class="glass-box" style="padding:32px;">
+        <div class="box-header" style="margin-bottom:24px;">
+          <div class="box-icon" style="width:40px;height:40px;font-size:20px;">📁</div>
+          <div>
+            <h2 class="box-title" style="font-size:20px;">Hợp Đồng Của Tôi</h2>
+          </div>
+        </div>
+        
+        <div id="loans-list">
+          <div class="loading-box"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+let productsData = [];
+let selectedProductPrice = 0;
+let userTier = 'New';
+let hasBadDebt = false;
+let creditScore = 600;
+
+async function init() {
+  const user = getUser();
+  if(!user) {
+    showToast('Vui lòng đăng nhập để xem thông tin trả góp', 'error');
+    setTimeout(() => window.location.href = '/login.html?redirect=/installment.html', 1500);
+    return;
+  }
+  
+  try {
+    // 1. Fetch User Profile for KYC & Credit Info
+    let pRes;
+    try {
+      pRes = await fetchAPI('/auth/profile');
+    } catch(err) {
+      showToast('Phiên đăng nhập hết hạn, vui lòng đăng nhập lại.', 'error');
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      setTimeout(() => window.location.href = '/login.html?redirect=/installment.html', 1500);
+      return;
+    }
+    
+    if(pRes && pRes.data) {
+      const u = pRes.data;
+      userTier = u.tier;
+      hasBadDebt = u.has_bad_debt;
+      creditScore = u.credit_score;
+      
+      renderCreditInfo();
+      
+      if(!u.cccd || !u.phone) {
+        document.getElementById('kyc-alert').innerHTML = `
+          <div class="alert alert-danger" style="margin-bottom:32px;">
+            <div><strong>Cảnh báo hồ sơ thiếu!</strong><br>Bạn cần cập nhật CMND/CCCD và Số điện thoại trong <a href="/profile.html" style="text-decoration:underline;color:#fff;font-weight:700">Hồ sơ cá nhân</a> để làm thủ tục vay.</div>
+          </div>
+        `;
+        document.getElementById('submitBtn').disabled = true;
+      }
+    }
+    
+    // 2. Fetch Products for select dropdown
+    const prodRes = await fetchAPI('/products?limit=50');
+    if(prodRes.data) {
+      productsData = prodRes.data;
+      const select = document.getElementById('productSelect');
+      select.innerHTML = '<option value="">-- Chọn dòng xe bạn quan tâm --</option>' + 
+        productsData.map(p => `<option value="${p._id}" data-price="${p.price}">${p.name} - ${formatPrice(p.price)}</option>`).join('');
+        
+      // Auto select if product_id is in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has('product_id')) {
+        select.value = urlParams.get('product_id');
+        calcLoan();
+      }
+    }
+    
+    // 3. Fetch My Loans
+    const loanRes = await fetchAPI('/installments/my-loans');
+    renderLoansList(loanRes.data || []);
+    
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+function renderCreditInfo() {
+  const cDiv = document.getElementById('credit-info');
+  if(hasBadDebt) {
+    cDiv.innerHTML = `
+      <div style="text-align:center;">
+        <div style="font-size:48px; font-weight:900; color:#ff6666; margin-bottom:8px;">${creditScore}</div>
+        <div style="font-size:14px; color:var(--muted); margin-bottom:16px;">Điểm CIC (Rủi ro cao)</div>
+        <div class="alert alert-danger" style="text-align:left;">
+          Hệ thống phát hiện bạn có lịch sử nợ xấu. Bạn sẽ KHÔNG THỂ vay thêm cho đến khi thanh toán dứt điểm dư nợ.
+        </div>
+      </div>
+    `;
+    document.getElementById('submitBtn').disabled = true;
+  } else {
+    cDiv.innerHTML = `
+      <div style="text-align:center;">
+        <div style="font-size:48px; font-weight:900; color:#00cc66; margin-bottom:8px;">${creditScore}</div>
+        <div style="font-size:14px; color:var(--muted); margin-bottom:16px;">Điểm CIC (Tốt)</div>
+        
+        <div style="background:rgba(255,255,255,0.05); border-radius:12px; padding:16px; display:flex; justify-content:space-between; text-align:left;">
+          <div>
+            <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">Hạng thành viên</div>
+            <strong style="color:var(--gold); font-size:16px;">${userTier} VIP</strong>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">Trạng thái</div>
+            <strong style="color:#00cc66; font-size:14px;">Đủ điều kiện vay</strong>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function calcLoan() {
+  const select = document.getElementById('productSelect');
+  if(!select.value) {
+    document.getElementById('vehiclePrice').textContent = '0 đ';
+    return;
+  }
+  
+  const option = select.options[select.selectedIndex];
+  selectedProductPrice = parseInt(option.getAttribute('data-price'));
+  document.getElementById('vehiclePrice').textContent = formatPrice(selectedProductPrice);
+  
+  const prepaymentInput = document.getElementById('prepayment');
+  if(!prepaymentInput.value) prepaymentInput.value = selectedProductPrice * 0.2; // Default 20%
+  
+  const pre = parseInt(prepaymentInput.value);
+  const duration = parseInt(document.getElementById('duration').value);
+  
+  const loanAmount = selectedProductPrice - pre;
+  if(loanAmount <= 0) return;
+  
+  let rate = 1.5;
+  const provider = document.getElementById('finance_company').value;
+  
+  if (provider === 'FE Credit') rate = 2.5;
+  else if (provider === 'Home Credit') rate = 1.8;
+  else if (provider === 'HD Saison') rate = 1.6;
+  else if (provider === 'MotoZone Finance') {
+    if(userTier === 'Silver') rate = 1.2;
+    else if(userTier === 'Gold') rate = 0.9;
+    else if(userTier === 'Diamond') rate = 0;
+    else rate = 'Không HT';
+  }
+  
+  if(rate === 'Không HT') {
+    document.getElementById('calc-rate').textContent = 'Chỉ dành cho VIP Silver+';
+    document.getElementById('calc-monthly').textContent = 'Không hỗ trợ';
+    document.getElementById('submitBtn').disabled = true;
+    return;
+  } else {
+    document.getElementById('submitBtn').disabled = false;
+  }
+  
+  const principal = loanAmount / duration;
+  const interest = loanAmount * (rate / 100);
+  const monthly = principal + interest;
+  
+  document.getElementById('calc-loan').textContent = formatPrice(loanAmount);
+  document.getElementById('calc-rate').textContent = `${rate}% / tháng`;
+  document.getElementById('calc-monthly').textContent = formatPrice(monthly);
+}
+
+async function handleApply(e) {
+  e.preventDefault();
+  
+  const product_id = document.getElementById('productSelect').value;
+  const prepayment = parseInt(document.getElementById('prepayment').value);
+  const duration_months = parseInt(document.getElementById('duration').value);
+  const finance_company = document.getElementById('finance_company').value;
+  const btn = document.getElementById('submitBtn');
+  const originalBtnContent = btn.innerHTML;
+  
+  if(prepayment < selectedProductPrice * 0.2) {
+    showToast('Trả trước tối thiểu 20% giá trị xe', 'error');
+    return;
+  }
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;border-width:2px;border-top-color:#fff;"></span><span>Đang kiểm tra CIC...</span>';
+  
+  try {
+    const res = await fetchAPI('/installments/apply', {
+      method: 'POST',
+      body: JSON.stringify({ product_id, prepayment, duration_months, finance_company })
+    });
+    
+    if(res.success) {
+      showToast(res.message, 'success');
+      setTimeout(() => window.location.reload(), 2000);
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnContent;
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnContent;
+  }
+}
+
+function renderLoansList(loans) {
+  const container = document.getElementById('loans-list');
+  if(!loans || loans.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:40px 20px; background:rgba(0,0,0,0.2); border-radius:12px; border:1px dashed rgba(255,255,255,0.1);">
+        <div style="font-size:32px; margin-bottom:12px;">📭</div>
+        <div style="color:var(--muted); font-size:14px;">Bạn chưa có hợp đồng trả góp nào.</div>
+      </div>`;
+    return;
+  }
+  
+  container.innerHTML = loans.map(L => {
+    const pName = L.product_id ? L.product_id.name : 'Xe đã xóa';
+    const statusObj = L.status === 'active' ? { cls: 'status-active', txt: 'ĐANG TRẢ GÓP' } 
+                    : L.status === 'defaulted' ? { cls: 'status-defaulted', txt: 'NỢ XẤU' }
+                     : { cls: 'status-active', txt: 'ĐÃ TẤT TOÁN' };
+    const pStatus = L.status === 'pending' ? { cls: 'status-pending', txt: 'ĐANG CHỜ DUYỆT' } : statusObj;
+                    
+    return `
+      <div class="history-item">
+        <div class="h-header">
+          <div>
+            <div class="h-name">${pName}</div>
+            <div class="h-code">Mã HĐ: ${L._id.substring(L._id.length - 8).toUpperCase()}</div>
+          </div>
+          <div class="h-status ${pStatus.cls}">${pStatus.txt}</div>
+        </div>
+        
+        <div class="h-details">
+          <div class="h-detail-item">Tài trợ bởi: <strong>${L.finance_company || 'MotoZone'}</strong></div>
+          <div class="h-detail-item">Gốc vay: <strong style="color:var(--accent)">${formatPrice(L.loan_amount)}</strong></div>
+          <div class="h-detail-item">Lãi suất: <strong>${L.interest_rate}%/tháng</strong></div>
+          <div class="h-detail-item">Kỳ hạn: <strong>${L.duration_months} tháng</strong></div>
+        </div>
+        
+        <div class="h-action">
+          <a href="/contract.html?type=loan&id=${L._id}" target="_blank" class="btn-outline-sm">📄 Xem Hợp Đồng</a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+init();
+</script>
+</body>
+</html>

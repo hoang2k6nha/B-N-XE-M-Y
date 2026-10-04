@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giỏ Hàng - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; padding: 40px 0; }
+  
+  .cart-items { background: var(--card); border-radius: 16px; border: 1px solid var(--border); padding: 24px; }
+  .cart-item { display: grid; grid-template-columns: 100px 1fr auto; gap: 20px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .cart-item:last-child { border-bottom: none; }
+  .c-img { width: 100px; height: 75px; border-radius: 8px; object-fit: cover; background: var(--surface); }
+  .c-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .c-info p { color: var(--muted); font-size: 13px; }
+  .c-actions { text-align: right; }
+  .c-price { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .c-qty-control { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+  .btn-qty { background: var(--surface); border: 1px solid var(--border); color: var(--text); width: 28px; height: 28px; border-radius: 6px; cursor: pointer; }
+  .btn-qty:hover { border-color: var(--accent); color: var(--accent); }
+  
+  .cart-summary { background: var(--surface); border-radius: 16px; border: 1px solid var(--border); padding: 24px; height: fit-content; }
+  .summary-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+  .summary-row.total { font-size: 20px; font-weight: 800; color: var(--accent); margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .promo-box { display: flex; gap: 8px; margin: 20px 0; }
+  .promo-input { flex: 1; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 10px 16px; border-radius: 8px; outline: none; }
+  .btn-promo { background: var(--text); color: var(--bg); border: none; padding: 0 16px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+  
+  @media (max-width: 992px) {
+    .cart-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">Giỏ Hàng Của Bạn</h1>
+  </div>
+</div>
+
+<div class="container cart-layout" id="cart-container">
+  <!-- JavaScript renders cart content here -->
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+let appliedPromo = '';
+
+function renderCart() {
+  const cart = getCart();
+  const container = document.getElementById('cart-container');
+  
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:80px;background:var(--card);border-radius:16px;">
+        <div style="font-size:64px;margin-bottom:16px">🛒</div>
+        <h2 style="margin-bottom:16px">Giỏ hàng trống</h2>
+        <a href="/products.html" class="btn-primary">Tiếp tục mua sắm</a>
+      </div>
+    `;
+    return;
+  }
+  
+  const subtotal = cart.reduce((sum, item) => {
+    const itemPrice = item.is_preorder ? item.deposit_amount : item.price;
+    return sum + (itemPrice * item.quantity);
+  }, 0);
+  
+  // Xử lý giảm giá VIP
+  const user = getUser();
+  let discount = 0;
+  let discountMsg = '';
+  
+  if(user) {
+    if(user.tier === 'Diamond') { discount = subtotal * 0.10; discountMsg = 'VIP Diamond (-10%)'; }
+    else if(user.tier === 'Gold') { discount = subtotal * 0.05; discountMsg = 'VIP Gold (-5%)'; }
+    else if(user.tier === 'Silver') { discount = subtotal * 0.02; discountMsg = 'VIP Silver (-2%)'; }
+  }
+  
+  // Mã giảm giá
+  if(appliedPromo === 'NEW_MOTO') {
+    discount += 1000000;
+    discountMsg += discountMsg ? ' & Khuyến mãi (-1tr)' : 'Khuyến mãi (-1tr)';
+  }
+  
+  const afterDiscount = subtotal - discount;
+  const vat = afterDiscount * 0.1; // VAT 10%
+  const total = afterDiscount + vat;
+  
+  const itemsHtml = cart.map((item, index) => {
+    const isPre = item.is_preorder;
+    const currentPrice = isPre ? item.deposit_amount : item.price;
+    const namePrefix = isPre ? '<span style="color:#ff9900">[Cọc 20%]</span> ' : '';
+    
+    return `
+    <div class="cart-item">
+      <img src="${item.image}" class="c-img" alt="${item.name}">
+      <div class="c-info">
+        <h3>${namePrefix}${item.name}</h3>
+        <p>Màu: ${item.color}</p>
+        ${isPre ? `<p style="color:var(--accent);font-size:12px;margin-top:4px">Đang chờ nhập hàng - Yêu cầu cọc trước 20%</p>` : ''}
+      </div>
+      <div class="c-actions">
+        <div class="c-price">${formatPrice(currentPrice)}</div>
+        ${isPre ? `<div style="font-size:12px;color:var(--muted);margin-bottom:8px">Tổng xe: ${formatPrice(item.price)}</div>` : ''}
+        <div class="c-qty-control">
+          <button class="btn-qty" onclick="updateQty(${index}, -1)">-</button>
+          <span style="font-weight:600;width:20px;text-align:center">${item.quantity}</span>
+          <button class="btn-qty" onclick="updateQty(${index}, 1)">+</button>
+          <button class="btn-qty" style="color:var(--accent);margin-left:8px" onclick="removeItem(${index})">🗑️</button>
+        </div>
+      </div>
+    </div>
+    `;
+  }).join('');
+  
+  container.innerHTML = `
+    <div class="cart-items">
+      ${itemsHtml}
+    </div>
+    <div class="cart-summary">
+      <div class="summary-title">Tóm Tắt Đơn Hàng</div>
+      
+      <div class="summary-row">
+        <span>Tạm tính</span>
+        <span>${formatPrice(subtotal)}</span>
+      </div>
+      
+      ${discount > 0 ? `
+      <div class="summary-row" style="color:#00cc66">
+        <span>${discountMsg}</span>
+        <span>- ${formatPrice(discount)}</span>
+      </div>
+      ` : ''}
+      
+      <div class="summary-row">
+        <span>VAT (10%)</span>
+        <span>${formatPrice(vat)}</span>
+      </div>
+      
+      <div class="promo-box">
+        <input type="text" id="promo-input" class="promo-input" placeholder="Mã giảm giá (VD: NEW_MOTO)">
+        <button class="btn-promo" onclick="applyPromo()">Áp Dụng</button>
+      </div>
+      
+      <div class="summary-row total">
+        <span>Tổng cộng</span>
+        <span id="final-total" data-value="${total}">${formatPrice(total)}</span>
+      </div>
+      
+      <div style="margin-top:20px;">
+        <label style="display:block;margin-bottom:8px;font-weight:600;">Phương thức thanh toán:</label>
+        <select id="payment-method" style="width:100%;padding:12px;border-radius:8px;background:var(--card);border:1px solid var(--border);color:var(--text);margin-bottom:16px;">
+          <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+          <option value="sepay">Chuyển khoản VietQR (Tự động xác nhận - SePay)</option>
+        </select>
+      </div>
+      
+      <button class="btn-primary btn-block" style="padding:16px" onclick="checkout()">Thanh Toán Đặt Hàng</button>
+    </div>
+  `;
+}
+
+function updateQty(index, change) {
+  const cart = getCart();
+  cart[index].quantity += change;
+  if(cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+  saveCart(cart);
+  renderCart();
+}
+
+function removeItem(index) {
+  const cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  renderCart();
+}
+
+function applyPromo() {
+  const code = document.getElementById('promo-input').value.trim();
+  if(code === 'NEW_MOTO') {
+    appliedPromo = code;
+    showToast('Áp dụng mã giảm giá thành công!', 'success');
+    renderCart();
+  } else {
+    showToast('Mã giảm giá không hợp lệ', 'error');
+  }
+}
+
+async function checkout() {
+  if(!getUser()) {
+    showToast('Vui lòng đăng nhập để thanh toán', 'error');
+    setTimeout(() => window.location.href = '/login.html', 1500);
+    return;
+  }
+  
+  const cart = getCart();
+  const orderItems = cart.map(item => ({
+    product_id: item.id,
+    quantity: item.quantity,
+    price: item.is_preorder ? item.deposit_amount : item.price,
+    is_preorder: item.is_preorder
+  }));
+  
+  const payment_method = document.getElementById('payment-method').value;
+  
+  const payload = {
+    orderItems,
+    promoCode: appliedPromo,
+    payment_method
+  };
+  
+  try {
+    const res = await fetchAPI('/orders', {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
+    
+    if(res.success) {
+      // Xóa giỏ hàng
+      saveCart([]);
+      
+      if(res.data.new_tier) {
+        const user = getUser();
+        user.tier = res.data.new_tier;
+        localStorage.setItem('user', JSON.stringify(user));
+      }
+      
+      if (payment_method === 'sepay') {
+        showToast('Đang chuyển hướng sang cổng thanh toán...', 'info');
+        setTimeout(() => {
+           window.location.href = `/sepay-checkout.html?orderId=${res.data.order._id}&amount=${res.data.order.total_price}`;
+        }, 1500);
+      } else {
+        showToast('🎉 Đặt hàng thành công!', 'success');
+        setTimeout(() => window.location.href = '/orders.html', 2000);
+      }
+    }
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh Sách Xe Máy - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .products-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; padding: 40px 0; }
+  .filters-sidebar { background: var(--surface); padding: 24px; border-radius: 16px; border: 1px solid var(--border); height: fit-content; position: sticky; top: 90px; }
+  .filter-group { margin-bottom: 24px; }
+  .filter-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #fff; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .filter-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer; color: var(--muted); font-size: 14px; transition: color .2s; }
+  .filter-item:hover, .filter-item.active { color: var(--accent); }
+  .filter-item input { accent-color: var(--accent); cursor: pointer; }
+  .search-box { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 12px 16px; border-radius: 8px; font-family: var(--font); margin-bottom: 24px; outline: none; }
+  .search-box:focus { border-color: var(--accent); }
+  .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .sort-select { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 8px; font-family: var(--font); outline: none; cursor: pointer; }
+  .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
+  .page-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; font-weight: 600; }
+  .page-btn:hover, .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  
+  /* Force multiple columns on desktop to avoid grid blowout */
+  #main-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 1200px) { #main-product-grid { grid-template-columns: repeat(2, 1fr); } }
+  
+  main { min-width: 0; }
+  @media (max-width: 992px) {
+    .products-layout { grid-template-columns: 1fr; }
+    .filters-sidebar { position: static; margin-bottom: 24px; }
+    #main-product-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    #main-product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+  @media (max-width: 500px) {
+    #main-product-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html" style="color:var(--accent)">Xe Máy</a></li>
+      <li><a href="/products.html?cat=Xe+Tay+Ga">Tay Ga</a></li>
+      <li><a href="/products.html?cat=Moto+PKL">Moto PKL</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+      <li><a href="/test-drive.html">Lái Thử</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">Khám Phá Danh Sách Xe Máy</h1>
+    <p class="page-desc">Hơn 13+ mẫu xe từ các thương hiệu hàng đầu thế giới đang chờ bạn.</p>
+  </div>
+</div>
+
+<div class="container products-layout">
+  <!-- SIDEBAR FILTERS -->
+  <aside class="filters-sidebar">
+    <input type="text" id="searchInput" class="search-box" placeholder="Tìm kiếm tên xe, thương hiệu..." onkeyup="handleSearch(event)">
+    
+    <div class="filter-group">
+      <div class="filter-title">Danh Mục</div>
+      <div id="category-filters">
+        <label class="filter-item"><input type="radio" name="cat" value="" checked onchange="applyFilters()"> Tất cả</label>
+        <!-- Categories injected here -->
+      </div>
+    </div>
+    
+    <div class="filter-group">
+      <div class="filter-title">Mức Giá</div>
+      <label class="filter-item"><input type="radio" name="price" value="" checked onchange="applyFilters()"> Tất cả</label>
+      <label class="filter-item"><input type="radio" name="price" value="under_60" onchange="applyFilters()"> Dưới 60 triệu</label>
+      <label class="filter-item"><input type="radio" name="price" value="60_150" onchange="applyFilters()"> Từ 60 - 150 triệu</label>
+      <label class="filter-item"><input type="radio" name="price" value="over_150" onchange="applyFilters()"> Trên 150 triệu (PKL)</label>
+    </div>
+    
+    <button class="btn-primary btn-block" onclick="resetFilters()" style="padding: 10px; font-size: 14px;">Xóa bộ lọc</button>
+  </aside>
+
+  <!-- PRODUCT GRID -->
+  <main>
+    <div class="top-bar">
+      <div style="color:var(--muted);font-size:14px">Tìm thấy <strong id="total-count" style="color:var(--accent)">0</strong> xe</div>
+      <select id="sortSelect" class="sort-select" onchange="applyFilters()">
+        <option value="">Mới nhất</option>
+        <option value="price_asc">Giá: Thấp → Cao</option>
+        <option value="price_desc">Giá: Cao → Thấp</option>
+        <option value="name_asc">Tên A-Z</option>
+      </select>
+    </div>
+    
+    <div class="product-grid" id="main-product-grid">
+      <div class="loading-box"><div class="spinner"></div></div>
+    </div>
+    
+    <div class="pagination" id="pagination"></div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+let currentCat = '';
+let currentPrice = '';
+let currentSort = '';
+let currentSearch = '';
+let currentPage = 1;
+let categoriesMap = {};
+
+// Parse URL params
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.has('cat')) {
+  const catName = urlParams.get('cat');
+  // We'll set this after loading categories
+  currentCat = catName; 
+}
+
+async function init() {
+  await loadCategories();
+  applyFilters(currentPage);
+}
+
+async function loadCategories() {
+  try {
+    const res = await fetchAPI('/categories');
+    if(res.data) {
+      let html = `<label class="filter-item"><input type="radio" name="cat" value="" ${!currentCat ? 'checked' : ''} onchange="applyFilters()"> Tất cả</label>`;
+      res.data.forEach(c => {
+        categoriesMap[c.name] = c._id;
+        
+        // Decode URI component in case URL has encoded spaces
+        const decodedUrlCat = decodeURIComponent(currentCat);
+        
+        const isChecked = decodedUrlCat === c.name || currentCat === c._id ? 'checked' : '';
+        if(isChecked) currentCat = c._id; // Convert name to ID for API
+        html += `<label class="filter-item"><input type="radio" name="cat" value="${c._id}" ${isChecked} onchange="applyFilters()"> ${c.name}</label>`;
+      });
+      document.getElementById('category-filters').innerHTML = html;
+    }
+  } catch(e) {}
+}
+
+function handleSearch(e) {
+  if (e.key === 'Enter') {
+    currentSearch = e.target.value;
+    applyFilters(1);
+  }
+}
+
+async function applyFilters(page = 1) {
+  currentPage = page;
+  
+  // Get filter values from UI
+  const catInput = document.querySelector('input[name="cat"]:checked');
+  const catId = catInput ? catInput.value : '';
+  
+  const priceInput = document.querySelector('input[name="price"]:checked');
+  const priceRange = priceInput ? priceInput.value : '';
+  
+  const sort = document.getElementById('sortSelect').value;
+  const search = document.getElementById('searchInput').value;
+
+  document.getElementById('main-product-grid').innerHTML = '<div class="loading-box"><div class="spinner"></div></div>';
+  
+  try {
+    let url = `/products?limit=12&page=${page}`;
+    if (catId) url += `&category=${catId}`;
+    if (priceRange) url += `&price_range=${priceRange}`;
+    if (sort) url += `&sort=${sort}`;
+    if (search) url += `&search=${encodeURIComponent(search)}`;
+    
+    const res = await fetchAPI(url);
+    if(res.data) {
+      document.getElementById('total-count').textContent = res.pagination.total;
+      if(res.data.length === 0) {
+        document.getElementById('main-product-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Không tìm thấy xe phù hợp</div>';
+      } else {
+        document.getElementById('main-product-grid').innerHTML = res.data.map(p => productCard(p)).join('');
+      }
+      renderPagination(res.pagination);
+    }
+  } catch(e) {
+    document.getElementById('main-product-grid').innerHTML = '<div style="grid-column:1/-1;color:var(--accent)">Lỗi tải dữ liệu</div>';
+  }
+}
+
+function renderPagination(pInfo) {
+  const pDiv = document.getElementById('pagination');
+  if(pInfo.pages <= 1) { pDiv.innerHTML = ''; return; }
+  
+  let html = '';
+  for(let i=1; i<=pInfo.pages; i++) {
+    html += `<button class="page-btn ${i === pInfo.page ? 'active' : ''}" onclick="applyFilters(${i})">${i}</button>`;
+  }
+  pDiv.innerHTML = html;
+}
+
+function resetFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('sortSelect').value = '';
+  document.querySelector('input[name="cat"][value=""]').checked = true;
+  document.querySelector('input[name="price"][value=""]').checked = true;
+  applyFilters(1);
+}
+
+init();
+</script>
+</body>
+</html>

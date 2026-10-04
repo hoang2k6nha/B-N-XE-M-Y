@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ Sơ Cá Nhân - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .profile-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    padding: 60px 0;
+    align-items: start;
+  }
+  @media (max-width: 992px) { .profile-layout { grid-template-columns: 1fr; } }
+  
+  .glass-box {
+    background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  
+  .box-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .box-icon { width: 48px; height: 48px; background: rgba(255,60,0,0.1); color: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+  .box-title { font-size: 24px; font-weight: 800; margin: 0; }
+  
+  .modern-form-group { margin-bottom: 24px; }
+  .modern-label { display: block; font-size: 14px; font-weight: 600; color: #ccc; margin-bottom: 10px; }
+  .modern-input {
+    width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    padding: 16px 20px; border-radius: 12px; font-family: var(--font); font-size: 16px; outline: none; transition: all 0.3s ease;
+  }
+  .modern-input:focus { border-color: var(--accent); background: rgba(0,0,0,0.5); box-shadow: 0 0 0 4px rgba(255,60,0,0.15); }
+  .modern-input:disabled { background: rgba(255,255,255,0.02); color: #888; cursor: not-allowed; }
+
+  .modern-btn {
+    width: 100%; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: 18px; border-radius: 12px; font-family: var(--font); font-size: 16px; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 20px rgba(255,60,0,0.2);
+  }
+  .modern-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(255,60,0,0.4); }
+
+  /* Left Sidebar Profile */
+  .profile-card { text-align: center; padding: 40px 24px; }
+  .avatar-circle {
+    width: 120px; height: 120px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+    font-size: 48px; font-weight: 800; color: #fff;
+    box-shadow: 0 10px 30px rgba(255,60,0,0.4);
+    text-transform: uppercase;
+  }
+  .profile-name { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .profile-email { color: var(--muted); margin-bottom: 24px; font-size: 15px; }
+  .profile-stats {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 20px; border-radius: 16px; margin-bottom: 24px; text-align: left;
+  }
+  .stat-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+  .stat-row:last-child { margin-bottom: 0; }
+  .btn-outline {
+    background: rgba(255,60,0,0.05); color: var(--accent); border: 1px solid rgba(255,60,0,0.3); box-shadow: none;
+  }
+  .btn-outline:hover { background: rgba(255,60,0,0.1); transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header" style="padding: 40px 0; background: radial-gradient(circle at center top, rgba(255,60,0,0.15) 0%, rgba(10,10,15,1) 100%); border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <div class="container" style="text-align:center;">
+    <h1 class="page-title gradient-text" style="font-size:36px; margin-bottom:10px;">Hồ Sơ Cá Nhân</h1>
+    <p class="page-desc">Quản lý thông tin định danh, bảo mật và thiết lập tài khoản</p>
+  </div>
+</div>
+
+<div class="container profile-layout">
+  
+  <!-- LEFT COLUMN: PROFILE SUMMARY -->
+  <div class="glass-box profile-card">
+    <div class="avatar-circle" id="avatar-initial">U</div>
+    <div class="profile-name" id="display-name">Khách Hàng</div>
+    <div class="profile-email" id="display-email">email@example.com</div>
+    
+    <div class="profile-stats">
+      <div class="stat-row">
+        <span style="color:var(--muted)">Hạng Thành Viên</span>
+        <strong id="display-tier" style="color:var(--gold); font-size:16px;">New</strong>
+      </div>
+      <div class="stat-row">
+        <span style="color:var(--muted)">Điểm Tín Dụng</span>
+        <strong id="display-cic" style="color:#00cc66;">600</strong>
+      </div>
+      <div class="stat-row">
+        <span style="color:var(--muted)">Vai Trò</span>
+        <strong id="display-role" style="text-transform: capitalize; color:#fff;">Khách hàng</strong>
+      </div>
+    </div>
+    
+    <button class="modern-btn btn-outline" onclick="handleLogout()">Đăng Xuất Tài Khoản</button>
+  </div>
+  
+  <!-- RIGHT COLUMN: FORMS -->
+  <div style="display:flex; flex-direction:column; gap:40px;">
+    
+    <!-- Cập nhật KYC -->
+    <div class="glass-box" style="padding:40px;">
+      <div class="box-header">
+        <div class="box-icon">👤</div>
+        <div>
+          <h2 class="box-title">Thông Tin Định Danh (KYC)</h2>
+          <div style="color:var(--muted); font-size:14px; margin-top:4px;">Cập nhật giấy tờ để phục vụ xét duyệt trả góp</div>
+        </div>
+      </div>
+      
+      <form id="kycForm" onsubmit="handleUpdateKYC(event)">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div class="modern-form-group">
+            <label class="modern-label">Họ và Tên</label>
+            <input type="text" id="name" class="modern-input" disabled>
+          </div>
+          <div class="modern-form-group">
+            <label class="modern-label">Email</label>
+            <input type="email" id="email" class="modern-input" disabled>
+          </div>
+        </div>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div class="modern-form-group">
+            <label class="modern-label">Số Điện Thoại</label>
+            <input type="text" id="phone" class="modern-input" required placeholder="090...">
+          </div>
+          <div class="modern-form-group">
+            <label class="modern-label">Căn cước công dân (CCCD)</label>
+            <input type="text" id="cccd" class="modern-input" required placeholder="079...">
+          </div>
+        </div>
+        
+        <div class="modern-form-group">
+          <label class="modern-label">Địa Chỉ Thường Trú</label>
+          <input type="text" id="address" class="modern-input" required placeholder="Số nhà, đường, phường, quận, thành phố">
+        </div>
+        
+        <div style="text-align:right;">
+          <button type="submit" class="modern-btn" id="btnUpdateKYC" style="width:auto; padding:16px 32px; display:inline-block;">Lưu Thay Đổi</button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Đổi mật khẩu -->
+    <div class="glass-box" style="padding:40px;">
+      <div class="box-header">
+        <div class="box-icon">🔒</div>
+        <div>
+          <h2 class="box-title">Đổi Mật Khẩu</h2>
+          <div style="color:var(--muted); font-size:14px; margin-top:4px;">Bảo mật tài khoản của bạn bằng mật khẩu mạnh</div>
+        </div>
+      </div>
+      
+      <form id="pwdForm" onsubmit="handleChangePassword(event)">
+        <div class="modern-form-group">
+          <label class="modern-label">Mật khẩu hiện tại</label>
+          <input type="password" id="oldPassword" class="modern-input" required placeholder="Nhập mật khẩu cũ">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div class="modern-form-group">
+            <label class="modern-label">Mật khẩu mới</label>
+            <input type="password" id="newPassword" class="modern-input" required minlength="6" placeholder="Tối thiểu 6 ký tự">
+          </div>
+          <div class="modern-form-group">
+            <label class="modern-label">Xác nhận mật khẩu mới</label>
+            <input type="password" id="confirmPassword" class="modern-input" required minlength="6" placeholder="Nhập lại mật khẩu mới">
+          </div>
+        </div>
+        
+        <div style="text-align:right;">
+          <button type="submit" class="modern-btn" id="btnChangePwd" style="width:auto; padding:16px 32px; display:inline-block;">Cập Nhật Mật Khẩu</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+async function init() {
+  const user = getUser();
+  if(!user) {
+    window.location.href = '/login.html';
+    return;
+  }
+  
+  try {
+    const res = await fetchAPI('/auth/profile');
+    if(res.data) {
+      const d = res.data;
+      
+      // Update Inputs
+      document.getElementById('name').value = d.name || '';
+      document.getElementById('email').value = d.email || '';
+      document.getElementById('phone').value = d.phone || '';
+      document.getElementById('cccd').value = d.cccd || '';
+      document.getElementById('address').value = d.address || '';
+      
+      // Update Sidebar Profile Card
+      document.getElementById('avatar-initial').textContent = (d.name ? d.name.charAt(0) : 'U').toUpperCase();
+      document.getElementById('display-name').textContent = d.name || 'Người Dùng';
+      document.getElementById('display-email').textContent = d.email;
+      document.getElementById('display-tier').textContent = d.tier || 'New';
+      document.getElementById('display-role').textContent = d.role === 'admin' ? 'Quản Trị Viên' : 'Khách Hàng';
+      
+      const cicEl = document.getElementById('display-cic');
+      if (d.has_bad_debt) {
+        cicEl.textContent = d.credit_score + ' (Nợ xấu)';
+        cicEl.style.color = '#ff3333';
+      } else {
+        cicEl.textContent = d.credit_score || 'N/A';
+        cicEl.style.color = '#00cc66';
+      }
+    }
+  } catch (error) {
+    showToast('Lỗi tải hồ sơ', 'error');
+  }
+}
+
+async function handleUpdateKYC(e) {
+  e.preventDefault();
+  const phone = document.getElementById('phone').value;
+  const cccd = document.getElementById('cccd').value;
+  const address = document.getElementById('address').value;
+  
+  const btn = document.getElementById('btnUpdateKYC');
+  const oldText = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Đang lưu...';
+  
+  try {
+    const res = await fetchAPI('/auth/profile', {
+      method: 'PUT',
+      body: JSON.stringify({ phone, cccd, address })
+    });
+    if(res.success) {
+      showToast('Cập nhật thông tin thành công!', 'success');
+    }
+  } catch (error) {}
+  
+  btn.disabled = false; btn.textContent = oldText;
+}
+
+async function handleChangePassword(e) {
+  e.preventDefault();
+  const oldPassword = document.getElementById('oldPassword').value;
+  const newPassword = document.getElementById('newPassword').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  
+  if (newPassword !== confirmPassword) {
+    showToast('Mật khẩu mới không khớp!', 'error');
+    return;
+  }
+  
+  const btn = document.getElementById('btnChangePwd');
+  const oldText = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Đang lưu...';
+  
+  try {
+    const res = await fetchAPI('/auth/change-password', {
+      method: 'POST',
+      body: JSON.stringify({ oldPassword, newPassword })
+    });
+    if(res.success) {
+      showToast('Đổi mật khẩu thành công!', 'success');
+      document.getElementById('pwdForm').reset();
+    }
+  } catch (error) {}
+  
+  btn.disabled = false; btn.textContent = oldText;
+}
+
+function handleLogout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  window.location.href = '/login.html';
+}
+
+init();
+</script>
+</body>
+</html>

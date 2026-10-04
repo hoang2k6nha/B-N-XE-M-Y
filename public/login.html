@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng Nhập - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  /* Custom Split Layout for Auth */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .split-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    overflow: hidden;
+  }
+  
+  .split-left img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .split-left::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,15,1) 0%, rgba(10,10,15,0.4) 50%, rgba(10,10,15,0.1) 100%);
+    z-index: 2;
+  }
+  
+  .left-content {
+    position: relative;
+    z-index: 3;
+    max-width: 500px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 0.8s forwards 0.3s;
+  }
+  
+  .left-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  }
+  
+  .left-content p {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  }
+  
+  .split-right {
+    width: 600px;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+  }
+  
+  .right-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+  }
+  
+  .auth-nav {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+  }
+  
+  .auth-nav .logo {
+    font-size: 28px;
+  }
+  
+  .modern-auth-box {
+    width: 100%;
+    animation: slideInRight 0.6s ease-out;
+  }
+  
+  .auth-heading {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  
+  .auth-subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .modern-form-group {
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .modern-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  
+  .modern-input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-input::placeholder {
+    color: #777;
+    font-family: var(--font);
+  }
+  
+  .modern-input:focus {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255,60,0,0.15);
+  }
+  
+  .modern-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(255,60,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .modern-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255,60,0,0.4);
+  }
+  
+  .modern-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .auth-footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  
+  .auth-footer a {
+    color: var(--accent);
+    font-weight: 600;
+    margin-left: 5px;
+    transition: color 0.2s;
+  }
+  
+  .auth-footer a:hover {
+    color: #fff;
+  }
+  
+  .test-accounts {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @media (max-width: 1024px) {
+    .split-left { display: none; }
+    .split-right { width: 100%; box-shadow: none; }
+    body { background: var(--bg); justify-content: center; align-items: center; }
+    .right-inner { padding: 40px; max-width: 500px; flex: none; width: 100%; }
+    .auth-nav { position: static; margin-bottom: 40px; text-align: center; }
+  }
+  
+  @media (max-width: 480px) {
+    .right-inner { padding: 24px; }
+    .auth-heading { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Left Visual Side -->
+  <div class="split-left">
+    <img src="/img/login_bg.jpg" alt="MotoZone Background">
+    <div class="left-content">
+      <h1 class="gradient-text">Tốc Độ <br>Đỉnh Cao</h1>
+      <p>Trải nghiệm mua sắm siêu xe thể thao phân khối lớn hàng đầu. Tham gia cộng đồng MotoZone để nhận những đặc quyền dành riêng cho bạn.</p>
+    </div>
+  </div>
+
+  <!-- Right Form Side -->
+  <div class="split-right">
+    <div class="right-inner">
+      <div class="auth-nav">
+        <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+      </div>
+      
+      <div class="modern-auth-box">
+        <h2 class="auth-heading">Chào mừng trở lại! 👋</h2>
+        <p class="auth-subtitle">Vui lòng đăng nhập vào tài khoản của bạn</p>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)" novalidate>
+          <div class="modern-form-group">
+            <label class="modern-label">Email</label>
+            <input type="email" id="email" class="modern-input" required placeholder="Nhập địa chỉ email" value="admin@gmail.com">
+          </div>
+          <div class="modern-form-group">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <label class="modern-label" style="margin-bottom:0;">Mật khẩu</label>
+              <a href="#" onclick="openForgotModal(); return false;" style="font-size:13px; color:var(--accent); font-weight:600;">Quên mật khẩu?</a>
+            </div>
+            <input type="password" id="password" class="modern-input" required placeholder="Nhập mật khẩu" value="123456">
+          </div>
+          
+          <button type="submit" class="modern-btn" id="submitBtn">
+            <span>Đăng Nhập</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        
+        <div class="auth-footer">
+          Chưa có tài khoản? <a href="/register.html">Đăng ký ngay</a>
+        </div>
+        
+        <div class="test-accounts">
+          <strong>Tài khoản dùng thử:</strong><br>
+          Admin: admin@gmail.com / 123456<br>
+          Khách hàng: khachhang@gmail.com / 123456
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center; backdrop-filter:blur(5px);">
+  <div class="modern-auth-box" style="background:var(--card); padding:40px; border-radius:24px; border:1px solid var(--border); width:400px; max-width:90%; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+    <h3 style="font-size:24px; font-weight:800; margin-bottom:12px;">Quên mật khẩu?</h3>
+    <p style="color:var(--muted); font-size:14px; margin-bottom:24px; line-height:1.5;">Nhập số điện thoại đã đăng ký, hệ thống sẽ cấp lại mật khẩu mặc định (123456) cho bạn.</p>
+    <div class="modern-form-group">
+      <input type="text" id="forgotPhone" class="modern-input" placeholder="Nhập số điện thoại của bạn">
+    </div>
+    <div style="display:flex; gap:12px; margin-top:24px;">
+      <button class="modern-btn" style="background:rgba(255,255,255,0.05); border:1px solid var(--border); box-shadow:none;" onclick="closeForgotModal()">Hủy</button>
+      <button class="modern-btn" onclick="submitForgotPassword()">Khôi phục</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+function openForgotModal() { document.getElementById('forgotPasswordModal').style.display = 'flex'; }
+function closeForgotModal() { document.getElementById('forgotPasswordModal').style.display = 'none'; }
+
+async function submitForgotPassword() {
+  const phone = document.getElementById('forgotPhone').value;
+  if (!phone) { showToast('Vui lòng nhập số điện thoại', 'error'); return; }
+  
+  try {
+    const res = await fetchAPI('/auth/forgot-password', { 
+      method: 'POST', 
+      body: JSON.stringify({ phone }) 
+    });
+    
+    if(res.success) { 
+      showToast(res.message, 'success'); 
+      closeForgotModal(); 
+    }
+  } catch (e) {
+    // error is handled by fetchAPI / common.js toast usually, or silently here
+  }
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  
+  if (!email || !password) {
+    return showToast('Vui lòng nhập đầy đủ email và mật khẩu!', 'error');
+  }
+  
+  // Custom Email Validation to avoid default browser tooltip
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return showToast('Bạn đã nhập sai tài khoản hoặc mật khẩu', 'error');
+  }
+
+  const btn = document.getElementById('submitBtn');
+  const originalBtnContent = btn.innerHTML;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;border-width:2px;border-top-color:#fff;"></span><span>Đang xử lý...</span>';
+  
+  try {
+    const res = await fetchAPI('/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    });
+    
+    if(res.success && res.data) {
+      // Save token and user info
+      localStorage.setItem('token', res.data.token);
+      
+      // Fetch full profile to get tier info
+      try {
+        const token = res.data.token;
+        const profileRes = await fetch(`${API_URL.replace('/api', '')}/api/auth/profile`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const profileData = await profileRes.json();
+        
+        if(profileData.success) {
+           localStorage.setItem('user', JSON.stringify({
+             _id: profileData.data._id,
+             name: profileData.data.name,
+             email: profileData.data.email,
+             role: profileData.data.role,
+             tier: profileData.data.tier
+           }));
+        }
+      } catch(err) {
+        // fallback
+        localStorage.setItem('user', JSON.stringify(res.data));
+      }
+      
+      showToast('Đăng nhập thành công!', 'success');
+      
+      // Redirect
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get('redirect') || '/';
+      setTimeout(() => window.location.href = redirect, 1000);
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnContent;
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnContent;
+  }
+}
+</script>
+</body>
+</html>

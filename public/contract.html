@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hợp Đồng - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { background: #e0e0e0; font-family: 'Times New Roman', Times, serif; margin: 0; padding: 20px; color: #000; }
+  .a4-page { background: #fff; max-width: 800px; margin: 0 auto; padding: 60px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); min-height: 1100px; position: relative; }
+  
+  .header-national { text-align: center; margin-bottom: 30px; }
+  .header-national h2 { font-size: 18px; margin: 0 0 5px 0; text-transform: uppercase; }
+  .header-national h3 { font-size: 16px; margin: 0 0 10px 0; }
+  .line { width: 200px; height: 1px; background: #000; margin: 0 auto; }
+  
+  .contract-title { text-align: center; font-size: 22px; font-weight: bold; margin: 30px 0 20px; text-transform: uppercase; }
+  .contract-number { text-align: center; font-style: italic; margin-bottom: 40px; }
+  
+  .section { margin-bottom: 20px; line-height: 1.6; }
+  .section h4 { font-size: 16px; margin: 0 0 10px 0; text-decoration: underline; }
+  
+  .signatures { display: flex; justify-content: space-between; margin-top: 60px; }
+  .signature-box { text-align: center; width: 45%; }
+  .stamp { color: red; border: 2px solid red; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; margin: 20px auto; transform: rotate(-15deg); opacity: 0.8; font-weight: bold; text-align: center; }
+  
+  .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 80px; color: rgba(0,0,0,0.05); white-space: nowrap; pointer-events: none; }
+  
+  /* Print styling */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .a4-page { box-shadow: none; margin: 0; padding: 20px; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div style="text-align:center; margin-bottom:20px;" class="print-btn">
+  <button onclick="window.print()" style="padding:10px 20px; background:#000; color:#fff; border:none; cursor:pointer; font-size:16px; border-radius:8px;">🖨️ In Hợp Đồng</button>
+</div>
+
+<div class="a4-page" id="contract-content">
+  <div style="text-align:center; margin-top:50px;">Đang tải hợp đồng...</div>
+</div>
+
+<script src="/js/common.js"></script>
+<script>
+async function loadContract() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  const id = urlParams.get('id');
+  
+  const user = getUser();
+  if(!user) {
+    document.getElementById('contract-content').innerHTML = '<h3 style="text-align:center">Vui lòng đăng nhập để xem hợp đồng.</h3>';
+    return;
+  }
+  
+  const date = new Date();
+  const dateStr = `ngày ${date.getDate()} tháng ${date.getMonth()+1} năm ${date.getFullYear()}`;
+  
+  let html = '';
+  
+  // HỢP ĐỒNG VAY TÍN DỤNG
+  if (type === 'loan') {
+    // Gọi API lấy chi tiết khoản vay (Dùng tạm My Loans và filter)
+    const res = await fetchAPI('/installments/my-loans');
+    const loan = res.data.find(l => l._id === id);
+    if(!loan) return document.getElementById('contract-content').innerHTML = 'Không tìm thấy hồ sơ vay.';
+    
+    html = `
+      <div class="watermark">${loan.finance_company || 'MotoZone Finance'}</div>
+      
+      <div class="header-national">
+        <h2>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h2>
+        <h3>Độc lập - Tự do - Hạnh phúc</h3>
+        <div class="line"></div>
+      </div>
+      
+      <div class="contract-title">HỢP ĐỒNG CHO VAY TÍN DỤNG TRẢ GÓP</div>
+      <div class="contract-number">Số: ${loan._id.substring(0,10).toUpperCase()}/HDTD-${new Date(loan.createdAt).getFullYear()}</div>
+      
+      <div class="section">
+        Hôm nay, ${dateStr}, tại Văn phòng Giao dịch MotoZone, chúng tôi gồm có:
+      </div>
+      
+      <div class="section">
+        <h4>BÊN CHO VAY (BÊN A):</h4>
+        <div><strong>CÔNG TY TÀI CHÍNH ${loan.finance_company || 'MOTOZONE FINANCE'}</strong></div>
+        <div>Đại diện: Ông/Bà Giám Đốc Tín Dụng</div>
+        <div>Trụ sở: 123 Đường Tín Dụng, TP.HCM</div>
+      </div>
+      
+      <div class="section">
+        <h4>BÊN VAY (BÊN B):</h4>
+        <div>Họ và tên: <strong>${user.name}</strong></div>
+        <div>Số CCCD: <strong>${user.cccd || '.......................................'}</strong></div>
+        <div>Số điện thoại: ${user.phone || '.......................................'}</div>
+        <div>Địa chỉ thường trú: ${user.address || '.......................................'}</div>
+      </div>
+      
+      <div class="section">
+        <h4>ĐIỀU 1: MỤC ĐÍCH VÀ SỐ TIỀN VAY</h4>
+        <div>Bên B đồng ý vay của Bên A số tiền để mua trả góp xe: <strong>${loan.product_id?.name || 'Xe máy'}</strong>.</div>
+        <div>- Giá trị xe: <strong>${formatPrice(loan.vehicle_price)}</strong></div>
+        <div>- Trả trước: <strong>${formatPrice(loan.prepayment)}</strong></div>
+        <div>- Số tiền thực vay (Gốc): <strong>${formatPrice(loan.loan_amount)}</strong></div>
+      </div>
+      
+      <div class="section">
+        <h4>ĐIỀU 2: LÃI SUẤT VÀ KỲ HẠN</h4>
+        <div>- Lãi suất áp dụng: <strong>${loan.interest_rate}% / tháng</strong></div>
+        <div>- Thời hạn vay: <strong>${loan.duration_months} tháng</strong></div>
+        <div>- Số tiền phải đóng hàng tháng (Gốc + Lãi): <strong>${formatPrice(loan.monthly_payment)}</strong> / tháng.</div>
+        <div>- Trạng thái hiện tại: <strong>${loan.status === 'active' ? 'Đang trả góp' : loan.status === 'defaulted' ? 'Nợ xấu' : 'Chờ duyệt / Khác'}</strong></div>
+      </div>
+      
+      <div class="section">
+        <h4>ĐIỀU 3: CAM KẾT</h4>
+        <div>Bên B cam kết thanh toán đầy đủ khoản vay hàng tháng. Nếu trễ hạn, Bên A có quyền báo cáo dư nợ xấu lên Trung tâm Thông tin Tín dụng Quốc gia (CIC) và tiến hành thu hồi tài sản theo quy định của pháp luật.</div>
+      </div>
+      
+      <div class="signatures">
+        <div class="signature-box">
+          <strong>ĐẠI DIỆN BÊN B (BÊN VAY)</strong><br>
+          <div style="color:blue; margin: 40px 0 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style:italic; font-size:24px;">${user.name}</div>
+          <div>${user.name}</div>
+        </div>
+        <div class="signature-box">
+          <strong>ĐẠI DIỆN BÊN A (CHO VAY)</strong><br>
+          <div class="stamp">${loan.finance_company || 'MotoZone'}<br>ĐÃ DUYỆT</div>
+          <div>Giám Đốc Tín Dụng</div>
+        </div>
+      </div>
+    `;
+  } 
+  
+  // HỢP ĐỒNG MUA BÁN XE
+  else if (type === 'sales') {
+    const res = await fetchAPI('/orders/myorders');
+    const order = res.data.find(o => o._id === id);
+    if(!order) return document.getElementById('contract-content').innerHTML = 'Không tìm thấy đơn hàng.';
+    
+    const itemsHtml = order.items.map(item => `
+      <tr>
+        <td style="border:1px solid #000; padding:8px;">${item.product_id?.name || 'Sản phẩm'}</td>
+        <td style="border:1px solid #000; padding:8px; text-align:center;">${item.quantity}</td>
+        <td style="border:1px solid #000; padding:8px; text-align:right;">${formatPrice(item.price)}</td>
+      </tr>
+    `).join('');
+    
+    html = `
+      <div class="watermark">MotoZone</div>
+      
+      <div class="header-national">
+        <h2>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h2>
+        <h3>Độc lập - Tự do - Hạnh phúc</h3>
+        <div class="line"></div>
+      </div>
+      
+      <div class="contract-title">HỢP ĐỒNG MUA BÁN XE MÁY</div>
+      <div class="contract-number">Số: ${order._id.substring(0,10).toUpperCase()}/HDMB-MZ</div>
+      
+      <div class="section">
+        Hôm nay, ${dateStr}, tại Showroom MotoZone, chúng tôi gồm có:
+      </div>
+      
+      <div class="section">
+        <h4>BÊN BÁN (BÊN A):</h4>
+        <div><strong>HỆ THỐNG PHÂN PHỐI XE MÁY MOTOZONE</strong></div>
+        <div>Đại diện: Giám Đốc Cửa Hàng</div>
+        <div>Trụ sở: Khu Công Nghệ Cao, TP.HCM</div>
+      </div>
+      
+      <div class="section">
+        <h4>BÊN MUA (BÊN B):</h4>
+        <div>Họ và tên: <strong>${user.name}</strong></div>
+        <div>Số điện thoại: ${user.phone || '.......................................'}</div>
+        <div>Địa chỉ giao xe: ${order.shipping_address?.street || user.address || '.......................................'}</div>
+      </div>
+      
+      <div class="section">
+        <h4>ĐIỀU 1: ĐỐI TƯỢNG HỢP ĐỒNG</h4>
+        <div>Bên A đồng ý bán và Bên B đồng ý mua các xe máy sau:</div>
+        <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+          <thead>
+            <tr style="background:#f0f0f0;">
+              <th style="border:1px solid #000; padding:8px;">Tên Xe</th>
+              <th style="border:1px solid #000; padding:8px; width:80px;">Số Lượng</th>
+              <th style="border:1px solid #000; padding:8px; width:150px;">Đơn Giá</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${itemsHtml}
+          </tbody>
+        </table>
+        <div style="margin-top:10px; font-weight:bold;">Tổng Giá Trị Hợp Đồng (Đã bao gồm VAT): ${formatPrice(order.total_amount || order.total_price)}</div>
+      </div>
+      
+      <div class="section">
+        <h4>ĐIỀU 2: PHƯƠNG THỨC THANH TOÁN VÀ GIAO NHẬN</h4>
+        <div>- Trạng thái thanh toán: <strong>${order.payment_status === 'paid' ? 'ĐÃ THANH TOÁN (Chuyển khoản / Trả góp)' : 'CHƯA THANH TOÁN (COD)'}</strong></div>
+        <div>- Phương thức nhận xe: Bên A sẽ vận chuyển xe đến địa chỉ của Bên B và hoàn tất các thủ tục đăng ký biển số (nếu có yêu cầu).</div>
+        <div>- Xe được bảo hành chính hãng theo quy định của nhà sản xuất.</div>
+      </div>
+      
+      <div class="signatures">
+        <div class="signature-box">
+          <strong>ĐẠI DIỆN BÊN B (BÊN MUA)</strong><br>
+          <div style="color:blue; margin: 40px 0 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style:italic; font-size:24px;">${user.name}</div>
+          <div>${user.name}</div>
+        </div>
+        <div class="signature-box">
+          <strong>ĐẠI DIỆN BÊN A (BÊN BÁN)</strong><br>
+          <div class="stamp">MotoZone<br>ĐÃ DUYỆT</div>
+          <div>Giám Đốc Cửa Hàng</div>
+        </div>
+      </div>
+    `;
+  }
+  
+  document.getElementById('contract-content').innerHTML = html;
+}
+
+loadContract();
+</script>
+</body>
+</html>

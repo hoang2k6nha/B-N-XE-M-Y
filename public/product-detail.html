@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Tiết Xe - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .detail-layout { display: grid; grid-template-columns: 1fr 450px; gap: 40px; padding: 40px 0; }
+  .img-gallery { background: var(--surface); border-radius: 24px; padding: 24px; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; }
+  .main-img { width: 100%; max-width: 600px; height: 400px; object-fit: contain; margin-bottom: 24px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); transition: opacity .3s; }
+  
+  .info-panel { background: var(--card); border-radius: 24px; padding: 32px; border: 1px solid var(--border); }
+  .d-brand { font-size: 14px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+  .d-name { font-size: 36px; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+  .d-price { font-size: 32px; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+  .d-desc { color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 32px; }
+  
+  .color-sec { margin-bottom: 32px; }
+  .color-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ccc; }
+  .color-options { display: flex; gap: 12px; flex-wrap: wrap; }
+  .color-btn { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 2px solid var(--border); padding: 8px 16px; border-radius: 12px; cursor: pointer; transition: all .2s; }
+  .color-btn.active { border-color: var(--accent); background: rgba(255,60,0,0.1); }
+  .c-dot { width: 20px; height: 20px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(255,255,255,0.2); }
+  .c-name { font-size: 14px; font-weight: 500; }
+  
+  .d-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+  .spec-box { background: var(--surface); padding: 16px; border-radius: 12px; border: 1px solid var(--border); }
+  .s-icon { font-size: 24px; margin-bottom: 8px; }
+  .s-val { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .s-key { font-size: 12px; color: var(--muted); }
+  
+  .action-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .btn-cart { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; transition: transform .2s; }
+  .btn-cart:hover { transform: translateY(-2px); }
+  .btn-install { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all .2s; }
+  .btn-install:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-test { grid-column: 1 / -1; background: transparent; border: 1px dashed var(--muted); color: var(--text); padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all .2s; margin-top: 8px;}
+  .btn-test:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+
+  @media (max-width: 992px) {
+    .detail-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/products.html?cat=Xe+Tay+Ga">Tay Ga</a></li>
+      <li><a href="/products.html?cat=Moto+PKL">Moto PKL</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:20px; padding-bottom: 20px;">
+  <a href="/products.html" style="color:var(--muted); font-size:14px;">← Trở lại danh sách</a>
+</div>
+
+<div class="container detail-layout" id="detail-container">
+  <div class="loading-box"><div class="spinner"></div><p>Đang tải thông tin xe...</p></div>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+let currentProduct = null;
+let selectedColor = null;
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
+
+async function loadProduct() {
+  if(!productId) {
+    document.getElementById('detail-container').innerHTML = '<h2>ID xe không hợp lệ!</h2>';
+    return;
+  }
+  
+  try {
+    const res = await fetchAPI(`/products/${productId}`);
+    if(res.data) {
+      currentProduct = res.data;
+      if(currentProduct.colors && currentProduct.colors.length > 0) {
+        selectedColor = currentProduct.colors[0];
+      }
+      renderDetail();
+    }
+  } catch(e) {
+    document.getElementById('detail-container').innerHTML = `<h2>Lỗi: ${e.message}</h2>`;
+  }
+}
+
+function selectColor(colorId) {
+  const c = currentProduct.colors.find(x => x._id === colorId);
+  if(c) {
+    selectedColor = c;
+    
+    // Update UI
+    document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`color-btn-${colorId}`).classList.add('active');
+    
+    const imgEl = document.getElementById('main-image');
+    imgEl.style.opacity = 0;
+    setTimeout(() => {
+      imgEl.src = c.image_url || currentProduct.image_url;
+      imgEl.style.opacity = 1;
+    }, 150);
+  }
+}
+
+function handleAddToCart(isPre = false) {
+  addToCart(currentProduct, 1, selectedColor, isPre);
+}
+
+function handleInstallment() {
+  if(!getUser()) {
+    showToast('Vui lòng đăng nhập để nộp hồ sơ trả góp', 'error');
+    setTimeout(() => window.location.href = '/login.html', 1500);
+    return;
+  }
+  window.location.href = `/installment.html?product_id=${currentProduct._id}`;
+}
+
+function handleTestDrive() {
+  if(!getUser()) {
+    showToast('Vui lòng đăng nhập để đăng ký lái thử', 'error');
+    setTimeout(() => window.location.href = '/login.html', 1500);
+    return;
+  }
+  window.location.href = `/test-drive.html?product_id=${currentProduct._id}`;
+}
+
+function renderDetail() {
+  const p = currentProduct;
+  const mainImg = selectedColor?.image_url || p.image_url || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800';
+  
+  let colorsHtml = '';
+  if(p.colors && p.colors.length > 0) {
+    colorsHtml = `
+      <div class="color-sec">
+        <div class="color-title">CHỌN MÀU SẮC:</div>
+        <div class="color-options">
+          ${p.colors.map(c => `
+            <div class="color-btn ${selectedColor && selectedColor._id === c._id ? 'active' : ''}" 
+                 id="color-btn-${c._id}" 
+                 onclick="selectColor('${c._id}')">
+              <div class="c-dot" style="background:${c.color_hex}"></div>
+              <div class="c-name">${c.color_name}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+  
+  const specs = [
+    { icon: '⚙️', key: 'Động cơ', val: p.engine },
+    { icon: '⚖️', key: 'Trọng lượng', val: p.weight },
+    { icon: '⛽', key: 'Tiêu hao', val: p.fuel_consumption },
+    { icon: '🛡️', key: 'Bảo hành', val: p.warranty }
+  ].filter(s => s.val);
+  
+  let specsHtml = '';
+  if(specs.length > 0) {
+    specsHtml = `
+      <div class="d-specs">
+        ${specs.map(s => `
+          <div class="spec-box">
+            <div class="s-icon">${s.icon}</div>
+            <div class="s-val">${s.val}</div>
+            <div class="s-key">${s.key}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  const isOutOfStock = p.stock === 0 || p.stock === '0';
+  const stockMsg = isOutOfStock 
+    ? `<div style="color:#ff9900;font-weight:700">⏳ Hàng đặt trước (Cọc 20%)</div>`
+    : (p.stock > 0 ? `<div style="color:#00cc66;font-weight:700">✓ Có sẵn tại cửa hàng (${p.stock} xe)</div>` : '');
+
+  const actionBtnsHtml = isOutOfStock 
+    ? `<div class="action-btns" style="grid-template-columns: 1fr;">
+         <button class="btn-cart" style="background:transparent; border:2px solid var(--accent); color:var(--accent);" onclick="handleAddToCart(true)">📝 Đặt Cọc Trước 20% (${formatPrice(p.price * 0.2)})</button>
+         <p style="color:var(--muted); text-align:center; font-size:13px; margin-top:8px;">Xe hiện không có sẵn, cần đặt cọc trước để xác nhận đơn hàng.</p>
+       </div>`
+    : `<div class="action-btns">
+         <button class="btn-cart" onclick="handleAddToCart(false)">🛒 Thêm Giỏ Hàng</button>
+         <button class="btn-install" onclick="handleInstallment()">💳 Trả Góp 0%</button>
+         <button class="btn-test" onclick="handleTestDrive()">🏁 Đăng Ký Lái Thử Tại Nhà</button>
+       </div>`;
+
+  document.getElementById('detail-container').innerHTML = `
+    <!-- Cột trái: Ảnh -->
+    <div class="img-gallery">
+      <img src="${mainImg}" id="main-image" class="main-img" alt="${p.name}">
+      ${stockMsg}
+    </div>
+    
+    <!-- Cột phải: Thông tin -->
+    <div class="info-panel">
+      <div class="d-brand">${p.brand || 'MotoZone'}</div>
+      <h1 class="d-name">${p.name}</h1>
+      <div class="d-price">${formatPrice(p.price)}</div>
+      <p class="d-desc">${p.description || 'Không có mô tả chi tiết.'}</p>
+      
+      ${colorsHtml}
+      ${specsHtml}
+      
+      ${actionBtnsHtml}
+    </div>
+  `;
+}
+
+loadProduct();
+</script>
+</body>
+</html>

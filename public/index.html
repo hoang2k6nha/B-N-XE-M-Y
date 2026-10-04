@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotoZone – Showroom Xe Máy Cao Cấp Việt Nam</title>
+<meta name="description" content="MotoZone – Mua xe máy chính hãng, giá tốt nhất. Honda, Yamaha, Ducati, Kawasaki, BMW. Trả góp 0%, giao xe tận nơi.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/products.html?cat=Xe+Tay+Ga">Tay Ga</a></li>
+      <li><a href="/products.html?cat=Moto+PKL">Moto PKL</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+      <li><a href="/test-drive.html">Lái Thử</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/products.html" class="nav-search-btn" title="Tìm kiếm">🔍</a>
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area">
+        <a href="/login.html" class="btn-nav-login">Đăng Nhập</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="/img/ducati.jpg" alt="Hero bike" class="hero-img" style="object-position: center;">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">🔥 Ưu Đãi Tháng 9 – Giảm Đến 10%</div>
+    <h1 class="hero-title">Xe Máy Đẳng Cấp<br><span class="gradient-text">Chính Hãng – Giá Tốt</span></h1>
+    <p class="hero-sub">Trải nghiệm showroom trực tuyến hàng đầu Việt Nam. Từ xe số quốc dân đến superbike đỉnh cao, tất cả trong tầm tay bạn.</p>
+    <div class="hero-btns">
+      <a href="/products.html" class="btn-primary">🏍️ Mua Xe Ngay</a>
+      <a href="/test-drive.html" class="btn-outline">🏁 Đăng Ký Lái Thử</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong id="hs-products">13+</strong><span>Mẫu Xe</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><strong>4</strong><span>Thương Hiệu</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><strong>0%</strong><span>Lãi Suất VIP</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><strong>48T</strong><span>Trả Góp</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- CATEGORY BAR -->
+<section class="cat-bar">
+  <div class="container">
+    <a href="/products.html?cat=Xe+Tay+Ga" class="cat-item">
+      <div class="cat-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H8.5a1 1 0 00-.9.55L5.4 12H4a2 2 0 00-2 2v2h2m15 0a2 2 0 11-4 0 2 2 0 014 0zm-11 0a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      </div>
+      <div class="cat-name">Xe Tay Ga</div>
+      <div class="cat-sub">Sang trọng, tiện lợi</div>
+    </a>
+    <a href="/products.html?cat=Xe+Số" class="cat-item">
+      <div class="cat-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="cat-name">Xe Số</div>
+      <div class="cat-sub">Tiết kiệm, bền bỉ</div>
+    </a>
+    <a href="/products.html?cat=Xe+Côn+Tay" class="cat-item">
+      <div class="cat-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="cat-name">Xe Côn Tay</div>
+      <div class="cat-sub">Thể thao, cá tính</div>
+    </a>
+    <a href="/products.html?cat=Moto+PKL" class="cat-item">
+      <div class="cat-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14l8-9 8 9M12 5v14"/></svg>
+      </div>
+      <div class="cat-name">Moto PKL</div>
+      <div class="cat-sub">Đỉnh cao tốc độ</div>
+    </a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">✨ NỔI BẬT</div>
+        <h2 class="section-title">Xe Bán Chạy Nhất</h2>
+      </div>
+      <a href="/products.html" class="see-all">Xem tất cả →</a>
+    </div>
+    <div class="product-grid" id="featured-grid">
+      <div class="loading-box"><div class="spinner"></div><p>Đang tải...</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo-banner">
+  <div class="container">
+    <div class="promo-grid">
+      <div class="promo-card promo-installment">
+        <div class="promo-icon">💳</div>
+        <h3>Trả Góp Linh Hoạt</h3>
+        <p>Lãi suất từ <strong>0%/tháng</strong> cho thành viên VIP. Tối đa 48 tháng, thủ tục đơn giản.</p>
+        <a href="/installment.html" class="promo-btn">Tìm Hiểu Thêm</a>
+      </div>
+      <div class="promo-card promo-vip">
+        <div class="promo-icon">👑</div>
+        <h3>Ưu Đãi Thành Viên</h3>
+        <p>Silver <strong>-5%</strong> · Gold <strong>-7%</strong> · Diamond <strong>-10%</strong> + tặng phụ kiện cao cấp.</p>
+        <a href="/register.html" class="promo-btn">Đăng Ký Ngay</a>
+      </div>
+      <div class="promo-card promo-test">
+        <div class="promo-icon">🏁</div>
+        <h3>Lái Thử Miễn Phí</h3>
+        <p>Đặt lịch lái thử tại showroom hoặc tại nhà, hoàn toàn <strong>miễn phí</strong>.</p>
+        <a href="/test-drive.html" class="promo-btn">Đặt Lịch Ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PKL SHOWCASE -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">🏎️ MOTO PKL</div>
+        <h2 class="section-title">Siêu Phẩm Đỉnh Cao</h2>
+      </div>
+      <a href="/products.html?cat=Moto+PKL" class="see-all">Xem tất cả →</a>
+    </div>
+    <div class="product-grid" id="pkl-grid">
+      <div class="loading-box"><div class="spinner"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND BAR -->
+<section class="brands-section">
+  <div class="container">
+    <p class="brands-label">Thương Hiệu Chính Hãng</p>
+    <div class="brands-row">
+      <div class="brand-item">Honda</div>
+      <div class="brand-item">Yamaha</div>
+      <div class="brand-item">Ducati</div>
+      <div class="brand-item">Kawasaki</div>
+      <div class="brand-item">BMW Motorrad</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">🏍️ MotoZone</div>
+        <p>Showroom xe máy trực tuyến hàng đầu Việt Nam. Chính hãng, giá tốt, dịch vụ tận tâm.</p>
+        <div class="footer-social">
+          <span>📘</span><span>📸</span><span>▶️</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sản Phẩm</h4>
+        <ul>
+          <li><a href="/products.html?cat=Xe+Tay+Ga">Xe Tay Ga</a></li>
+          <li><a href="/products.html?cat=Xe+Số">Xe Số</a></li>
+          <li><a href="/products.html?cat=Xe+Côn+Tay">Xe Côn Tay</a></li>
+          <li><a href="/products.html?cat=Moto+PKL">Moto PKL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Dịch Vụ</h4>
+        <ul>
+          <li><a href="/installment.html">Trả Góp</a></li>
+          <li><a href="/test-drive.html">Lái Thử</a></li>
+          <li><a href="/orders.html">Đơn Hàng</a></li>
+          <li><a href="/profile.html">Tài Khoản</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li>📍 123 Đường Tốc Độ, Q.1, TP.HCM</li>
+          <li>📞 1800 1234 (Miễn phí)</li>
+          <li>✉️ support@motozone.vn</li>
+          <li>🕐 8:00 – 21:00 mỗi ngày</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MotoZone. All rights reserved.</span>
+      <span>Node.js + MongoDB Backend</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+// Load featured products
+async function loadFeatured() {
+  const [featured, pkl] = await Promise.all([
+    fetchAPI('/api/products?limit=4&sort=name_asc'),
+    fetchAPI('/api/products?limit=4')
+  ]);
+
+  if (featured?.data) {
+    document.getElementById('featured-grid').innerHTML = featured.data.map(p => productCard(p)).join('');
+  }
+  if (pkl?.data) {
+    const pklProducts = pkl.data.filter(p => p.price > 400000000).slice(0, 4);
+    document.getElementById('pkl-grid').innerHTML = 
+      pklProducts.length ? pklProducts.map(p => productCard(p)).join('') 
+      : pkl.data.slice(0,4).map(p => productCard(p)).join('');
+  }
+}
+
+loadFeatured();
+updateNavUser();
+updateCartBadge();
+</script>
+</body>
+</html>

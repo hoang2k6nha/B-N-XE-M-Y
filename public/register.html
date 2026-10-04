@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng Ký - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  /* Custom Split Layout for Auth */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .split-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    overflow: hidden;
+  }
+  
+  .split-left img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: scaleX(-1); /* Lật ảnh để tạo sự khác biệt nhẹ với trang đăng nhập */
+  }
+  
+  .split-left::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,15,1) 0%, rgba(10,10,15,0.4) 50%, rgba(10,10,15,0.1) 100%);
+    z-index: 2;
+  }
+  
+  .left-content {
+    position: relative;
+    z-index: 3;
+    max-width: 500px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 0.8s forwards 0.3s;
+  }
+  
+  .left-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  }
+  
+  .left-content p {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  }
+  
+  .split-right {
+    width: 650px;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+    overflow-y: auto;
+  }
+  
+  /* Custom scrollbar for right side */
+  .split-right::-webkit-scrollbar { width: 8px; }
+  .split-right::-webkit-scrollbar-track { background: var(--bg); }
+  .split-right::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+  .split-right::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+  
+  .right-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+  }
+  
+  .auth-nav {
+    margin-bottom: 40px;
+  }
+  
+  .auth-nav .logo {
+    font-size: 28px;
+  }
+  
+  .modern-auth-box {
+    width: 100%;
+    animation: slideInRight 0.6s ease-out;
+  }
+  
+  .auth-heading {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  
+  .auth-subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .modern-form-group {
+    margin-bottom: 20px;
+    position: relative;
+    flex: 1;
+  }
+  
+  .modern-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ccc;
+  }
+  
+  .modern-input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-input::placeholder {
+    color: #777;
+    font-family: var(--font);
+  }
+  
+  .modern-input:focus {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255,60,0,0.15);
+  }
+  
+  .modern-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(255,60,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .modern-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255,60,0,0.4);
+  }
+  
+  .modern-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .auth-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  
+  .auth-footer a {
+    color: var(--accent);
+    font-weight: 600;
+    margin-left: 5px;
+    transition: color 0.2s;
+  }
+  
+  .auth-footer a:hover {
+    color: #fff;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @media (max-width: 1024px) {
+    .split-left { display: none; }
+    .split-right { width: 100%; box-shadow: none; overflow-y: auto; }
+    body { background: var(--bg); justify-content: center; align-items: flex-start; overflow-y: auto; }
+    .right-inner { padding: 40px; max-width: 500px; margin: 0 auto; width: 100%; justify-content: flex-start; }
+    .auth-nav { text-align: center; }
+  }
+  
+  @media (max-width: 480px) {
+    .right-inner { padding: 24px; }
+    .auth-heading { font-size: 28px; }
+    .form-row { flex-direction: column; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Left Visual Side -->
+  <div class="split-left">
+    <!-- Tái sử dụng ảnh login_bg nhưng lật ngang bằng CSS ở trên để tạo sự mới mẻ -->
+    <img src="/img/login_bg.jpg" alt="MotoZone Background">
+    <div class="left-content">
+      <h1 class="gradient-text">Gia Nhập <br>Cộng Đồng</h1>
+      <p>Trở thành thành viên MotoZone để nhận ưu đãi VIP, cập nhật sớm nhất các mẫu siêu xe và trải nghiệm dịch vụ đẳng cấp.</p>
+    </div>
+  </div>
+
+  <!-- Right Form Side -->
+  <div class="split-right">
+    <div class="right-inner">
+      <div class="auth-nav">
+        <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+      </div>
+      
+      <div class="modern-auth-box">
+        <h2 class="auth-heading">Tạo Tài Khoản</h2>
+        <p class="auth-subtitle">Điền thông tin của bạn để bắt đầu hành trình mới</p>
+        
+        <form id="regForm" onsubmit="handleRegister(event)" novalidate>
+          <div class="modern-form-group">
+            <label class="modern-label">Họ và Tên</label>
+            <input type="text" id="name" class="modern-input" required placeholder="Nhập họ và tên của bạn">
+          </div>
+          
+          <div class="form-row">
+            <div class="modern-form-group">
+              <label class="modern-label">Email</label>
+              <input type="email" id="email" class="modern-input" required placeholder="Địa chỉ email">
+            </div>
+            <div class="modern-form-group">
+              <label class="modern-label">Số điện thoại</label>
+              <input type="text" id="phone" class="modern-input" required placeholder="Số điện thoại">
+            </div>
+          </div>
+          
+          <div class="modern-form-group">
+            <label class="modern-label">Mật khẩu</label>
+            <input type="password" id="password" class="modern-input" required placeholder="Tạo mật khẩu (ít nhất 6 ký tự)" minlength="6">
+          </div>
+          
+          <div class="modern-form-group">
+            <label class="modern-label">Địa chỉ</label>
+            <input type="text" id="address" class="modern-input" required placeholder="Nhập địa chỉ giao xe">
+          </div>
+          
+          <button type="submit" class="modern-btn" id="submitBtn">
+            <span>Đăng Ký Ngay</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        
+        <div class="auth-footer">
+          Đã có tài khoản? <a href="/login.html">Đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+async function handleRegister(e) {
+  e.preventDefault();
+  
+  const payload = {
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    password: document.getElementById('password').value,
+    phone: document.getElementById('phone').value.trim(),
+    address: document.getElementById('address').value.trim()
+  };
+  
+  if (!payload.name || !payload.email || !payload.password || !payload.phone || !payload.address) {
+    return showToast('Vui lòng điền đầy đủ các thông tin!', 'error');
+  }
+  
+  // Custom Email Validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(payload.email)) {
+    return showToast('Vui lòng nhập định dạng email hợp lệ! (Ví dụ: name@domain.com)', 'error');
+  }
+  
+  if (payload.password.length < 6) {
+    return showToast('Mật khẩu phải có ít nhất 6 ký tự!', 'error');
+  }
+  
+  const btn = document.getElementById('submitBtn');
+  const originalBtnContent = btn.innerHTML;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner" style="width:20px;height:20px;margin:0;border-width:2px;border-top-color:#fff;"></span><span>Đang xử lý...</span>';
+  
+  try {
+    const res = await fetchAPI('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
+    
+    if(res.success && res.data) {
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', JSON.stringify({
+        _id: res.data._id,
+        name: res.data.name,
+        email: res.data.email,
+        role: res.data.role,
+        tier: 'New'
+      }));
+      
+      showToast('Đăng ký thành công! Chào mừng bạn.', 'success');
+      setTimeout(() => window.location.href = '/', 1500);
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnContent;
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnContent;
+  }
+}
+</script>
+</body>
+</html>

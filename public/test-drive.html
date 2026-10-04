@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng Ký Lái Thử - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+      <li><a href="/installment.html">Trả Góp</a></li>
+      <li><a href="/test-drive.html" style="color:var(--accent)">Lái Thử</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/cart.html" class="cart-btn" id="nav-cart">🛒 <span class="cart-badge" id="cart-count">0</span></a>
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">Đăng Ký Lái Thử Cảm Nhận Thực Tế</h1>
+    <p class="page-desc">Trải nghiệm sức mạnh động cơ trước khi quyết định mua. Hỗ trợ giao xe lái thử tận nhà.</p>
+  </div>
+</div>
+
+<div class="container" style="max-width:600px; padding: 40px 24px;">
+  <div class="auth-container" style="margin:0 auto; width: 100%;">
+    <h2 style="margin-bottom:24px; text-align:center;">Điền thông tin đặt lịch</h2>
+    <form id="tdForm" onsubmit="handleTestDrive(event)">
+      <div class="form-group">
+        <label class="form-label">Chọn mẫu xe</label>
+        <select id="productSelect" class="form-control" required>
+          <option value="">-- Đang tải danh sách xe --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ngày dự kiến lái thử</label>
+        <input type="date" id="dateInput" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Hình thức</label>
+        <select id="locationSelect" class="form-control" required>
+          <option value="showroom">Tại Showroom (123 Đường Tốc Độ, Q.1)</option>
+          <option value="home">Giao xe lái thử tại nhà (Nội thành TP.HCM)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ghi chú thêm (Tùy chọn)</label>
+        <textarea id="notesInput" class="form-control" rows="3" placeholder="Ví dụ: Giờ rảnh..."></textarea>
+      </div>
+      
+      <button type="submit" class="btn-primary btn-block" id="submitBtn">Xác Nhận Đặt Lịch</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+async function init() {
+  if(!getUser()) {
+    showToast('Vui lòng đăng nhập để đặt lịch lái thử', 'error');
+    setTimeout(() => window.location.href = '/login.html?redirect=/test-drive.html', 1500);
+    return;
+  }
+  
+  // Set min date to tomorrow
+  const tmr = new Date();
+  tmr.setDate(tmr.getDate() + 1);
+  document.getElementById('dateInput').min = tmr.toISOString().split('T')[0];
+  
+  try {
+    const res = await fetchAPI('/products?limit=50');
+    if(res.data) {
+      const select = document.getElementById('productSelect');
+      select.innerHTML = '<option value="">-- Chọn xe --</option>' + 
+        res.data.map(p => `<option value="${p._id}">${p.name}</option>`).join('');
+        
+      const urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has('product_id')) {
+        select.value = urlParams.get('product_id');
+      }
+    }
+  } catch(e) {}
+}
+
+async function handleTestDrive(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Đang xử lý...';
+  
+  const payload = {
+    product_id: document.getElementById('productSelect').value,
+    preferred_date: document.getElementById('dateInput').value,
+    location_type: document.getElementById('locationSelect').value,
+    notes: document.getElementById('notesInput').value
+  };
+  
+  try {
+    const res = await fetchAPI('/test-drives', {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
+    
+    if(res.success) {
+      showToast('Đăng ký thành công! Nhân viên sẽ liên hệ với bạn.', 'success');
+      setTimeout(() => window.location.href = '/', 2000);
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = 'Xác Nhận Đặt Lịch';
+  }
+}
+
+init();
+</script>
+</body>
+</html>

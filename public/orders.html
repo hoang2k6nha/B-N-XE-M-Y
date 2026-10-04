@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lịch Sử Đơn Hàng - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .order-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 24px; overflow: hidden; }
+  .o-header { background: var(--surface); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+  .o-id { font-size: 14px; font-family: monospace; color: var(--muted); }
+  .o-status { padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; }
+  .status-pending { background: rgba(255,140,0,0.1); color: #ffaa00; }
+  .status-confirmed { background: rgba(0,102,255,0.1); color: #66b3ff; }
+  .status-delivered { background: rgba(0,204,102,0.1); color: #00cc66; }
+  
+  .o-body { padding: 24px; }
+  .o-item { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; }
+  .o-img { width: 80px; height: 60px; object-fit: cover; border-radius: 8px; background: var(--surface); }
+  .o-info { flex: 1; }
+  .o-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .o-qty { font-size: 13px; color: var(--muted); }
+  .o-price { font-weight: 700; color: var(--text); }
+  
+  .o-footer { padding: 16px 24px; border-top: 1px dashed var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .o-total { font-size: 20px; font-weight: 800; color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+    <ul class="nav-links">
+      <li><a href="/products.html">Xe Máy</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div id="nav-user-area"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">Lịch Sử Mua Hàng</h1>
+  </div>
+</div>
+
+<div class="container" style="max-width:800px; padding-bottom: 80px;">
+  <div id="orders-list">
+    <div class="loading-box"><div class="spinner"></div></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom"><span>© 2026 MotoZone. All rights reserved.</span></div></div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script>
+async function loadOrders() {
+  if(!getUser()) {
+    window.location.href = '/login.html';
+    return;
+  }
+  
+  try {
+    const res = await fetchAPI('/orders/myorders');
+    const container = document.getElementById('orders-list');
+    
+    if(!res.data || res.data.length === 0) {
+      container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Bạn chưa có đơn hàng nào.</div>';
+      return;
+    }
+    
+    container.innerHTML = res.data.map(o => {
+      const statusCls = o.status === 'pending' ? 'status-pending' : o.status === 'confirmed' ? 'status-confirmed' : 'status-delivered';
+      const statusTxt = o.status === 'pending' ? 'ĐANG CHỜ DUYỆT' : o.status === 'confirmed' ? 'ĐÃ XÁC NHẬN' : 'ĐÃ GIAO';
+      const date = new Date(o.createdAt).toLocaleDateString('vi-VN');
+      
+      const itemsHtml = o.items.map(item => `
+        <div class="o-item">
+          <img src="${item.product_id?.image_url || ''}" class="o-img">
+          <div class="o-info">
+            <div class="o-name">${item.product_id?.name || 'Sản phẩm'}</div>
+            <div class="o-qty">Số lượng: ${item.quantity}</div>
+          </div>
+          <div class="o-price">${formatPrice(item.price)}</div>
+        </div>
+      `).join('');
+      
+      return `
+        <div class="order-card">
+          <div class="o-header">
+            <div>
+              <div class="o-id">#${o._id}</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px">Ngày đặt: ${date}</div>
+            </div>
+            <div class="o-status ${statusCls}">${statusTxt}</div>
+          </div>
+          <div class="o-body">
+            ${itemsHtml}
+          </div>
+          <div class="o-footer">
+            <div style="font-size:14px;color:var(--muted)">Tổng thanh toán (đã gồm VAT)</div>
+            <div style="display:flex; align-items:center; gap:16px;">
+              <a href="/contract.html?type=sales&id=${o._id}" target="_blank" style="font-size:13px; color:var(--accent); text-decoration:none; border: 1px solid var(--accent); padding:6px 12px; border-radius:6px; font-weight:bold;">📄 Xem HĐ Mua Xe</a>
+              <div class="o-total">${formatPrice(o.total_price || o.total_amount || 0)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadOrders);
+</script>
+</body>
+</html>

@@ -1,0 +1,1132 @@
+﻿642620664845Bá»˜ LAO Äá»˜NG THÆ¯Æ NG BINH VÃ€ XÃƒ Há»˜I TRÆ¯á»œNG CAO Äáº²NG CÃ”NG NGHá»† THÃ”NG TIN TP.HCM 
+KHOA CÃ”NG NGHá»† THÃ”NG TIN â€“ ÄIá»†N Tá»¬
+
+
+
+3321050-527685
+
+
+Äá»’ ÃN MÃ”N Há»ŒC: CHUYÃŠN Äá»€ BACK-END Äá»€ TÃ€I: XÃ‚Y Dá»°NG WEBSITE BÃN SÃCH
+.......................................................................................................................................... 
+
+
+
+
+
+
+
+
+1986280-1132840
+
+
+
+
+
+
+
+
+
+GiÃ¡o viÃªn hÆ°á»›ng dáº«n : NGUYá»„N MINH Háº¢I Sinh viÃªn thá»±c hiá»‡n: NGUYá»„N HOÃ€NG THÃ”NG
+Mssv : 501240248
+KhoÃ¡ :DC24 CT2
+
+
+TP. Há»“ ChÃ­ Minh, ngÃ y 2 thÃ¡ng 10 nÄƒm 2026
+
+
+
+
+
+
+
+Lá»œI Má»ž Äáº¦U
+
+Trong ká»· nguyÃªn sá»‘ hÃ³a vÃ  cuá»™c CÃ¡ch máº¡ng CÃ´ng nghiá»‡p 4.0, CÃ´ng nghá»‡ ThÃ´ng tin (CNTT) Ä‘Ã£ vÃ  Ä‘ang kháº³ng Ä‘á»‹nh vai trÃ² lÃ  Ä‘á»™ng lá»±c cá»‘t lÃµi thÃºc Ä‘áº©y sá»± thay Ä‘á»•i cá»§a má»i ngÃ nh nghá» trong xÃ£ há»™i. Sá»± bÃ¹ng ná»• cá»§a háº¡ táº§ng Internet, cÃ¹ng vá»›i viá»‡c tá»‘i Æ°u hÃ³a cÃ¡c ná»n táº£ng thiáº¿t bá»‹ di Ä‘á»™ng vÃ  cÃ´ng nghá»‡ web, Ä‘Ã£ Ä‘Æ°a ThÆ°Æ¡ng máº¡i Äiá»‡n tá»­ (E-commerce) trá»Ÿ thÃ nh má»™t mÃ´ hÃ¬nh kinh doanh táº¥t yáº¿u. ThÆ°Æ¡ng máº¡i Ä‘iá»‡n tá»­ khÃ´ng chá»‰ lÃ m thay Ä‘á»•i sÃ¢u sáº¯c thÃ³i quen tiÃªu dÃ¹ngâ€”chuyá»ƒn tá»« phÆ°Æ¡ng thá»©c mua sáº¯m truyá»n thá»‘ng sang giao dá»‹ch trá»±c tuyáº¿nâ€”mÃ  cÃ²n má»Ÿ ra cÆ¡ há»™i bá»©t phÃ¡ cho cÃ¡c doanh nghiá»‡p trong viá»‡c tiáº¿p cáº­n thá»‹ trÆ°á»ng toÃ n cáº§u, cáº¯t giáº£m chi phÃ­ váº­n hÃ nh vÃ  nÃ¢ng cao nÄƒng lá»±c cáº¡nh tranh.
+Nháº­n thá»©c Ä‘Æ°á»£c táº§m quan trá»ng cá»§a viá»‡c á»©ng dá»¥ng cÃ´ng nghá»‡ vÃ o thá»±c tiá»…n kinh doanh, cÃ¹ng vá»›i mong muá»‘n tá»± tay thiáº¿t káº¿ vÃ  triá»ƒn khai má»™t giáº£i phÃ¡p thÆ°Æ¡ng máº¡i Ä‘iá»‡n tá»­ hoÃ n chá»‰nh, em Ä‘Ã£ lá»±a chá»n thá»±c hiá»‡n Ä‘á» tÃ i: â€œXÃ¢y dá»±ng website bÃ¡n sÃ¡ch WebSachsâ€.
+Há»‡ thá»‘ng WebSachs Ä‘Æ°á»£c thiáº¿t káº¿ vÃ  phÃ¡t triá»ƒn vá»›i Ä‘á»‹nh hÆ°á»›ng mang láº¡i tráº£i nghiá»‡m ngÆ°á»i dÃ¹ng tá»‘i Æ°u, Ä‘á»“ng thá»i Ä‘áº£m báº£o tÃ­nh á»•n Ä‘á»‹nh vÃ  báº£o máº­t cho khÃ¢u quáº£n trá»‹. Trong khuÃ´n khá»• Ä‘á» tÃ i, em Ä‘Ã£ táº­p trung nghiÃªn cá»©u, phÃ¢n tÃ­ch vÃ  triá»ƒn khai cÃ¡c nhÃ³m chá»©c nÄƒng cá»‘t lÃµi bao gá»“m:
+QuÃ¡ trÃ¬nh nghiÃªn cá»©u vÃ  thá»±c hiá»‡n Ä‘á» tÃ i WebSachs khÃ´ng chá»‰ giÃºp em cá»§ng cá»‘ toÃ n diá»‡n cÃ¡c kiáº¿n thá»©c Ä‘Ã£ há»c trÃªn nhÃ  trÆ°á»ng vá» láº­p trÃ¬nh web, thiáº¿t káº¿ & tá»‘i Æ°u hÃ³a cÆ¡ sá»Ÿ dá»¯ liá»‡u, phÃ¢n tÃ­ch thiáº¿t káº¿ há»‡ thá»‘ng (UML), mÃ  cÃ²n mang láº¡i kinh nghiá»‡m thá»±c táº¿ quÃ½ bÃ¡u trong viá»‡c tÃ­ch há»£p cÃ¡c API thanh toÃ¡n hiá»‡n Ä‘áº¡i vÃ  giáº£i quyáº¿t cÃ¡c bÃ i toÃ¡n cÃ´ng nghá»‡ thá»±c táº¿.
+Em xin chÃ¢n thÃ nh cáº£m Æ¡n!
+
+
+
+
+
+
+
+
+Lá»œI Cáº¢M Æ N
+
+Lá»i Ä‘áº§u tiÃªn, chÃºng em xin gá»­i lá»i tri Ã¢n sÃ¢u sáº¯c vÃ  lÃ²ng biáº¿t Æ¡n chÃ¢n thÃ nh nháº¥t Ä‘áº¿n toÃ n thá»ƒ QuÃ½ Tháº§y, Cá»¥ CÃ´ giáº£ng viÃªn Khoa CÃ´ng nghá»‡ ThÃ´ng tin â€“ TrÆ°á»ng Cao Ä‘áº³ng CÃ´ng nghá»‡ ThÃ´ng tin TP.HCM (ITC). Trong suá»‘t quÃ¡ trÃ¬nh há»c táº­p vÃ  rÃ¨n luyá»‡n dÆ°á»›i mÃ¡i trÆ°á»ng, chÃºng em Ä‘Ã£ may máº¯n nháº­n Ä‘Æ°á»£c sá»± chá»‰ báº£o táº­n tÃ¬nh, truyá»n Ä‘áº¡t khÃ´ng chá»‰ nhá»¯ng kiáº¿n thá»©c chuyÃªn mÃ´n cá»‘t lÃµi vá» cÃ´ng nghá»‡, tÆ° duy láº­p trÃ¬nh mÃ  cÃ²n cáº£ nhá»¯ng ká»¹ nÄƒng nghá» nghiá»‡p vÃ  tÃ¡c phong lÃ m viá»‡c thá»±c táº¿. Nhá»¯ng ná»n táº£ng tri thá»©c quÃ½ bÃ¡u áº¥y chÃ­nh lÃ  hÃ nh trang vá»¯ng cháº¯c, giÃºp chÃºng em Ä‘á»§ tá»± tin vÃ  nÄƒng lá»±c Ä‘á»ƒ tá»± tay nghiÃªn cá»©u, triá»ƒn khai vÃ  hoÃ n thÃ nh dá»± Ã¡n â€œXÃ¢y dá»±ng website bÃ¡n sÃ¡ch WebSachsâ€.
+Äáº·c biá»‡t, chÃºng em xin gá»­i lá»i cáº£m Æ¡n chÃ¢n thÃ nh vÃ  sÃ¢u sáº¯c nháº¥t Ä‘áº¿n Tháº§y Nguyá»…n Minh Háº£i â€“ Giáº£ng viÃªn hÆ°á»›ng dáº«n trá»±c tiáº¿p cá»§a dá»± Ã¡n. Trong suá»‘t thá»i gian chÃºng em báº¯t tay vÃ o thá»±c hiá»‡n Ä‘á» tÃ i, Tháº§y Ä‘Ã£ luÃ´n dÃ nh nhiá»u thá»i gian, tÃ¢m huyáº¿t Ä‘á»ƒ theo sÃ¡t, Ä‘á»‹nh hÆ°á»›ng tÆ° duy phÃ¢n tÃ­ch thiáº¿t káº¿, há»— trá»£ thÃ¡o gá»¡ nhá»¯ng vÆ°á»›ng máº¯c vá» máº·t ká»¹ thuáº­t, Ä‘á»“ng thá»i Ä‘Æ°a ra nhá»¯ng lá»i gÃ³p Ã½ quÃ½ bÃ¡u giÃºp chÃºng em hoÃ n thiá»‡n cáº£ vá» máº·t tÃ­nh nÄƒng sáº£n pháº©m láº«n cáº¥u trÃºc cá»§a bÃ¡o cÃ¡o. Sá»± táº­n tá»¥y, nghiÃªm tÃºc nhÆ°ng vÃ´ cÃ¹ng gáº§n gÅ©i cá»§a Tháº§y chÃ­nh lÃ  Ä‘á»™ng lá»±c to lá»›n giÃºp chÃºng em vÆ°á»£t qua nhá»¯ng khÃ³ khÄƒn trong quÃ¡ trÃ¬nh lÃ m Ä‘á»“ Ã¡n.
+ChÃºng em cÅ©ng xin gá»­i lá»i cáº£m Æ¡n chÃ¢n thÃ nh Ä‘áº¿n Ban GiÃ¡m hiá»‡u nhÃ  trÆ°á»ng cÃ¹ng cÃ¡c Tháº§y/CÃ´ trong Há»™i Ä‘á»“ng pháº£n biá»‡n Ä‘Ã£ táº¡o Ä‘iá»u kiá»‡n thuáº­n lá»£i vá» mÃ´i trÆ°á»ng há»c táº­p, cÆ¡ sá»Ÿ váº­t cháº¥t cÅ©ng nhÆ° Ä‘Æ°a ra nhá»¯ng Ä‘Ã¡nh giÃ¡ khÃ¡ch quan, giÃºp chÃºng em nhÃ¬n nháº­n rÃµ hÆ¡n vá» Æ°u â€“ nhÆ°á»£c Ä‘iá»ƒm cá»§a sáº£n pháº©m, tá»« Ä‘Ã³ tÃ­ch lÅ©y thÃªm kinh nghiá»‡m cho con Ä‘Æ°á»ng phÃ¡t triá»ƒn sá»± nghiá»‡p tÆ°Æ¡ng lai.
+BÃªn cáº¡nh Ä‘Ã³, chÃºng em xin bÃ y tá» lÃ²ng biáº¿t Æ¡n sÃ¢u sáº¯c Ä‘áº¿n gia Ä‘Ã¬nh, cÃ¡c báº¡n há»c cÃ¹ng lá»›p vÃ  nhá»¯ng ngÆ°á»i báº¡n Ä‘Ã£ luÃ´n á»Ÿ bÃªn Ä‘á»™ng viÃªn, chia sáº» khÃ³ khÄƒn, há»— trá»£ tÃ i nguyÃªn cÅ©ng nhÆ° Ä‘Æ°a ra nhá»¯ng gÃ³p Ã½ thá»±c táº¿ trong suá»‘t quÃ¡ trÃ¬nh nhÃ³m xÃ¢y dá»±ng vÃ  kiá»ƒm thá»­ há»‡ thá»‘ng.
+Cuá»‘i cÃ¹ng, chÃºng em xin kÃ­nh chÃºc QuÃ½ Tháº§y/CÃ´ trong Khoa CÃ´ng nghá»‡ ThÃ´ng tin cÃ¹ng toÃ n thá»ƒ Ban GiÃ¡m hiá»‡u TrÆ°á»ng Cao Ä‘áº³ng CÃ´ng nghá»‡ ThÃ´ng tin TP.HCM luÃ´n dá»“i dÃ o sá»©c khá»e, háº¡nh phÃºc vÃ  gáº·t hÃ¡i Ä‘Æ°á»£c nhiá»u thÃ nh cÃ´ng hÆ¡n ná»¯a trong sá»± nghiá»‡p "trá»“ng ngÆ°á»i" cao quÃ½!
+ChÃºng em xin chÃ¢n thÃ nh cáº£m Æ¡n!
+
+
+
+Má»¤C Lá»¤C
+
+ChÆ°Æ¡ng 1. GIá»šI THIá»†U .............................................................................................................. 1
+1.1. Má»¥c tiÃªu dá»± Ã¡n..................................................................................................................  1
+1.1.1. CÃ¡c chá»©c nÄƒng cÆ¡ báº£n ...............................................................................................  1
+1.1.2. Má»¥c Ä‘Ã­ch phÃ¡t triá»ƒn á»©ng dá»¥ng Back-End.................................................................. 1
+1.2. CÃ´ng nghá»‡ sá»­ dá»¥ng...........................................................................................................  2
+1.2.1. NodeJS ......................................................................................................................  2
+1.2.2. Express...................................................................................................................... 2
+1.2.3. MongoDB .................................................................................................................  3
+1.2.4. JWT...........................................................................................................................  4
+1.2.5. Nodemailer................................................................................................................ 4
+1.2.6. EJS ............................................................................................................................  5
+1.2.7. Dotenv.......................................................................................................................  6
+1.2.8. Bcrypt........................................................................................................................ 6
+1.3. LÃ½ do chá»n cÃ´ng nghá»‡ ......................................................................................................  7
+1.3.1. NodeJS ......................................................................................................................  7
+1.3.2. Express...................................................................................................................... 7
+1.3.3. MongoDB .................................................................................................................  7
+1.3.4. JWT...........................................................................................................................  7
+1.3.5. Nodemailer................................................................................................................ 7
+ChÆ°Æ¡ng 2. THIáº¾T Káº¾ KIáº¾N TRÃšC Há»† THá»NG .................................................................... 8
+2.1. Kiáº¿n trÃºc á»©ng dá»¥ng...........................................................................................................  8
+2.1.1. Client (Frontend).......................................................................................................  8
+2.1.2. Server (Backend) ......................................................................................................  8
+2.1.3. Database (MongoDB) ...............................................................................................  8
+2.1.4. Middleware ...............................................................................................................  8
+2.1.5. SÆ¡ Ä‘á»“ kiáº¿n trÃºc á»©ng dá»¥ng..........................................................................................  9
+2.2. Cáº¥u trÃºc thÆ° má»¥c .............................................................................................................. 9
+2.2.1. config/ .....................................................................................................................  10
+2.2.2. controllers/ ..............................................................................................................  10
+2.2.3. middlewares/........................................................................................................... 10
+2.2.4. models/.................................................................................................................... 10
+2.2.5. routes/...................................................................................................................... 10
+2.2.6. utils/ ........................................................................................................................  10
+ChÆ°Æ¡ng 3. CÃ€I Äáº¶T THá»°C NGHIá»†M VÃ€ Káº¾T QUáº¢...........................................................11
+3.1. Má»™t sá»‘ giao diá»‡n website................................................................................................ 11
+3.1.1. Giao diá»‡n Ä‘Äƒng kÃ½ ................................................................................................... 11
+3.1.2. Giao diá»‡n Ä‘Äƒng nháº­p ...............................................................................................  11
+3.1.3. Giao diá»‡n danh sÃ¡ch ngÆ°á»i dÃ¹ng.............................................................................  12
+3.1.4. Giao diá»‡n thÃªm má»›i ngÆ°á»i dÃ¹ng .............................................................................  12
+
+
+3.1.5. Giao diá»‡n lá»—i 404..................................................................................................... 13
+3.2. CÃ¡c chá»©c nÄƒng chÃ­nh ......................................................................................................  13
+3.2.1. Chá»©c nÄƒng Ä‘Äƒng kÃ½ vÃ  Ä‘Äƒng nháº­p ........................................................................... 13
+3.2.2. Chá»©c nÄƒng quÃªn máº­t kháº©u....................................................................................... 17
+3.2.3. Chá»©c nÄƒng thÃªm má»›i ngÆ°á»i dÃ¹ng ........................................................................... 20
+3.2.4. Chá»©c nÄƒng xem chi tiáº¿t ngÆ°á»i dÃ¹ng........................................................................ 21
+3.2.5. Chá»©c nÄƒng sá»­a thÃ´ng tin ngÆ°á»i dÃ¹ng...................................................................... 21
+3.2.6. Chá»©c nÄƒng xÃ³a ngÆ°á»i dÃ¹ng..................................................................................... 22
+3.2.7. Chá»©c nÄƒng tÃ¬m kiáº¿m................................................................................................  22
+ChÆ°Æ¡ng 4. Xá»¬ LÃ Lá»–I VÃ€ Báº¢O Máº¬T....................................................................................  24
+4.1. Xá»­ lÃ½ lá»—i trong á»©ng dá»¥ng................................................................................................ 24
+4.1.1. Lá»—i 400 â€“ Bad Request............................................................................................  24
+4.1.2. Lá»—i 401 â€“ Unauthorized ..........................................................................................  24
+4.1.3. Lá»—i 404 â€“ Not Found...............................................................................................  25
+4.1.4. Lá»—i 500 â€“ Internal Server Error...............................................................................  26
+4.2. Báº£o máº­t á»©ng dá»¥ng ..........................................................................................................  27
+4.2.1. MÃ£ hÃ³a máº­t kháº©u..................................................................................................... 27
+4.2.2. Báº£o vá»‡ route ............................................................................................................ 27
+ChÆ°Æ¡ng 5. Káº¾T LUáº¬N VÃ€ HÆ¯á»šNG PHÃT TRIá»‚N .............................................................. 29
+5.1. Káº¿t luáº­n ..........................................................................................................................  29
+5.2. HÆ°á»›ng phÃ¡t triá»ƒn tÆ°Æ¡ng lai .............................................................................................  30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DANH Má»¤C HÃŒNH
+HÃ¬nh 1.2.1 NodeJS ..........................................................................................................................  2
+HÃ¬nh 1.2.2 ExpressJS ......................................................................................................................  3
+HÃ¬nh 1.2.3 MongoDB .....................................................................................................................  4
+HÃ¬nh 1.2.4 JWT...............................................................................................................................  4
+HÃ¬nh 1.2.5 Nodemailer....................................................................................................................  5
+HÃ¬nh 1.2.6 EJS ................................................................................................................................  5
+HÃ¬nh 1.2.7 Dotenv...........................................................................................................................  6
+HÃ¬nh 1.2.8 Bcrypt............................................................................................................................  6
+
+HÃ¬nh 2.1.5 SÆ¡ Ä‘á»“ kiáº¿n trÃºc á»©ng dá»¥ng.............................................................................................. 9
+HÃ¬nh 2.2 Cáº¥u trÃºc thÆ° má»¥c server................................................................................................... 9
+
+HÃ¬nh 3.1.1 Giao diá»‡n Ä‘Äƒng kÃ½ ....................................................................................................... 11
+HÃ¬nh 3.1.2 Giao diá»‡n Ä‘Äƒng nháº­p ................................................................................................... 11
+HÃ¬nh 3.1.3 Giao diá»‡n danh sÃ¡ch ngÆ°á»i dÃ¹ng................................................................................. 12
+HÃ¬nh 3.1.4 Giao diá»‡n thÃªm má»›i ngÆ°á»i dÃ¹ng .................................................................................  12
+HÃ¬nh 3.1.5 Giao diá»‡n lá»—i 404......................................................................................................... 13
+HÃ¬nh 3.2.1.1a ÄÄƒng kÃ½ tÃ i khoáº£n .................................................................................................. 14
+HÃ¬nh 3.2.1.1b ThÃ´ng bÃ¡o Ä‘Äƒng kÃ½ thÃ nh cÃ´ng.............................................................................. 15
+HÃ¬nh 3.2.1.2a Email xÃ¡c thá»±c gá»­i tá»›i............................................................................................ 16
+HÃ¬nh 3.2.1.2b ÄÆ°á»ng dáº«n Ä‘á»ƒ xÃ¡c thá»±c tÃ i khoáº£n ..........................................................................  16
+HÃ¬nh 3.2.1.3 Khi chÆ°a xÃ¡c thá»±c tÃ i khoáº£n .................................................................................... 17
+HÃ¬nh 3.2.1.4 Khi chÆ°a Ä‘Äƒng nháº­p ................................................................................................. 17
+HÃ¬nh 3.2.2a Nháº­p thÃ´ng tin ngÆ°á»i dÃ¹ng má»›i................................................................................ 20
+HÃ¬nh 3.2.2b ThÃ´ng bÃ¡o thÃªm ngÆ°á»i dÃ¹ng thÃ nh cÃ´ng .................................................................. 20
+HÃ¬nh 3.2.3 Giao diá»‡n xem chi tiáº¿t ngÆ°á»i dÃ¹ng.............................................................................. 21
+HÃ¬nh 3.2.4a Cáº­p nháº­t hÃ¬nh áº£nh ngÆ°á»i dÃ¹ng ..................................................................................  21
+HÃ¬nh 3.2.4b ThÃ´ng bÃ¡o thay Ä‘á»•i thÃ nh cÃ´ng................................................................................. 22
+HÃ¬nh 3.2.5 ThÃ´ng bÃ¡o khi muá»‘n xÃ³a ngÆ°á»i dÃ¹ng.........................................................................  22
+HÃ¬nh 3.2.6 TÃ¬m kiáº¿m ngÆ°á»i dÃ¹ng theo tÃªn.................................................................................... 22
+
+HÃ¬nh 4.1.1 ThÃ´ng bÃ¡o lá»—i 400 ....................................................................................................... 24
+HÃ¬nh 4.1.2 ThÃ´ng bÃ¡o lá»—i 401 ....................................................................................................... 25
+HÃ¬nh 4.1.3 ThÃ´ng bÃ¡o lá»—i 404 ....................................................................................................... 26
+HÃ¬nh 4.1.4 ThÃ´ng bÃ¡o lá»—i 500 ....................................................................................................... 27
+
+
+
+
+
+
+
+ChÆ°Æ¡ng 1. GIá»šI THIá»†U
+
+1.1. Má»¥c tiÃªu dá»± Ã¡n
+
+WebSachs lÃ  há»‡ thá»‘ng thÆ°Æ¡ng máº¡i Ä‘iá»‡n tá»­ hÆ°á»›ng Ä‘áº¿n viá»‡c giá»›i thiá»‡u vÃ  bÃ¡n sÃ¡ch trá»±c tuyáº¿n. Há»‡ thá»‘ng há»— trá»£ khÃ¡ch hÃ ng Ä‘Äƒng kÃ½ tÃ i khoáº£n, xÃ¡c thá»±c email, tÃ¬m kiáº¿m vÃ  xem sÃ¡ch theo thá»ƒ loáº¡i, quáº£n lÃ½ giá» hÃ ng, Ä‘áº·t hÃ ng, thanh toÃ¡n báº±ng mÃ£ VietQR, theo dÃµi Ä‘Æ¡n hÃ ng, Ä‘Ã¡nh giÃ¡ sÃ¡ch vÃ  lÆ°u sÃ¡ch yÃªu thÃ­ch. BÃªn cáº¡nh Ä‘Ã³, há»‡ thá»‘ng cung cáº¥p khu vá»±c quáº£n trá»‹/nhÃ¢n viÃªn Ä‘á»ƒ quáº£n lÃ½ sÃ¡ch, danh má»¥c, Ä‘Æ¡n hÃ ng, ngÆ°á»i dÃ¹ng, Ä‘Ã¡nh giÃ¡, chÆ°Æ¡ng trÃ¬nh Flash Sale vÃ  thÃ´ng bÃ¡o.
+1.1.1. CÃ¡c chá»©c nÄƒng cÆ¡ báº£n
+ÄÄƒng kÃ½: Admin cÃ³ thá»ƒ táº¡o tÃ i khoáº£n má»›i.
+ÄÄƒng nháº­p: Admin cÃ³ thá»ƒ Ä‘Äƒng nháº­p báº±ng tÃ i khoáº£n Ä‘Ã£ Ä‘Äƒng kÃ½.
+ÄÄƒng xuáº¥t: Admin cÃ³ thá»ƒ Ä‘Äƒng xuáº¥t khá»i há»‡ thá»‘ng.
+Táº¡o ngÆ°á»i dÃ¹ng: Admin (hoáº·c ngÆ°á»i dÃ¹ng cÃ³ quyá»n) cÃ³ thá»ƒ táº¡o tÃ i khoáº£n ngÆ°á»i dÃ¹ng má»›i. 
+Sá»­a thÃ´ng tin ngÆ°á»i dÃ¹ng: Admin (hoáº·c ngÆ°á»i dÃ¹ng cÃ³ quyá»n) cÃ³ thá»ƒ cáº­p nháº­t thÃ´ng tin ngÆ°á»i dÃ¹ng. 
+XÃ³a ngÆ°á»i dÃ¹ng: Admin (hoáº·c ngÆ°á»i dÃ¹ng cÃ³ quyá»n) cÃ³ thá»ƒ xÃ³a tÃ i khoáº£n ngÆ°á»i dÃ¹ng.
+TÃ¬m kiáº¿m ngÆ°á»i dÃ¹ng: TÃ¬m kiáº¿m ngÆ°á»i dÃ¹ng theo tÃªn, email, hoáº·c cÃ¡c tiÃªu chÃ­ khÃ¡c.
+
+
+1.1.2. Má»¥c Ä‘Ã­ch phÃ¡t triá»ƒn á»©ng dá»¥ng Back-End
+Cung cáº¥p API: Backend sáº½ cung cáº¥p cÃ¡c API (Application Programming Interfaces) Ä‘á»ƒ frontend (giao diá»‡n ngÆ°á»i dÃ¹ng) cÃ³ thá»ƒ tÆ°Æ¡ng tÃ¡c vá»›i dá»¯ liá»‡u ngÆ°á»i dÃ¹ng. 
+Xá»­ lÃ½ logic nghiá»‡p vá»¥: Backend sáº½ xá»­ lÃ½ cÃ¡c logic nghiá»‡p vá»¥ liÃªn quan Ä‘áº¿n viá»‡c quáº£n lÃ½ ngÆ°á»i dÃ¹ng, cháº³ng háº¡n nhÆ° xÃ¡c thá»±c, á»§y quyá»n, kiá»ƒm tra dá»¯ liá»‡u Ä‘áº§u vÃ o, v.v. 
+LÆ°u trá»¯ dá»¯ liá»‡u: Backend sáº½ chá»‹u trÃ¡ch nhiá»‡m lÆ°u trá»¯ dá»¯ liá»‡u ngÆ°á»i dÃ¹ng trong cÆ¡ sá»Ÿ dá»¯ liá»‡u (MongoDB). 
+Báº£o máº­t: Backend sáº½ Ä‘áº£m báº£o an toÃ n cho dá»¯ liá»‡u ngÆ°á»i dÃ¹ng vÃ  ngÄƒn cháº·n cÃ¡c truy cáº­p trÃ¡i phÃ©p. 
+
+
+
+
+
+
+
+
+
+1
+
+1.2. CÃ´ng nghá»‡ sá»­ dá»¥ng
+1.2.1. NodeJS
+NodeJS lÃ  má»™t mÃ´i trÆ°á»ng thá»±c thi (runtime environment) JavaScript mÃ£ nguá»“n má»Ÿ, cháº¡y trÃªn ná»n táº£ng V8 Engine (cÅ©ng Ä‘Æ°á»£c dÃ¹ng trong trÃ¬nh duyá»‡t Chrome). NÃ³ cho phÃ©p ta cháº¡y mÃ£ JavaScript bÃªn ngoÃ i trÃ¬nh duyá»‡t web, chá»§ yáº¿u Ä‘á»ƒ xÃ¢y dá»±ng cÃ¡c á»©ng dá»¥ng máº¡ng phÃ­a mÃ¡y chá»§ (server-side) nhanh chÃ³ng vÃ  cÃ³ kháº£ nÄƒng má»Ÿ rá»™ng. 
+TÄƒng cÆ°á»ng hiá»‡u suáº¥t: Nodemon
+Nodemon lÃ  má»™t cÃ´ng cá»¥ tiá»‡n Ã­ch giÃºp tá»± Ä‘á»™ng khá»Ÿi Ä‘á»™ng láº¡i á»©ng dá»¥ng Node.js khi phÃ¡t hiá»‡n cÃ¡c thay Ä‘á»•i trong mÃ£ nguá»“n. Äiá»u nÃ y giÃºp tÄƒng tá»‘c quÃ¡ trÃ¬nh phÃ¡t triá»ƒn vÃ¬ ta khÃ´ng cáº§n pháº£i dá»«ng vÃ  cháº¡y láº¡i server thá»§ cÃ´ng má»—i khi sá»­a code. 
+
+
+
+
+
+
+
+
+1028700-1132840
+
+
+
+
+
+
+
+HÃ¬nh 1.2.1 NodeJS
+
+
+1.2.2. Express
+Express lÃ  má»™t framework á»©ng dá»¥ng web tá»‘i giáº£n vÃ  linh hoáº¡t cho Node.js. NÃ³ cung cáº¥p má»™t táº­p há»£p cÃ¡c tÃ­nh nÄƒng máº¡nh máº½ Ä‘á»ƒ xÃ¢y dá»±ng cÃ¡c á»©ng dá»¥ng web vÃ  API má»™t cÃ¡ch dá»… dÃ ng vÃ  nhanh chÃ³ng. CÃ³ thá»ƒ nÃ³i Express lÃ  framework phá»• biáº¿n nháº¥t trong há»‡ sinh thÃ¡i Node.js. 
+TÄƒng cÆ°á»ng hiá»‡u suáº¥t:
+express-session: LÃ  má»™t middleware dÃ¹ng Ä‘á»ƒ quáº£n lÃ½ phiÃªn lÃ m viá»‡c (session) trong Express. NÃ³ cho phÃ©p ta lÆ°u trá»¯ dá»¯ liá»‡u ngÆ°á»i dÃ¹ng giá»¯a cÃ¡c request khÃ¡c nhau (vÃ­ dá»¥: thÃ´ng tin Ä‘Äƒng nháº­p). 
+
+
+
+
+2
+
+express-flash-messages: (ThÆ°á»ng Ä‘Æ°á»£c dÃ¹ng vá»›i tÃªn connect-flash) LÃ  middleware cho phÃ©p ta lÆ°u trá»¯ cÃ¡c thÃ´ng bÃ¡o táº¡m thá»i (flash messages) vÃ  hiá»ƒn thá»‹ chÃºng cho ngÆ°á»i dÃ¹ng á»Ÿ láº§n request tiáº¿p theo (vÃ­ dá»¥: thÃ´ng bÃ¡o thÃ nh cÃ´ng/tháº¥t báº¡i sau khi Ä‘Äƒng kÃ½/Ä‘Äƒng nháº­p). 
+express-ejs-layouts: LÃ  má»™t thÆ° viá»‡n giÃºp quáº£n lÃ½ layout (bá»‘ cá»¥c) cho cÃ¡c view sá»­ dá»¥ng EJS trong Express. NÃ³ cho phÃ©p ta Ä‘á»‹nh nghÄ©a layout chung vÃ  tÃ¡i sá»­ dá»¥ng cho nhiá»u trang khÃ¡c nhau, giÃºp code gá»n gÃ ng vÃ  dá»… báº£o trÃ¬ hÆ¡n. 
+
+
+
+
+
+
+
+
+
+914400-1283970
+
+
+
+
+
+
+
+
+
+HÃ¬nh 1.2.2 ExpressJS
+
+
+1.2.3. MongoDB
+MongoDB lÃ  má»™t há»‡ quáº£n trá»‹ cÆ¡ sá»Ÿ dá»¯ liá»‡u (DBMS) NoSQL mÃ£ nguá»“n má»Ÿ, hÆ°á»›ng tÃ i liá»‡u (document-oriented). Thay vÃ¬ lÆ°u trá»¯ dá»¯ liá»‡u trong cÃ¡c báº£ng vá»›i cáº¥u trÃºc cá»‘ Ä‘á»‹nh nhÆ° SQL, MongoDB lÆ°u trá»¯ dá»¯ liá»‡u trong cÃ¡c document cÃ³ Ä‘á»‹nh dáº¡ng giá»‘ng JSON (gá»i lÃ  BSON). 
+TÄƒng cÆ°á»ng hiá»‡u suáº¥t: Mongoose
+Mongoose lÃ  má»™t thÆ° viá»‡n Object Document Modeling (ODM) cho MongoDB vÃ  Node.js. NÃ³ cung cáº¥p má»™t cÃ¡ch thá»©c Ä‘Æ¡n giáº£n vÃ  trá»±c quan Ä‘á»ƒ tÆ°Æ¡ng tÃ¡c vá»›i cÆ¡ sá»Ÿ dá»¯ liá»‡u MongoDB, cho phÃ©p ta Ä‘á»‹nh nghÄ©a cÃ¡c schema (cáº¥u trÃºc dá»¯ liá»‡u), thá»±c hiá»‡n cÃ¡c truy váº¥n, vÃ  quáº£n lÃ½ cÃ¡c má»‘i quan há»‡ giá»¯a cÃ¡c document. 
+
+
+
+
+
+
+
+3
+
+
+
+
+
+
+914400-702310
+
+
+
+
+HÃ¬nh 1.2.3 MongoDB
+
+
+1.2.4. JWT
+JSON Web Token (JWT) lÃ  má»™t tiÃªu chuáº©n má»Ÿ (RFC 7519) Ä‘á»‹nh nghÄ©a má»™t cÃ¡ch thá»©c nhá» gá»n vÃ  Ä‘á»™c láº­p Ä‘á»ƒ truyá»n thÃ´ng tin giá»¯a cÃ¡c bÃªn dÆ°á»›i dáº¡ng Ä‘á»‘i tÆ°á»£ng JSON. ThÃ´ng tin nÃ y cÃ³ thá»ƒ Ä‘Æ°á»£c xÃ¡c minh vÃ  tin cáº­y vÃ¬ nÃ³ Ä‘Æ°á»£c kÃ½ Ä‘iá»‡n tá»­. JWT thÆ°á»ng Ä‘Æ°á»£c sá»­ dá»¥ng Ä‘á»ƒ xÃ¡c thá»±c (authentication) vÃ  á»§y quyá»n (authorization) trong cÃ¡c á»©ng dá»¥ng web. 
+
+
+
+
+
+
+
+914400-977900
+
+
+
+
+
+
+
+HÃ¬nh 1.2.4 JWT
+
+
+1.2.5. Nodemailer
+Nodemailer lÃ  má»™t module cho Node.js cho phÃ©p ta gá»­i email má»™t cÃ¡ch dá»… dÃ ng. NÃ³ há»— trá»£ nhiá»u phÆ°Æ¡ng thá»©c gá»­i mail khÃ¡c nhau (SMTP, Sendmail, ...), cÃ³ thá»ƒ Ä‘Ã­nh kÃ¨m file, vÃ  sá»­ dá»¥ng HTML trong ná»™i dung email. 
+TÄƒng cÆ°á»ng hiá»‡u suáº¥t:
+nodemailer-express-handlebars lÃ  má»™t plugin cho Nodemailer cho phÃ©p ta sá»­ dá»¥ng template engine Handlebars (tÆ°Æ¡ng tá»± EJS) Ä‘á»ƒ táº¡o ná»™i dung email. Äiá»u nÃ y giÃºp ta dá»… dÃ ng táº¡o ra cÃ¡c email Ä‘á»™ng vá»›i ná»™i dung Ä‘Æ°á»£c tÃ¹y biáº¿n theo dá»¯ liá»‡u tá»« á»©ng dá»¥ng. 
+
+4
+
+
+
+
+
+
+
+
+
+
+
+914400-1464310
+
+
+
+
+
+
+
+
+
+HÃ¬nh 1.2.5 Nodemailer
+
+
+1.2.6. EJS
+EJS (Embedded JavaScript templates) lÃ  má»™t template engine Ä‘Æ¡n giáº£n cho phÃ©p ta nhÃºng mÃ£ JavaScript vÃ o trong cÃ¡c file HTML. NÃ³ giÃºp ta dá»… dÃ ng táº¡o ra cÃ¡c trang web Ä‘á»™ng báº±ng cÃ¡ch káº¿t há»£p dá»¯ liá»‡u tá»« server vá»›i cÃ¡c máº«u HTML. 
+
+
+
+
+
+
+
+
+914400-1130300
+
+
+
+
+
+
+
+
+HÃ¬nh 1.2.6 EJS
+
+
+
+
+
+
+5
+
+1.2.7. Dotenv
+Dotenv lÃ  má»™t module cho phÃ©p ta táº£i cÃ¡c biáº¿n mÃ´i trÆ°á»ng (environment variables) tá»« má»™t file .env vÃ o trong á»©ng dá»¥ng Node.js. Viá»‡c nÃ y giÃºp ta quáº£n lÃ½ cÃ¡c cáº¥u hÃ¬nh (config) má»™t cÃ¡ch dá»… dÃ ng vÃ  báº£o máº­t hÆ¡n, Ä‘áº·c biá»‡t lÃ  khi ta cáº§n cáº¥u hÃ¬nh khÃ¡c nhau cho cÃ¡c mÃ´i trÆ°á»ng phÃ¡t triá»ƒn, thá»­ nghiá»‡m, vÃ  production. 
+
+
+
+
+
+
+1062355-828040
+
+
+
+
+
+
+HÃ¬nh 1.2.7 Dotenv
+
+
+1.2.8. Bcrypt
+Bcrypt lÃ  má»™t hÃ m bÄƒm máº­t kháº©u (password hashing function) Ä‘Æ°á»£c thiáº¿t káº¿ Ä‘á»ƒ an toÃ n vÃ  cháº­m, lÃ m cho viá»‡c táº¥n cÃ´ng brute-force (thá»­ táº¥t cáº£ cÃ¡c máº­t kháº©u cÃ³ thá»ƒ) trá»Ÿ nÃªn khÃ³ khÄƒn hÆ¡n. NÃ³ thÆ°á»ng Ä‘Æ°á»£c sá»­ dá»¥ng Ä‘á»ƒ lÆ°u trá»¯ máº­t kháº©u ngÆ°á»i dÃ¹ng má»™t cÃ¡ch an toÃ n trong cÆ¡ sá»Ÿ dá»¯ liá»‡u. 
+
+
+
+
+
+
+
+
+
+1100455-1285875
+
+
+
+
+
+
+
+
+
+HÃ¬nh 1.2.8 Bcrypt
+
+
+6
+
+1.3. LÃ½ do chá»n cÃ´ng nghá»‡
+1.3.1. NodeJS
+JavaScript Ä‘á»“ng nháº¥t: Sá»­ dá»¥ng JavaScript cho cáº£ frontend vÃ  backend giÃºp Ä‘Æ¡n giáº£n hÃ³a viá»‡c phÃ¡t triá»ƒn vÃ  dá»… dÃ ng chia sáº» code giá»¯a hai pháº§n. 
+Hiá»‡u suáº¥t tá»‘t: Node.js hoáº¡t Ä‘á»™ng nhanh vÃ  phÃ¹ há»£p vá»›i cÃ¡c á»©ng dá»¥ng cÆ¡ báº£n nhÆ° API nhá» cÆ¡ cháº¿ xá»­ lÃ½ báº¥t Ä‘á»“ng bá»™ (non-blocking). 
+Há»‡ sinh thÃ¡i lá»›n: Node.js cÃ³ má»™t há»‡ sinh thÃ¡i npm (Node Package Manager) ráº¥t lá»›n vá»›i nhiá»u thÆ° viá»‡n vÃ  cÃ´ng cá»¥ há»¯u Ã­ch. 
+
+
+1.3.2. Express
+ÄÆ¡n giáº£n vÃ  linh hoáº¡t: Express cung cáº¥p má»™t framework tá»‘i giáº£n nhÆ°ng máº¡nh máº½, cho phÃ©p ta dá»… dÃ ng xÃ¢y dá»±ng cÃ¡c API vÃ  á»©ng dá»¥ng web. 
+Middleware: Há»‡ thá»‘ng middleware cá»§a Express giÃºp ta dá»… dÃ ng má»Ÿ rá»™ng chá»©c nÄƒng cá»§a á»©ng dá»¥ng. 
+Phá»• biáº¿n: Express lÃ  framework phá»• biáº¿n nháº¥t cho Node.js, cÃ³ cá»™ng Ä‘á»“ng há»— trá»£ lá»›n.
+
+
+1.3.3. MongoDB
+Linh hoáº¡t: Schema linh hoáº¡t cá»§a MongoDB cho phÃ©p ta dá»… dÃ ng thay Ä‘á»•i cáº¥u trÃºc dá»¯ liá»‡u khi cáº§n thiáº¿t. 
+Kháº£ nÄƒng má»Ÿ rá»™ng: MongoDB Ä‘Æ°á»£c thiáº¿t káº¿ Ä‘á»ƒ cÃ³ thá»ƒ má»Ÿ rá»™ng theo chiá»u ngang (horizontal scaling), phÃ¹ há»£p vá»›i cÃ¡c á»©ng dá»¥ng cÃ³ lÆ°á»£ng dá»¯ liá»‡u lá»›n. 
+Hiá»‡u suáº¥t tá»‘t: MongoDB cÃ³ hiá»‡u suáº¥t Ä‘á»c/ghi tá»‘t, Ä‘áº·c biá»‡t lÃ  vá»›i cÃ¡c á»©ng dá»¥ng cÃ³ nhiá»u thao tÃ¡c ghi. 
+
+
+1.3.4. JWT
+XÃ¡c thá»±c vÃ  á»§y quyá»n: Cung cáº¥p má»™t cÃ¡ch thá»©c an toÃ n vÃ  hiá»‡u quáº£ Ä‘á»ƒ xÃ¡c thá»±c vÃ  á»§y quyá»n ngÆ°á»i dÃ¹ng. 
+
+
+1.3.5. Nodemailer
+Gá»­i email: Cho phÃ©p á»©ng dá»¥ng gá»­i email thÃ´ng bÃ¡o, xÃ¡c nháº­n, v.v.
+
+
+7
+
+ChÆ°Æ¡ng 2. THIáº¾T Káº¾ KIáº¾N TRÃšC Há»† THá»NG
+
+2.1. Kiáº¿n trÃºc á»©ng dá»¥ng
+á»¨ng dá»¥ng sáº½ hoáº¡t Ä‘á»™ng dá»±a trÃªn cÃ¡c thÃ nh pháº§n chÃ­nh sau:
+
+2.1.1. Client (Frontend)
+LÃ  nÆ¡i ngÆ°á»i dÃ¹ng tÆ°Æ¡ng tÃ¡c vá»›i há»‡ thá»‘ng, gá»­i cÃ¡c yÃªu cáº§u (request) nhÆ° Ä‘Äƒng kÃ½, Ä‘Äƒng nháº­p, hoáº·c xem danh sÃ¡ch ngÆ°á»i dÃ¹ng. 
+Client giao tiáº¿p vá»›i server thÃ´ng qua API endpoints (vÃ­ dá»¥: /api/login, /api/users).
+Dá»¯ liá»‡u tráº£ vá» tá»« server (response) thÆ°á»ng á»Ÿ Ä‘á»‹nh dáº¡ng JSON Ä‘á»ƒ dá»… dÃ ng xá»­ lÃ½ trÃªn client.
+
+
+2.1.2. Server (Backend)
+Xá»­ lÃ½ cÃ¡c yÃªu cáº§u tá»« phÃ­a client.
+Quáº£n lÃ½ logic á»©ng dá»¥ng, xÃ¡c thá»±c ngÆ°á»i dÃ¹ng, vÃ  káº¿t ná»‘i vá»›i cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+PhÃ¢n táº§ng chÃ­nh:
+Routes: Xá»­ lÃ½ cÃ¡c endpoint, Ä‘á»‹nh tuyáº¿n yÃªu cáº§u tá»« client Ä‘áº¿n controller phÃ¹ há»£p.
+Controllers: Xá»­ lÃ½ logic cá»§a á»©ng dá»¥ng, gá»i dá»¯ liá»‡u tá»« Model, xá»­ lÃ½ xong tráº£ vá» response cho client. 
+Models: Quáº£n lÃ½ dá»¯ liá»‡u, káº¿t ná»‘i vá»›i cÆ¡ sá»Ÿ dá»¯ liá»‡u (MongoDB).
+
+
+2.1.3. Database (MongoDB)
+NÆ¡i lÆ°u trá»¯ dá»¯ liá»‡u ngÆ°á»i dÃ¹ng, bao gá»“m thÃ´ng tin Ä‘Äƒng nháº­p, email, vÃ  cÃ¡c thÃ´ng tin khÃ¡c.
+Há»— trá»£ cÃ¡c thao tÃ¡c thÃªm, sá»­a, xÃ³a vÃ  Ä‘á»c dá»¯ liá»‡u (CRUD).
+
+
+2.1.4. Middleware
+CÃ¡c lá»›p trung gian Ä‘Æ°á»£c sá»­ dá»¥ng Ä‘á»ƒ xá»­ lÃ½ yÃªu cáº§u trÆ°á»›c khi chÃºng Ä‘áº¿n controller.
+VÃ­ dá»¥: Middleware xÃ¡c thá»±c ngÆ°á»i dÃ¹ng báº±ng JWT Ä‘á»ƒ báº£o vá»‡ cÃ¡c API nháº¡y cáº£m.
+
+
+
+
+
+
+
+
+8
+
+2.1.5. SÆ¡ Ä‘á»“ kiáº¿n trÃºc á»©ng dá»¥ng
+
+
+
+
+
+
+
+
+
+
+1257300-14185901247775-1428115
+
+
+
+
+
+
+
+
+
+
+HÃ¬nh 2.1.5 SÆ¡ Ä‘á»“ kiáº¿n trÃºc á»©ng dá»¥ng
+
+
+2.2. Cáº¥u trÃºc thÆ° má»¥c
+
+
+
+
+
+
+
+
+
+
+2905125-16427452895600-1652270
+
+
+
+
+
+
+
+
+
+HÃ¬nh 2.2 Cáº¥u trÃºc thÆ° má»¥c server
+
+9
+
+2.2.1. config/
+ThÆ° má»¥c nÃ y chá»©a tá»‡p db.js Ä‘á»ƒ cáº¥u hÃ¬nh vÃ  thiáº¿t láº­p káº¿t ná»‘i vá»›i cÆ¡ sá»Ÿ dá»¯ liá»‡u MongoDB.
+Vai trÃ² chÃ­nh: Quáº£n lÃ½ káº¿t ná»‘i cÆ¡ sá»Ÿ dá»¯ liá»‡u má»™t cÃ¡ch táº­p trung vÃ  dá»… báº£o trÃ¬.
+
+
+2.2.2. controllers/
+Chá»©a cÃ¡c tá»‡p xá»­ lÃ½ logic chÃ­nh cá»§a á»©ng dá»¥ng.
+authController.js: Xá»­ lÃ½ xÃ¡c thá»±c ngÆ°á»i dÃ¹ng, bao gá»“m Ä‘Äƒng nháº­p, Ä‘Äƒng kÃ½ vÃ  cáº¥p phÃ¡t JWT token. 
+customerController.js: Xá»­ lÃ½ cÃ¡c thao tÃ¡c liÃªn quan Ä‘áº¿n khÃ¡ch hÃ ng nhÆ° thÃªm má»›i, sá»­a Ä‘á»•i, xÃ³a hoáº·c láº¥y danh sÃ¡ch khÃ¡ch hÃ ng. 
+
+
+2.2.3. middlewares/
+ThÆ° má»¥c nÃ y chá»©a cÃ¡c middleware â€“ cÃ¡c lá»›p trung gian xá»­ lÃ½ trÆ°á»›c khi yÃªu cáº§u tá»›i controller. 
+authMiddleware.js: XÃ¡c thá»±c token JWT Ä‘á»ƒ báº£o vá»‡ cÃ¡c route yÃªu cáº§u quyá»n truy cáº­p.
+
+
+2.2.4. models/
+Chá»©a cÃ¡c schema cá»§a MongoDB, Ä‘á»‹nh nghÄ©a cáº¥u trÃºc dá»¯ liá»‡u lÆ°u trong cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+Customer.js: Äá»‹nh nghÄ©a schema vÃ  model cá»§a khÃ¡ch hÃ ng (Customer).
+User.js: Äá»‹nh nghÄ©a schema vÃ  model cá»§a ngÆ°á»i dÃ¹ng (User).
+
+
+2.2.5. routes/
+Äá»‹nh nghÄ©a cÃ¡c endpoint API vÃ  liÃªn káº¿t vá»›i controller tÆ°Æ¡ng á»©ng.
+auth.js: Chá»©a cÃ¡c endpoint liÃªn quan Ä‘áº¿n xÃ¡c thá»±c (Ä‘Äƒng nháº­p, Ä‘Äƒng kÃ½).
+customer.js: Chá»©a cÃ¡c endpoint quáº£n lÃ½ khÃ¡ch hÃ ng (CRUD khÃ¡ch hÃ ng).
+
+
+2.2.6. utils/
+Chá»©a cÃ¡c tiá»‡n Ã­ch dÃ¹ng chung trong á»©ng dá»¥ng.
+sendEmail.js: ThÆ° viá»‡n gá»­i email (sá»­ dá»¥ng Nodemailer), thÆ°á»ng dÃ¹ng cho xÃ¡c thá»±c tÃ i khoáº£n hoáº·c gá»­i thÃ´ng bÃ¡o. 
+
+10
+
+ChÆ°Æ¡ng 3. CÃ€I Äáº¶T THá»°C NGHIá»†M VÃ€ Káº¾T QUáº¢
+
+3.1. Má»™t sá»‘ giao diá»‡n website
+3.1.1. Giao diá»‡n Ä‘Äƒng kÃ½
+
+HÃ¬nh 3.1.1 Giao diá»‡n Ä‘Äƒng kÃ½
+
+3.1.2. Giao diá»‡n Ä‘Äƒng nháº­p
+
+
+
+
+HÃ¬nh 3.1.2 Giao diá»‡n Ä‘Äƒng nháº­p
+
+11
+
+
+
+3.1.3. Giao diá»‡n danh sÃ¡ch ngÆ°á»i dÃ¹ng
+
+
+
+
+
+HÃ¬nh 3.1.3 Giao diá»‡n danh sÃ¡ch ngÆ°á»i dÃ¹ng
+
+
+3.1.4. Giao diá»‡n thÃªm má»›i ngÆ°á»i dÃ¹ng
+HÃ¬nh 3.1.4 Giao diá»‡n thÃªm má»›i ngÆ°á»i dÃ¹ng
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+3.1.5. Giao diá»‡n lá»—i 404
+
+
+
+
+
+
+
+933450-961390923925-970915
+
+
+
+
+
+
+HÃ¬nh 3.1.5 Giao diá»‡n lá»—i 404
+
+3.1.6. Giao diá»‡n ngÆ°á»i dÃ¹ng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HÃ¬nh 3.1.6 Giao diá»‡n ngÆ°á»i dÃ¹ng
+
+3.2. CÃ¡c chá»©c nÄƒng chÃ­nh
+
+3.2.1. Chá»©c nÄƒng Ä‘Äƒng kÃ½ vÃ  Ä‘Äƒng nháº­p 3.2.1.1. ÄÄƒng kÃ½ tÃ i khoáº£n 
+Má»¥c tiÃªu:
+Thu tháº­p thÃ´ng tin tá»« ngÆ°á»i dÃ¹ng bao gá»“m: username, email, password.
+MÃ£ hÃ³a máº­t kháº©u trÆ°á»›c khi lÆ°u vÃ o cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+Gá»­i email xÃ¡c thá»±c Ä‘á»ƒ kÃ­ch hoáº¡t tÃ i khoáº£n.
+Luá»“ng hoáº¡t Ä‘á»™ng:
+
+13
+
+NgÆ°á»i dÃ¹ng nháº­p thÃ´ng tin cáº§n thiáº¿t (username, email, password).
+Há»‡ thá»‘ng kiá»ƒm tra:
+Email Ä‘Ã£ tá»“n táº¡i hay chÆ°a.
+Email cÃ³ há»£p lá»‡ hay khÃ´ng.
+Náº¿u thÃ´ng tin há»£p lá»‡:
+LÆ°u ngÆ°á»i dÃ¹ng vÃ o cÆ¡ sá»Ÿ dá»¯ liá»‡u vá»›i tráº¡ng thÃ¡i chÆ°a Ä‘Æ°á»£c kÃ­ch hoáº¡t.
+Táº¡o mÃ£ thÃ´ng bÃ¡o (token) Ä‘á»ƒ xÃ¡c thá»±c tÃ i khoáº£n qua email.
+Gá»­i email xÃ¡c thá»±c.
+NgÆ°á»i dÃ¹ng nháº­n email vÃ  nháº¥p vÃ o liÃªn káº¿t Ä‘á»ƒ kÃ­ch hoáº¡t tÃ i khoáº£n
+
+
+
+
+
+
+
+
+
+
+
+
+HÃ¬nh 3.2.1.1a ÄÄƒng kÃ½ tÃ i khoáº£b
+
+
+
+14
+
+
+HÃ¬nh 3.2.1.1b ThÃ´ng bÃ¡o Ä‘Äƒng kÃ½ thÃ nh cÃ´ng
+
+3.2.1.2. XÃ¡c thá»±c email
+Má»¥c tiÃªu:
+XÃ¡c thá»±c tÃ i khoáº£n ngÆ°á»i dÃ¹ng khi nháº¥p vÃ o liÃªn káº¿t trong email.
+Luá»“ng hoáº¡t Ä‘á»™ng:
+NgÆ°á»i dÃ¹ng nháº¥p vÃ o liÃªn káº¿t xÃ¡c thá»±c trong email.
+Há»‡ thá»‘ng kiá»ƒm tra token há»£p lá»‡ hay khÃ´ng.
+Náº¿u token há»£p lá»‡:
+Cáº­p nháº­t tráº¡ng thÃ¡i tÃ i khoáº£n sang isVerified: true.
+Cho phÃ©p ngÆ°á»i dÃ¹ng Ä‘Äƒng nháº­p.
+Náº¿u token khÃ´ng há»£p lá»‡, thÃ´ng bÃ¡o lá»—i.
+
+
+
+
+
+
+
+15
+
+84518563500
+
+
+
+
+
+HÃ¬nh 3.2.1.2a Email xÃ¡c thá»±c gá»­i tá»›i
+HÃ¬nh 3.2.1.2b ÄÆ°á»ng dáº«n Ä‘á»ƒ xÃ¡c thá»±c tÃ i khoáº£n
+
+3.2.1.3. ÄÄƒng nháº­p
+Má»¥c tiÃªu:
+Cho phÃ©p ngÆ°á»i dÃ¹ng Ä‘Äƒng nháº­p náº¿u tÃ i khoáº£n Ä‘Ã£ Ä‘Æ°á»£c xÃ¡c thá»±c.
+Táº¡o JSON Web Token (JWT) Ä‘á»ƒ duy trÃ¬ phiÃªn Ä‘Äƒng nháº­p.
+Luá»“ng hoáº¡t Ä‘á»™ng:
+NgÆ°á»i dÃ¹ng nháº­p email vÃ  máº­t kháº©u.
+Há»‡ thá»‘ng kiá»ƒm tra:
+Email cÃ³ tá»“n táº¡i khÃ´ng.
+TÃ i khoáº£n Ä‘Ã£ Ä‘Æ°á»£c xÃ¡c thá»±c chÆ°a (isVerified: true).
+Máº­t kháº©u cÃ³ há»£p lá»‡ khÃ´ng.
+Náº¿u há»£p lá»‡:
+Táº¡o vÃ  tráº£ vá» token JWT.
+Náº¿u khÃ´ng há»£p lá»‡, tráº£ vá» lá»—i tÆ°Æ¡ng á»©ng.
+
+
+16
+
+HÃ¬nh 3.2.1.3 Khi chÆ°a xÃ¡c thá»±c tÃ i khoáº£n
+
+3.2.1.4. Kiá»ƒm tra tráº¡ng thÃ¡i Ä‘Äƒng nháº­p
+Má»¥c tiÃªu:
+XÃ¡c Ä‘á»‹nh ngÆ°á»i dÃ¹ng Ä‘Ã£ Ä‘Äƒng nháº­p chÆ°a trÆ°á»›c khi truy cáº­p cÃ¡c route yÃªu cáº§u quyá»n.
+Báº£o vá»‡ cÃ¡c tÃ i nguyÃªn quan trá»ng, chá»‰ cho phÃ©p ngÆ°á»i dÃ¹ng Ä‘Æ°á»£c xÃ¡c thá»±c má»›i cÃ³ quyá»n truy cáº­p. 
+TÄƒng cÆ°á»ng báº£o máº­t, trÃ¡nh cÃ¡c truy cáº­p trÃ¡i phÃ©p hoáº·c khÃ´ng há»£p lá»‡.
+
+923925-55245
+
+HÃ¬nh 3.2.1.4 Khi chÆ°a Ä‘Äƒng nháº­p
+
+
+3.2.2. Chá»©c nÄƒng quÃªn máº­t kháº©u
+Má»¥c tiÃªu:
+Há»— trá»£ ngÆ°á»i dÃ¹ng Ä‘áº·t láº¡i máº­t kháº©u khi quÃªn máº­t kháº©u Ä‘Äƒng nháº­p.
+Gá»­i email chá»©a liÃªn káº¿t Ä‘áº·t láº¡i máº­t kháº©u Ä‘á»ƒ xÃ¡c minh.
+Cáº­p nháº­t máº­t kháº©u má»›i má»™t cÃ¡ch an toÃ n vÃ  báº£o máº­t.
+Luá»“ng hoáº¡t Ä‘á»™ng:
+
+17
+
+NgÆ°á»i dÃ¹ng yÃªu cáº§u Ä‘áº·t láº¡i máº­t kháº©u:
+TrÃªn trang Ä‘Äƒng nháº­p, ngÆ°á»i dÃ¹ng chá»n "QuÃªn Máº­t Kháº©u?".
+Há»‡ thá»‘ng hiá»ƒn thá»‹ trang nháº­p email.
+HÃ¬nh 3.2.2a Giao diá»‡n trang quÃªn máº­t kháº©u
+
+Há»‡ thá»‘ng kiá»ƒm tra email:
+Kiá»ƒm tra email cÃ³ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u khÃ´ng.
+Náº¿u khÃ´ng tá»“n táº¡i: ThÃ´ng bÃ¡o lá»—i.
+
+HÃ¬nh 3.2.2b ThÃ´ng bÃ¡o lá»—i khi email khÃ´ng tá»“n táº¡i
+
+Náº¿u tá»“n táº¡i: Táº¡o token báº£o máº­t (resetPasswordToken) kÃ¨m thá»i gian háº¿t háº¡n.
+
+
+
+
+
+
+
+
+
+18
+
+
+Gá»­i email xÃ¡c nháº­n:
+Gá»­i email chá»©a liÃªn káº¿t Ä‘áº·t láº¡i máº­t kháº©u
+
+
+
+933450-349250923925-358775
+
+
+HÃ¬nh 3.2.2d Email Ä‘áº·t láº¡i máº­t kháº©u
+
+NgÆ°á»i dÃ¹ng nháº¥p vÃ o liÃªn káº¿t:
+Há»‡ thá»‘ng xÃ¡c minh token:
+Náº¿u há»£p lá»‡: Hiá»ƒn thá»‹ form nháº­p máº­t kháº©u má»›i.
+
+
+
+
+
+
+1181100-8077201171575-817245
+
+
+
+
+
+
+HÃ¬nh 3.2.2e Giao diá»‡n trang Ä‘áº·t láº¡i máº­t kháº©u
+
+Náº¿u khÃ´ng há»£p lá»‡ hoáº·c token háº¿t háº¡n: ThÃ´ng bÃ¡o lá»—i.
+
+
+19
+
+Äáº·t láº¡i máº­t kháº©u:
+NgÆ°á»i dÃ¹ng nháº­p máº­t kháº©u má»›i.
+Há»‡ thá»‘ng mÃ£ hÃ³a máº­t kháº©u vÃ  lÆ°u vÃ o cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+XÃ³a token Ä‘áº·t láº¡i máº­t kháº©u.
+
+
+3.2.3. Chá»©c nÄƒng thÃªm má»›i ngÆ°á»i dÃ¹ng
+HÃ¬nh 3.2.3a Nháº­p thÃ´ng tin ngÆ°á»i dÃ¹ng má»›i
+
+
+
+
+
+
+HÃ¬nh 3.2.3b ThÃ´ng bÃ¡o thÃªm ngÆ°á»i dÃ¹ng thÃ nh cÃ´ng
+
+
+
+
+20
+
+3.2.4. Chá»©c nÄƒng xem chi tiáº¿t ngÆ°á»i dÃ¹ng
+HÃ¬nh 3.2.4 Giao diá»‡n xem chi tiáº¿t ngÆ°á»i dÃ¹ng
+
+3.2.5. Chá»©c nÄƒng sá»­a thÃ´ng tin ngÆ°á»i dÃ¹ng
+HÃ¬nh 3.2.5a thay Ä‘á»•i máº­t kháº©u
+
+
+
+21
+
+
+HÃ¬nh 3.2.5b ThÃ´ng bÃ¡o thay Ä‘á»•i thÃ nh cÃ´ng
+
+
+3.2.6. Chá»©c nÄƒng xÃ³a ngÆ°á»i dÃ¹ng
+
+HÃ¬nh 3.2.6 ThÃ´ng bÃ¡o khi muá»‘n xÃ³a ngÆ°á»i dÃ¹ng
+
+3.2.7. Chá»©c nÄƒng tÃ¬m kiáº¿m
+
+
+HÃ¬nh 3.2.7 TÃ¬m kiáº¿m ngÆ°á»i dÃ¹ng theo tÃªn
+
+
+
+
+22
+
+3.2.8. Chá»©c nÄƒng phÃ¢n quyá»n admin
+Admin A khÃ´ng Ä‘Æ°á»£c sá»­a, xÃ³a thÃ´ng tin user cá»§a Admin B
+Chá»‰ Ä‘Æ°á»£c sá»­a, xÃ³a thÃ´ng tin user cá»§a chÃ­nh mÃ¬nh
+User cÃ³ thá»ƒ trá»Ÿ thÃ nh Admin
+
+HÃ¬nh 3.2.8 Chá»©c nÄƒng phÃ¢n quyá»n admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23
+
+ChÆ°Æ¡ng 4. Xá»¬ LÃ Lá»–I VÃ€ Báº¢O Máº¬T
+
+4.1. Xá»­ lÃ½ lá»—i trong á»©ng dá»¥ng
+4.1.1. Lá»—i 400 â€“ Bad Request
+NguyÃªn nhÃ¢n:
+Dá»¯ liá»‡u Ä‘áº§u vÃ o tá»« client khÃ´ng há»£p lá»‡ (vÃ­ dá»¥: thiáº¿u email, password khÃ´ng Ä‘Ãºng Ä‘á»‹nh dáº¡ng). 
+ThÃ´ng tin tÃ i khoáº£n Ä‘Ã£ tá»“n táº¡i (username hoáº·c email trÃ¹ng).
+CÃ¡ch xá»­ lÃ½:
+Pháº£n há»“i lá»—i vá»›i HTTP status code 400 kÃ¨m thÃ´ng bÃ¡o chi tiáº¿t: "Username or email already exists." 
+HÃ¬nh 4.1.1 ThÃ´ng bÃ¡o lá»—i 400
+
+
+4.1.2. Lá»—i 401 â€“ Unauthorized
+NguyÃªn nhÃ¢n:
+NgÆ°á»i dÃ¹ng khÃ´ng xÃ¡c thá»±c (chÆ°a Ä‘Äƒng nháº­p hoáº·c token khÃ´ng há»£p lá»‡).
+NgÆ°á»i dÃ¹ng chÆ°a xÃ¡c minh email trÆ°á»›c khi Ä‘Äƒng nháº­p.
+CÃ¡ch xá»­ lÃ½:
+XÃ¡c thá»±c thÃ´ng qua JWT hoáº·c kiá»ƒm tra isVerified trong cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+
+
+24
+
+Pháº£n há»“i vá»›i HTTP status code 401 kÃ¨m thÃ´ng bÃ¡o chi tiáº¿t:
+"Invalid email or password."
+"Please verify your email before logging in."".
+
+HÃ¬nh 4.1.2 ThÃ´ng bÃ¡o lá»—i 401
+
+
+4.1.3. Quáº£n lÃ½ sáº£n pháº©m
+Má»¥c Ä‘Ã­ch: GiÃºp Admin dá»… dÃ ng kiá»ƒm soÃ¡t, cáº­p nháº­t vÃ  duy trÃ¬ danh má»¥c sÃ¡ch trÃªn há»‡ thá»‘ng.
+CÃ¡c chá»©c nÄƒng chÃ­nh:
+ThÃªm má»›i: Nháº­p tÃªn sÃ¡ch, tÃ¡c giáº£, thá»ƒ loáº¡i, giÃ¡, sá»‘ lÆ°á»£ng kho vÃ  upload áº£nh bÃ¬a.
+Xem & TÃ¬m kiáº¿m: Lá»c sáº£n pháº©m theo danh má»¥c, tÃªn sÃ¡ch, phÃ¢n trang danh sÃ¡ch.
+Cáº­p nháº­t: Chá»‰nh sá»­a thÃ´ng tin, Ä‘iá»u chá»‰nh giÃ¡ bÃ¡n vÃ  cáº­p nháº­t tá»“n kho.
+XÃ³a / áº¨n: Thá»±c hiá»‡n xÃ³a má»m (Soft Delete) hoáº·c áº©n sáº£n pháº©m Ä‘á»ƒ giá»¯ toÃ n váº¹n lá»‹ch sá»­ Ä‘Æ¡n hÃ ng.
+Â·Xá»­ lÃ½ ngoáº¡i lá»‡: Kiá»ƒm tra dá»¯ liá»‡u Ä‘áº§u vÃ o (khÃ´ng Ä‘á»ƒ giÃ¡ Ã¢m, thiáº¿u thÃ´ng tin) vÃ  giá»›i háº¡n file áº£nh upload báº±ng Middleware phÃ­a Backend. Pháº£n há»“i lá»—i 400 Bad Request náº¿u dá»¯ liá»‡u khÃ´ng há»£p lá»‡. 
+
+
+
+
+
+25
+
+
+HÃ¬nh 4.1.3 Quáº£n lÃ½ sáº£n pháº©m
+
+
+4.1.4. Quáº£n lÃ½ Ä‘Æ¡n hÃ ng
+Má»¥c Ä‘Ã­ch: GiÃºp Admin theo dÃµi, xá»­ lÃ½ vÃ  kiá»ƒm soÃ¡t toÃ n bá»™ luá»“ng giao dá»‹ch tá»« khi khÃ¡ch hÃ ng Ä‘áº·t hÃ ng Ä‘áº¿n khi hoÃ n táº¥t giao hÃ ng.CÃ¡c chá»©c nÄƒng chÃ­nh:Xem danh sÃ¡ch & Lá»c: Hiá»ƒn thá»‹ danh sÃ¡ch Ä‘Æ¡n hÃ ng, lá»c theo tráº¡ng thÃ¡i (Chá» xÃ¡c nháº­n, Äang xá»­ lÃ½, Äang giao, ÄÃ£ giao, ÄÃ£ há»§y) hoáº·c tÃ¬m kiáº¿m theo mÃ£ Ä‘Æ¡n / thÃ´ng tin khÃ¡ch hÃ ng.Cáº­p nháº­t tráº¡ng thÃ¡i: Chuyá»ƒn tráº¡ng thÃ¡i Ä‘Æ¡n hÃ ng theo Ä‘Ãºng quy trÃ¬nh nghiá»‡p vá»¥ (vd: XÃ¡c nháº­n thanh toÃ¡n VietQR $\rightarrow$ Äang giao $\rightarrow$ HoÃ n thÃ nh).Chi tiáº¿t Ä‘Æ¡n hÃ ng: Xem danh sÃ¡ch sÃ¡ch Ä‘Ã£ Ä‘áº·t, sá»‘ lÆ°á»£ng, giÃ¡ tiá»n, Ä‘á»‹a chá»‰ giao hÃ ng vÃ  phÆ°Æ¡ng thá»©c thanh toÃ¡n.Há»§y Ä‘Æ¡n hÃ ng: Cho phÃ©p Admin hoáº·c KhÃ¡ch hÃ ng há»§y Ä‘Æ¡n (náº¿u Ä‘Æ¡n chÆ°a chuyá»ƒn sang tráº¡ng thÃ¡i giao hÃ ng) vÃ  tá»± Ä‘á»™ng hoÃ n tráº£ sá»‘ lÆ°á»£ng tá»“n kho.Xá»­ lÃ½ ngoáº¡i lá»‡: Kiá»ƒm tra tÃ­nh há»£p lá»‡ cá»§a tráº¡ng thÃ¡i trÆ°á»›c khi cáº­p nháº­t (khÃ´ng thá»ƒ chuyá»ƒn tá»« "ÄÃ£ há»§y" sang "Äang giao"). Pháº£n há»“i lá»—i 400 Bad Request náº¿u tráº¡ng thÃ¡i chuyá»ƒn Ä‘á»•i khÃ´ng há»£p lá»‡.
+
+
+
+HÃ¬nh 4.1.4  quáº£n lÃ½ Ä‘Æ¡n hÃ ng
+4.2. Khuyáº¿n mÃ£i vÃ  ÄÃ¡nh GÃ­a Danh Má»¥c
+4.2.1.Khuyáº¿n mÃ£i ( flash sale )
+Má»¥c Ä‘Ã­ch: Táº¡o cÃ¡c chÆ°Æ¡ng trÃ¬nh Æ°u Ä‘Ã£i, mÃ£ giáº£m giÃ¡ nháº±m kÃ­ch cáº§u mua sáº¯m vÃ  tÄƒng doanh thu.
+CÃ¡c chá»©c nÄƒng chÃ­nh:
+Táº¡o & Cáº¥u hÃ¬nh: Thiáº¿t láº­p pháº§n trÄƒm giáº£m giÃ¡, giá»›i háº¡n sá»‘ lÆ°á»£ng vÃ  khung giá» Ã¡p dá»¥ng (Flash Sale).
+Kiá»ƒm tra Ä‘iá»u kiá»‡n: Tá»± Ä‘á»™ng Ã¡p dá»¥ng giáº£m giÃ¡ khi Ä‘Æ¡n hÃ ng thá»a Ä‘iá»u kiá»‡n (thá»i háº¡n, giÃ¡ trá»‹ tá»‘i thiá»ƒu).
+XÃ³a / Ngá»«ng Ã¡p dá»¥ng: Há»§y bá» hoáº·c táº¡m dá»«ng chÆ°Æ¡ng trÃ¬nh khuyáº¿n mÃ£i khi háº¿t háº¡n/háº¿t lÆ°á»£t.
+
+HÃ¬nh 4.1.5
+
+4.2.2. ÄÃ¡nh GÃ­a
+Má»¥c Ä‘Ã­ch: Kiá»ƒm soÃ¡t pháº£n há»“i tá»« ngÆ°á»i dÃ¹ng, nÃ¢ng cao uy tÃ­n sáº£n pháº©m vÃ  cháº¥t lÆ°á»£ng dá»‹ch vá»¥.
+CÃ¡c chá»©c nÄƒng chÃ­nh:
+Gá»­i Ä‘Ã¡nh giÃ¡: Cho phÃ©p khÃ¡ch hÃ ng cháº¥m Ä‘iá»ƒm (1â€“5 sao) vÃ  Ä‘á»ƒ láº¡i bÃ¬nh luáº­n cho sÃ¡ch Ä‘Ã£ mua.
+Duyá»‡t / Quyá»n xem: Hiá»ƒn thá»‹ Ä‘Ã¡nh giÃ¡ cÃ´ng khai trÃªn trang chi tiáº¿t sáº£n pháº©m.
+Kiá»ƒm duyá»‡t (Admin): Má»Ÿ quyá»n cho Admin xÃ³a/áº©n cÃ¡c Ä‘Ã¡nh giÃ¡ chá»©a tá»« ngá»¯ thÃ´ tá»¥c hoáº·c spam.
+
+HÃ¬nh 4.1.6
+
+
+
+4.2.3: Danh Má»¥c 
+Má»¥c Ä‘Ã­ch: PhÃ¢n loáº¡i sáº£n pháº©m khoa há»c giÃºp ngÆ°á»i dÃ¹ng dá»… dÃ ng tÃ¬m kiáº¿m vÃ  tra cá»©u sÃ¡ch theo chá»§ Ä‘á».
+CÃ¡c chá»©c nÄƒng chÃ­nh:
+ThÃªm / Sá»­a danh má»¥c: Táº¡o má»›i hoáº·c Ä‘á»•i tÃªn thá»ƒ loáº¡i sÃ¡ch (vÃ­ dá»¥: VÄƒn há»c, Kinh táº¿, Ká»¹ nÄƒng...).
+Xem danh sÃ¡ch: Hiá»ƒn thá»‹ cÃ¢y danh má»¥c vÃ  thá»‘ng kÃª sá»‘ lÆ°á»£ng sáº£n pháº©m thuá»™c tá»«ng thá»ƒ loáº¡i.
+XÃ³a danh má»¥c: RÃ ng buá»™c khÃ´ng cho xÃ³a danh má»¥c náº¿u Ä‘ang cÃ³ sáº£n pháº©m liÃªn káº¿t (trÃ¡nh má»“ cÃ´i dá»¯ liá»‡u).
+
+
+
+HÃ¬nh 4.1.7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28
+
+ChÆ°Æ¡ng 5. Káº¾T LUáº¬N VÃ€ HÆ¯á»šNG PHÃT TRIá»‚N
+
+5.1. Káº¿t luáº­n
+Káº¿t luáº­n Ä‘áº¡t Ä‘Æ°á»£c
+XÃ¢y dá»±ng hoÃ n thiá»‡n há»‡ thá»‘ng: ÄÃ£ nghiÃªn cá»©u vÃ  triá»ƒn khai thÃ nh cÃ´ng website bÃ¡n sÃ¡ch trá»±c tuyáº¿n WebSachs vá»›i Ä‘áº§y Ä‘á»§ cÃ¡c phÃ¢n há»‡ chá»©c nÄƒng cho KhÃ¡ch hÃ ng vÃ  Quáº£n trá»‹ viÃªn (Admin).
+
+Äáº£m báº£o quy trÃ¬nh nghiá»‡p vá»¥: ÄÃ¡p á»©ng tá»‘t cÃ¡c yÃªu cáº§u thÆ°Æ¡ng máº¡i Ä‘iá»‡n tá»­ cá»‘t lÃµi nhÆ° tra cá»©u/lá»c sáº£n pháº©m, giá» hÃ ng, Ä‘áº·t hÃ ng, quáº£n lÃ½ danh má»¥c, Ä‘Ã¡nh giÃ¡ - pháº£n há»“i vÃ  tÃ­ch há»£p thanh toÃ¡n tá»± Ä‘á»™ng qua mÃ£ VietQR.
+
+Tá»‘i Æ°u kiáº¿n trÃºc API: Há»‡ thá»‘ng RESTful API Ä‘Æ°á»£c thiáº¿t káº¿ chuáº©n hÃ³a, cáº¥u trÃºc rÃµ rÃ ng, dá»… báº£o trÃ¬ vÃ  thuáº­n tiá»‡n cho viá»‡c má»Ÿ rá»™ng tÃ­nh nÄƒng trong tÆ°Æ¡ng lai.
+
+á»¨ng dá»¥ng cÃ´ng nghá»‡ hiá»‡n Ä‘áº¡i: Khai thÃ¡c hiá»‡u quáº£ sá»©c máº¡nh cá»§a bá»™ cÃ´ng nghá»‡ Node.js, Express.js vÃ  cÆ¡ sá»Ÿ dá»¯ liá»‡u MongoDB Ä‘á»ƒ xá»­ lÃ½ dá»¯ liá»‡u linh hoáº¡t.
+
+Tá»± Ä‘á»™ng hÃ³a thÃ´ng bÃ¡o: TÃ­ch há»£p dá»‹ch vá»¥ Nodemailer phá»¥c vá»¥ gá»­i email xÃ¡c thá»±c tÃ i khoáº£n, thÃ´ng bÃ¡o tráº¡ng thÃ¡i Ä‘Æ¡n hÃ ng tá»›i ngÆ°á»i dÃ¹ng nhanh chÃ³ng.
+
+NÃ¢ng cao nÄƒng lá»±c thá»±c hÃ nh: NhÃ³m Ä‘Ã£ cá»§ng cá»‘ sÃ¢u sáº¯c cÃ¡c kiáº¿n thá»©c chuyÃªn ngÃ nh, rÃ¨n luyá»‡n tÆ° duy thiáº¿t káº¿ há»‡ thá»‘ng vÃ  nÃ¢ng cao ká»¹ nÄƒng lÃ m viá»‡c nhÃ³m trong má»™t dá»± Ã¡n pháº§n má»m thá»±c táº¿.
+
+
+LÃ½ thuyáº¿t, ká»¹ nÄƒng vÃ  kinh nghiá»‡m
+Láº­p trÃ¬nh & CÃ´ng cá»¥: LÃ m chá»§ quy trÃ¬nh phÃ¡t triá»ƒn á»©ng dá»¥ng Web Fullstack, sá»­ dá»¥ng thÃ nh tháº¡o mÃ´i trÆ°á»ng láº­p trÃ¬nh Visual Studio Code vÃ  cÃ¡c cÃ´ng cá»¥ quáº£n lÃ½ mÃ£ nguá»“n.
+
+TÆ° duy Kiáº¿n trÃºc: Náº¯m vá»¯ng quy trÃ¬nh thiáº¿t káº¿ vÃ  triá»ƒn khai há»‡ thá»‘ng Backend/Frontend, tá»« phÃ¢n tÃ­ch mÃ´ hÃ¬nh dá»¯ liá»‡u Ä‘áº¿n cáº¥u trÃºc thÆ° má»¥c theo chuáº©n modular, giÃºp tÄƒng kháº£ nÄƒng tÃ¡i sá»­ dá»¥ng mÃ£ nguá»“n.
+
+ThÃ nh tháº¡o cÃ´ng nghá»‡ cá»‘t lÃµi:
+
+Mongoose ODM: Tá»‘i Æ°u hÃ³a viá»‡c tÆ°Æ¡ng tÃ¡c, truy váº¥n vÃ  Ã¡nh xáº¡ dá»¯ liá»‡u vá»›i MongoDB.
+
+JWT (JSON Web Token): XÃ¢y dá»±ng cÆ¡ cháº¿ xÃ¡c thá»±c, phÃ¢n quyá»n vÃ  báº£o vá»‡ cÃ¡c tuyáº¿n truy cáº­p (routes) an toÃ n.
+
+Nodemailer: Xá»­ lÃ½ gá»­i email tá»± Ä‘á»™ng dá»±a trÃªn cÃ¡c sá»± kiá»‡n trong há»‡ thá»‘ng.
+
+
+Khuyáº¿t Ä‘iá»ƒm
+Hiá»‡u suáº¥t há»‡ thá»‘ng: CÆ¡ cháº¿ truy váº¥n dá»¯ liá»‡u chÆ°a Ä‘Æ°á»£c tá»‘i Æ°u triá»‡t Ä‘á»ƒ, tá»‘c Ä‘á»™ pháº£n há»“i cÃ³ thá»ƒ bá»‹ áº£nh hÆ°á»Ÿng khi xá»­ lÃ½ lÆ°á»£ng truy cáº­p lá»›n hoáº·c danh má»¥c sÃ¡ch quÃ¡ nhiá»u.
+
+TÃ­nh nÄƒng nÃ¢ng cao: PhÃ¢n quyá»n quáº£n trá»‹ chÆ°a Ä‘áº¡t Ä‘á»™ chi tiáº¿t cao (chÆ°a chia nhá» quyá»n theo tá»«ng cáº¥p Ä‘á»™ nhÃ¢n viÃªn); cÃ¡c chá»©c nÄƒng thá»‘ng kÃª - bÃ¡o cÃ¡o doanh thu má»›i dá»«ng á»Ÿ má»©c cÆ¡ báº£n.
+
+MÃ´i trÆ°á»ng triá»ƒn khai: Há»‡ thá»‘ng hiá»‡n má»›i chá»‰ váº­n hÃ nh thá»­ nghiá»‡m trÃªn mÃ´i trÆ°á»ng cá»¥c bá»™ (Localhost), chÆ°a triá»ƒn khai chÃ­nh thá»©c lÃªn cÃ¡c dá»‹ch vá»¥ Ä‘iá»‡n toÃ¡n Ä‘Ã¡m mÃ¢y (Cloud Hosting).
+
+Báº£o máº­t: Má»›i dá»«ng á»Ÿ má»©c báº£o máº­t cÆ¡ báº£n (mÃ£ hÃ³a máº­t kháº©u bcryptjs, xÃ¡c thá»±c JWT), chÆ°a tÃ­ch há»£p sÃ¢u cÃ¡c cÆ¡ cháº¿ phÃ²ng chá»‘ng táº¥n cÃ´ng nÃ¢ng cao nhÆ° CSRF, Rate Limiting toÃ n diá»‡n, hay DDoS.
+
+
+Kinh nghiá»‡m Ä‘Ãºc káº¿t
+Cáº§n tÄƒng cÆ°á»ng kháº£ nÄƒng tá»± há»c vÃ  náº¯m báº¯t cÃ¡c cÃ´ng nghá»‡ má»›i trong lÄ©nh vá»±c phÃ¡t triá»ƒn web. 
+TÄƒng cÆ°á»ng tÆ° duy logic vÃ  ká»¹ nÄƒng giáº£i quyáº¿t váº¥n Ä‘á».
+Cáº£i thiá»‡n kiáº¿n thá»©c chuyÃªn mÃ´n vá» láº­p trÃ¬nh backend vÃ  quáº£n lÃ½ cÆ¡ sá»Ÿ dá»¯ liá»‡u.
+RÃ¨n luyá»‡n ká»¹ nÄƒng lÃ m viá»‡c nhÃ³m vÃ  chia sáº» kiáº¿n thá»©c trong nhÃ³m Ä‘á»ƒ nÃ¢ng cao hiá»‡u quáº£ lÃ m viá»‡c. 
+
+5.2. HÆ°á»›ng phÃ¡t triá»ƒn tÆ°Æ¡ng lai
+PhÃ¢n quyá»n nÃ¢ng cao: Triá»ƒn khai mÃ´ hÃ¬nh phÃ¢n quyá»n chi tiáº¿t (RBAC - Role-Based Access Control) cho tá»«ng nhÃ³m quáº£n trá»‹ viÃªn (Quáº£n lÃ½ kho, ChÄƒm sÃ³c khÃ¡ch hÃ ng, Quáº£n lÃ½ ná»™i dung).
+
+Tá»‘i Æ°u hÃ³a & Báº£o máº­t: Ãp dá»¥ng Redis Ä‘á»ƒ Caching dá»¯ liá»‡u, cáº£i thiá»‡n tá»‘c Ä‘á»™ truy váº¥n sÃ¡ch; Ä‘á»“ng thá»i tÃ­ch há»£p SSL, HTTPS vÃ  cÃ¡c middleware chá»‘ng táº¥n cÃ´ng Web (Helmet, Rate Limiter).
+
+NÃ¢ng cáº¥p tÃ­nh nÄƒng ThÆ°Æ¡ng máº¡i Ä‘iá»‡n tá»­:
+
+PhÃ¡t triá»ƒn há»‡ thá»‘ng gá»£i Ã½ sÃ¡ch thÃ´ng minh dá»±a trÃªn lá»‹ch sá»­ xem vÃ  hÃ nh vi mua sáº¯m cá»§a ngÆ°á»i dÃ¹ng.
+
+TÃ­ch há»£p thÃªm cÃ¡c cá»•ng thanh toÃ¡n Ä‘iá»‡n tá»­ khÃ¡c (Momo, VNPay, ZaloPay).
+
+XÃ¢y dá»±ng tÃ­nh nÄƒng theo dÃµi vá»‹ trÃ­ Ä‘Æ¡n hÃ ng theo thá»i gian thá»±c (Real-time Order Tracking).
+
+Triá»ƒn khai thá»±c táº¿: ÄÆ°a á»©ng dá»¥ng lÃªn cÃ¡c ná»n táº£ng Cloud (Docker, AWS, Render hoáº·c Vercel) Ä‘á»ƒ chuáº©n bá»‹ cho viá»‡c váº­n hÃ nh thá»±c táº¿.
+
+
+PhÃ¡t triá»ƒn báº£n thÃ¢n
+Äáº©y máº¡nh kháº£ nÄƒng tá»± há»c, chá»§ Ä‘á»™ng Ä‘Ã³n Ä‘áº§u cÃ¡c cÃ´ng nghá»‡ má»›i trong ngÃ nh CNTT.
+
+Äi sÃ¢u nghiÃªn cá»©u vá» tá»‘i Æ°u hÃ³a hiá»‡u nÄƒng á»©ng dá»¥ng (Performance Tuning) vÃ  kiáº¿n trÃºc há»‡ thá»‘ng lá»›n (Microservices).
+
+Cáº£i thiá»‡n kiáº¿n thá»©c vá» an toÃ n thÃ´ng tin vÃ  quy trÃ¬nh kiá»ƒm thá»­ pháº§n má»m (Testing/CI-CD).
+
+TÃ­ch cá»±c tham gia cÃ¡c dá»± Ã¡n thá»±c táº¿ Ä‘á»ƒ tÃ­ch lÅ©y kinh nghiá»‡m, nÃ¢ng cao ká»¹ nÄƒng lÃ m viá»‡c nhÃ³m vÃ  phÆ°Æ¡ng phÃ¡p quáº£n lÃ½ dá»± Ã¡n chuyÃªn nghiá»‡p (Agile/Scrum).
+
+
+
+
+
+
+
+
+
+30
+
+
+
+
+DANH Má»¤C TÃ€I LIá»†U THAM KHáº¢O
+
+
+[1]  HYPERLINK "https://github.com/nodejs" \h https://github.com/nodejs
+
+ HYPERLINK "https://www.w3schools.com/" \h https://www.w3schools.com/ 
+https://github.com/kaiogenzo1412/websach.git
+

@@ -1,0 +1,370 @@
+BỘ LAO ĐỘNG THƯƠNG BINH VÀ XÃ HỘI
+TRƯỜNG CAO ĐẲNG CÔNG NGHỆ THÔNG TIN TP.HCM
+KHOA CÔNG NGHỆ THÔNG TIN – ĐIỆN TỬ
+
+ĐỒ ÁN MÔN HỌC: CHUYÊN ĐỀ BACK-END
+ĐỀ TÀI: XÂY DỰNG HỆ THỐNG RESTFUL API BÁN XE MÁY VÀ XÉT DUYỆT TRẢ GÓP
+..........................................................................................................................................
+
+Giáo viên hướng dẫn : 
+Sinh viên thực hiện: 
+Khoá : 
+
+TP. Hồ Chí Minh, ngày    tháng    năm 
+
+==================================================
+
+LỜI MỞ ĐẦU
+
+Ngày nay, việc quản lý luồng dữ liệu và nghiệp vụ hiệu quả là một yếu tố không thể thiếu đối với bất kỳ hệ thống phần mềm hay ứng dụng web nào. Từ việc lưu trữ thông tin cá nhân, phân quyền truy cập, đến đảm bảo tính bảo mật cho dữ liệu và xử lý thanh toán, một hệ thống backend đóng vai trò quan trọng trong hoạt động vận hành và phát triển của các tổ chức và doanh nghiệp.
+
+Với mong muốn học hỏi và áp dụng kiến thức vào thực tế, chúng em thực hiện dự án xây dựng một hệ thống RESTful API bán xe máy trực tuyến với mục tiêu tạo ra một hệ thống backend mạnh mẽ, linh hoạt và bảo mật. Dự án không chỉ mang tính học thuật mà còn mở ra cơ hội để chúng em tìm hiểu sâu hơn về các công nghệ hiện đại như Node.js, Express.js, MongoDB, và các công cụ hỗ trợ như JWT, Nodemailer, Postman.
+
+Hệ thống API quản lý bán hàng này bao gồm các chức năng cơ bản như tạo, sửa, xóa, và tìm kiếm thông tin sản phẩm, đơn hàng, đồng thời tích hợp cơ chế xác thực và phân quyền nhằm bảo vệ dữ liệu và đảm bảo người dùng chỉ được truy cập vào các phần phù hợp với vai trò của mình. Điểm nhấn của dự án là logic xét duyệt hợp đồng trả góp tự động dựa trên điểm tín dụng và nợ xấu. Ngoài ra, dự án còn triển khai tính năng gửi email thông qua Nodemailer, hỗ trợ xác nhận tài khoản hoặc đặt lại mật khẩu.
+
+Chúng em hy vọng dự án này không chỉ giúp hoàn thiện các yêu cầu học tập mà còn là một bước đệm giúp chúng em chuẩn bị tốt hơn cho công việc thực tế trong lĩnh vực phát triển ứng dụng web.
+
+==================================================
+
+LỜI CẢM ƠN
+
+Trước hết, chúng em xin gửi lời cảm ơn chân thành tới các thầy cô trong bộ môn Công nghệ Thông tin của trường Cao đẳng Công nghệ Thông Tin TPHCM, đặc biệt là thầy Nguyễn Minh Hải đã hướng dẫn, cung cấp kiến thức chuyên môn, hỗ trợ chúng em trong suốt quá trình thực hiện dự án. Những kiến thức mà thầy chia sẻ chính là nền tảng vững chắc để chúng em hoàn thành sản phẩm này.
+
+Chúng em cũng xin bày tỏ lòng biết ơn đến các bạn trong nhóm đã nhiệt tình hỗ trợ, chia sẻ kinh nghiệm và giúp đỡ nhau trong những lúc gặp khó khăn.
+
+Cuối cùng, chúng em muốn gửi lời cảm ơn đến gia đình và bạn bè đã luôn động viên, khích lệ tinh thần, tạo điều kiện tốt nhất để chúng em có thể tập trung vào việc học tập và hoàn thành dự án này.
+
+Chúng em tin rằng sản phẩm "Hệ thống RESTful API Bán xe máy" này không chỉ đánh dấu sự nỗ lực trong học tập mà còn là nền tảng để chúng em tiếp tục phát triển và hoàn thiện bản thân trong hành trình sự nghiệp phía trước.
+
+==================================================
+
+MỤC LỤC
+
+Chương 1. GIỚI THIỆU
+1.1. Mục tiêu dự án
+1.1.1. Các chức năng cơ bản
+1.1.2. Mục đích phát triển ứng dụng Back-End
+1.2. Công nghệ sử dụng
+1.2.1. NodeJS
+1.2.2. Express
+1.2.3. MongoDB
+1.2.4. JWT
+1.2.5. Nodemailer
+1.2.6. Postman (Kiểm thử API)
+1.2.7. Dotenv
+1.2.8. Bcrypt
+1.3. Lý do chọn công nghệ
+1.3.1. NodeJS
+1.3.2. Express
+1.3.3. MongoDB
+1.3.4. JWT
+1.3.5. Nodemailer
+
+Chương 2. THIẾT KẾ KIẾN TRÚC HỆ THỐNG
+2.1. Kiến trúc ứng dụng
+2.1.1. Client (Frontend / Postman)
+2.1.2. Server (Backend)
+2.1.3. Database (MongoDB)
+2.1.4. Middleware
+2.1.5. Sơ đồ kiến trúc ứng dụng
+2.2. Cấu trúc thư mục
+2.2.1. config/
+2.2.2. controllers/
+2.2.3. middlewares/
+2.2.4. models/
+2.2.5. routes/
+2.2.6. utils/
+
+Chương 3. CÀI ĐẶT THỰC NGHIỆM VÀ KẾT QUẢ
+3.1. Một số giao diện kiểm thử API
+3.1.1. Giao diện test đăng ký (Postman)
+3.1.2. Giao diện test đăng nhập (Postman)
+3.1.3. Giao diện test danh sách sản phẩm
+3.1.4. Giao diện test đặt hàng & trả góp
+3.1.5. Giao diện lỗi 404
+3.2. Các chức năng chính
+3.2.1. Chức năng đăng ký và đăng nhập
+3.2.2. Chức năng quên mật khẩu
+3.2.3. Chức năng quản lý danh sách xe máy
+3.2.4. Chức năng đặt hàng và tính ưu đãi (VIP Tier)
+3.2.5. Chức năng xét duyệt trả góp (Điểm tín dụng & Nợ xấu)
+3.2.6. Chức năng phân quyền admin
+
+Chương 4. XỬ LÝ LỖI VÀ BẢO MẬT
+4.1. Xử lý lỗi trong ứng dụng
+4.1.1. Lỗi 400 – Bad Request
+4.1.2. Lỗi 401 – Unauthorized
+4.1.3. Lỗi 404 – Not Found
+4.1.4. Lỗi 500 – Internal Server Error
+4.2. Bảo mật ứng dụng
+4.2.1. Mã hóa mật khẩu
+4.2.2. Bảo vệ route
+
+Chương 5. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+5.1. Kết luận
+5.2. Hướng phát triển tương lai
+
+==================================================
+
+Chương 1. GIỚI THIỆU
+
+1.1. Mục tiêu dự án
+Dự án này nhằm mục đích xây dựng một ứng dụng web (dạng RESTful API) bán xe máy với backend được phát triển bằng Node.js và các công nghệ đã liệt kê ở trên.
+1.1.1. Các chức năng cơ bản
+- Đăng ký: Khách hàng và Admin có thể tạo tài khoản mới.
+- Đăng nhập: Người dùng có thể đăng nhập bằng tài khoản đã đăng ký để lấy Token.
+- Quản lý xe máy: Admin có thể thêm, sửa, xóa thông tin xe phân khối lớn.
+- Đặt hàng: Khách hàng thêm sản phẩm vào giỏ và tiến hành tạo đơn hàng.
+- Xét duyệt trả góp: Hệ thống tự động kiểm tra điểm tín dụng (CIC) và tình trạng nợ xấu.
+
+1.1.2. Mục đích phát triển ứng dụng Back-End
+- Cung cấp API: Backend sẽ cung cấp các API (Application Programming Interfaces) để frontend (giao diện người dùng) hoặc Postman có thể tương tác với dữ liệu.
+- Xử lý logic nghiệp vụ: Backend sẽ xử lý các logic nghiệp vụ liên quan đến việc quản lý đơn hàng, kiểm tra nợ xấu, ưu đãi khách quen, xác thực, ủy quyền.
+- Lưu trữ dữ liệu: Backend sẽ chịu trách nhiệm lưu trữ dữ liệu trong cơ sở dữ liệu (MongoDB).
+- Bảo mật: Backend sẽ đảm bảo an toàn cho dữ liệu và ngăn chặn các truy cập trái phép.
+
+1.2. Công nghệ sử dụng
+1.2.1. NodeJS
+NodeJS là một môi trường thực thi (runtime environment) JavaScript mã nguồn mở, chạy trên nền tảng V8 Engine. Nó cho phép ta chạy mã JavaScript bên ngoài trình duyệt web, chủ yếu để xây dựng các ứng dụng mạng phía máy chủ (server-side) nhanh chóng và có khả năng mở rộng.
+v Tăng cường hiệu suất: Nodemon
+Nodemon là một công cụ tiện ích giúp tự động khởi động lại ứng dụng Node.js khi phát hiện các thay đổi trong mã nguồn.
+
+1.2.2. Express
+Express là một framework ứng dụng web tối giản và linh hoạt cho Node.js. Nó cung cấp một tập hợp các tính năng mạnh mẽ để xây dựng các ứng dụng web và API một cách dễ dàng và nhanh chóng.
+
+1.2.3. MongoDB
+MongoDB là một hệ quản trị cơ sở dữ liệu (DBMS) NoSQL mã nguồn mở, hướng tài liệu. Thay vì lưu trữ dữ liệu trong các bảng với cấu trúc cố định như SQL, MongoDB lưu trữ dữ liệu trong các document có định dạng giống JSON.
+v Tăng cường hiệu suất: Mongoose
+Mongoose là một thư viện Object Document Modeling (ODM) cho MongoDB và Node.js. Nó cung cấp một cách thức đơn giản và trực quan để tương tác với cơ sở dữ liệu.
+
+1.2.4. JWT
+JSON Web Token (JWT) là một tiêu chuẩn mở (RFC 7519) định nghĩa một cách thức nhỏ gọn và độc lập để truyền thông tin giữa các bên dưới dạng đối tượng JSON. JWT thường được sử dụng để xác thực (authentication) và ủy quyền (authorization).
+
+1.2.5. Nodemailer
+Nodemailer là một module cho Node.js cho phép ta gửi email một cách dễ dàng. Nó hỗ trợ nhiều phương thức gửi mail khác nhau, có thể đính kèm file, và sử dụng HTML trong nội dung email.
+
+1.2.6. Postman (Kiểm thử API)
+Do dự án tập trung vào kiến trúc RESTful API thay vì giao diện tĩnh (EJS), hệ thống sử dụng Postman làm công cụ Client để gửi các request (GET, POST, PUT, DELETE) kiểm thử các luồng hoạt động của Backend.
+
+1.2.7. Dotenv
+Dotenv là một module cho phép ta tải các biến môi trường (environment variables) từ một file .env vào trong ứng dụng Node.js. 
+
+1.2.8. Bcrypt
+Bcrypt là một hàm băm mật khẩu (password hashing function) được thiết kế để an toàn và chậm, làm cho việc tấn công brute-force trở nên khó khăn hơn. 
+
+1.3. Lý do chọn công nghệ
+1.3.1. NodeJS
+- JavaScript đồng nhất: Sử dụng JavaScript cho cả frontend và backend giúp đơn giản hóa việc phát triển.
+- Hiệu suất tốt: Node.js hoạt động nhanh và phù hợp với các ứng dụng cơ bản như API nhờ cơ chế xử lý bất đồng bộ (non-blocking).
+
+1.3.2. Express
+- Đơn giản và linh hoạt: Express cung cấp một framework tối giản nhưng mạnh mẽ, cho phép ta dễ dàng xây dựng các API.
+- Middleware: Hệ thống middleware của Express giúp ta dễ dàng mở rộng chức năng.
+
+1.3.3. MongoDB
+- Linh hoạt: Schema linh hoạt của MongoDB cho phép ta dễ dàng thay đổi cấu trúc dữ liệu khi cần thiết.
+- Khả năng mở rộng: MongoDB được thiết kế để có thể mở rộng theo chiều ngang.
+
+1.3.4. JWT
+- Xác thực và ủy quyền: Cung cấp một cách thức an toàn và hiệu quả để xác thực và ủy quyền người dùng.
+
+1.3.5. Nodemailer
+- Gửi email: Cho phép ứng dụng gửi email thông báo, xác nhận, v.v.
+
+==================================================
+
+Chương 2. THIẾT KẾ KIẾN TRÚC HỆ THỐNG
+
+2.1. Kiến trúc ứng dụng
+Ứng dụng sẽ hoạt động dựa trên các thành phần chính sau:
+2.1.1. Client (Frontend / Postman)
+- Là nơi người dùng tương tác với hệ thống, gửi các yêu cầu (request) như đăng ký, đăng nhập, hoặc đặt hàng. (Trong phạm hiện của đồ án, Client được giả lập bằng Postman).
+- Client giao tiếp với server thông qua API endpoints (ví dụ: /api/login, /api/orders).
+- Dữ liệu trả về từ server (response) thường ở định dạng JSON để dễ dàng xử lý.
+
+2.1.2. Server (Backend)
+- Xử lý các yêu cầu từ phía client.
+- Quản lý logic ứng dụng, xác thực người dùng, và kết nối với cơ sở dữ liệu.
+- Phân tầng chính: Routes, Controllers, Models.
+
+2.1.3. Database (MongoDB)
+- Nơi lưu trữ dữ liệu người dùng, xe máy, đơn hàng và hợp đồng trả góp.
+- Hỗ trợ các thao tác thêm, sửa, xóa và đọc dữ liệu (CRUD).
+
+2.1.4. Middleware
+- Các lớp trung gian được sử dụng để xử lý yêu cầu trước khi chúng đến controller.
+- Ví dụ: Middleware xác thực người dùng bằng JWT để bảo vệ các API nhạy cảm.
+
+2.1.5. Sơ đồ kiến trúc ứng dụng
+[Chèn Hình 2.1.5 Sơ đồ kiến trúc ứng dụng tại đây]
+
+2.2. Cấu trúc thư mục
+[Chèn Hình 2.2 Cấu trúc thư mục server tại đây]
+2.2.1. config/
+- Thư mục này chứa tệp db.js để cấu hình và thiết lập kết nối với cơ sở dữ liệu MongoDB.
+2.2.2. controllers/
+- Chứa các tệp xử lý logic chính của ứng dụng.
+- authController.js: Xử lý xác thực người dùng.
+- orderController.js: Xử lý logic đặt hàng và duyệt trả góp.
+2.2.3. middlewares/
+- authMiddleware.js: Xác thực token JWT để bảo vệ các route yêu cầu quyền truy cập.
+2.2.4. models/
+- Chứa các schema của MongoDB.
+- User.js, Product.js, Order.js.
+2.2.5. routes/
+- Định nghĩa các endpoint API và liên kết với controller tương ứng.
+2.2.6. utils/
+- Chứa các tiện ích dùng chung (như sendEmail.js).
+
+==================================================
+
+Chương 3. CÀI ĐẶT THỰC NGHIỆM VÀ KẾT QUẢ
+
+3.1. Một số giao diện kiểm thử API
+(Ghi chú: Vì hệ thống là RESTful API, giao diện thực nghiệm sẽ là các màn hình test trên Postman trả về JSON).
+3.1.1. Giao diện test đăng ký (Postman)
+[Chèn ảnh chụp màn hình Postman gọi API Register]
+3.1.2. Giao diện test đăng nhập (Postman)
+[Chèn ảnh chụp màn hình Postman gọi API Login trả về Token]
+3.1.3. Giao diện test danh sách sản phẩm
+[Chèn ảnh Postman GET /api/products]
+3.1.4. Giao diện test đặt hàng & trả góp
+[Chèn ảnh Postman báo lỗi Nợ xấu hoặc duyệt thành công]
+3.1.5. Giao diện lỗi 404
+[Chèn ảnh Postman gọi sai link API]
+
+3.2. Các chức năng chính
+3.2.1. Chức năng đăng ký và đăng nhập
+v Mục tiêu:
+- Thu thập thông tin từ người dùng bao gồm: username, email, password.
+- Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu.
+- Đăng nhập thành công trả về Token JWT.
+v Luồng hoạt động:
+1. Client (Postman) gửi request POST chứa email và mật khẩu lên server.
+2. Hệ thống kiểm tra dữ liệu đầu vào. Nếu người dùng nhập sai thông tin (thiếu trường, sai định dạng email) hoặc sai mật khẩu, Server sẽ lập tức phản hồi thông báo lỗi với mã HTTP 400 (Bad Request).
+3. Nếu email đã tồn tại (khi đăng ký), hệ thống cũng báo lỗi 400: "Email này đã tồn tại".
+4. Nếu hợp lệ, hệ thống băm (hash) mật khẩu bằng Bcrypt và lưu vào Database.
+5. Đối với đăng nhập, nếu tài khoản và mật khẩu khớp, hệ thống tạo JWT Token.
+6. Server trả về JSON chứa Token cho Client để xác thực ở các request tiếp theo.
+
+3.2.2. Chức năng quên mật khẩu
+v Mục tiêu:
+- Hỗ trợ người dùng đặt lại mật khẩu khi quên.
+- Gửi email chứa mã xác nhận.
+v Luồng hoạt động:
+1. Client gửi request POST kèm email cần khôi phục.
+2. Hệ thống kiểm tra email trong Database, nếu tồn tại sẽ tạo một mã xác nhận (resetToken) ngẫu nhiên.
+3. Server gửi email đến người dùng qua Nodemailer chứa mã này.
+4. Client gửi lại mã xác nhận kèm mật khẩu mới lên server.
+5. Hệ thống xác minh mã hợp lệ và tiến hành băm mật khẩu mới lưu vào DB.
+
+3.2.3. Chức năng quản lý danh sách xe máy
+v Mục tiêu:
+- Cho phép Admin thêm, sửa, xóa các dòng xe máy cao cấp. Khách hàng chỉ có quyền xem (GET).
+v Luồng hoạt động:
+1. Admin (kèm Token có role admin) gửi request POST /api/products kèm thông tin xe (tên, hãng, giá, số lượng).
+2. Middleware kiểm tra Token hợp lệ và quyền admin.
+3. Server lưu xe máy mới vào Collection Products.
+4. Admin có thể tiếp tục gửi request PUT hoặc DELETE để sửa thông tin tồn kho hoặc xóa mẫu xe.
+
+3.2.4. Chức năng đặt hàng và tính ưu đãi (VIP Tier)
+v Mục tiêu:
+- Khách hàng mới được áp mã khuyến mãi tân thủ. Khách hàng cũ được tự động giảm giá phần trăm theo hạng Vàng, Kim Cương.
+v Luồng hoạt động:
+1. Khách hàng gửi request POST /api/orders truyền vào ID chiếc xe và số lượng.
+2. Server truy xuất thông tin User, lấy ra hạng thành viên (tier).
+3. Tùy thuộc vào tier (Gold, Diamond), Server tự động tính toán tổng tiền (giảm 2% hoặc 5%).
+4. Nếu khách hàng truyền mã "NEW_MOTO" và chưa từng mua hàng, được giảm trực tiếp 1.000.000 VNĐ.
+5. Server lưu Order mới vào Database và trừ đi stock của xe.
+
+3.2.5. Chức năng xét duyệt trả góp (Điểm tín dụng & Nợ xấu)
+v Mục tiêu:
+- Tránh rủi ro tài chính bằng cách chặn tự động nếu khách hàng có "has_bad_debt = true" hoặc "credit_score < 500".
+v Luồng hoạt động:
+1. Khách hàng gửi request yêu cầu tạo hồ sơ trả góp cho một chiếc xe.
+2. Server kiểm tra trong User model: `if(user.has_bad_debt === true)` -> Từ chối ngay (Return 400).
+3. Server kiểm tra `if(user.credit_score < 500)` -> Từ chối ngay (Return 400).
+4. Kiểm tra khách hàng có hợp đồng trả góp nào chưa tất toán không. Nếu có -> Từ chối (Return 400).
+5. Nếu vượt qua mọi điều kiện, Server tạo một Record Installment với trạng thái "Pending" chờ Admin duyệt.
+
+3.2.6. Chức năng phân quyền admin
+v Mục tiêu:
+- Admin A không được sửa thông tin của Admin B, nhưng được toàn quyền quản lý kho xe máy và đơn hàng.
+v Luồng hoạt động:
+1. Middleware `admin` chặn mọi truy cập nếu user.role khác "admin".
+2. Trong route quản lý tài khoản, Controller so sánh ID người bị xóa với danh sách admin. Nếu mục tiêu là Admin khác, Server ném lỗi 403 (Forbidden).
+3. Các User thông thường truy cập route quản lý sẽ bị middleware loại bỏ từ ngoài cùng (Return 401).
+
+==================================================
+
+Chương 4. XỬ LÝ LỖI VÀ BẢO MẬT
+
+4.1. Xử lý lỗi trong ứng dụng
+4.1.1. Lỗi 400 – Bad Request
+v Nguyên nhân:
+- Dữ liệu đầu vào từ client không hợp lệ (ví dụ: thiếu email, password, nhập sai mật khẩu, hoặc bị nợ xấu nhưng vẫn đòi vay).
+v Cách xử lý:
+- Phản hồi lỗi với HTTP status code 400 kèm thông báo chi tiết: "Sai tài khoản hoặc mật khẩu", "Email này đã tồn tại"...
+
+4.1.2. Lỗi 401 – Unauthorized
+v Nguyên nhân:
+- Người dùng không xác thực (chưa đăng nhập hoặc token không hợp lệ).
+v Cách xử lý:
+- Xác thực thông qua JWT. Phản hồi mã lỗi 401.
+
+4.1.3. Lỗi 404 – Not Found
+v Nguyên nhân:
+- Truy cập một route không tồn tại.
+v Cách xử lý:
+- Phản hồi với HTTP status code 404 và thông báo: "Not found".
+
+4.1.4. Lỗi 500 – Internal Server Error
+v Nguyên nhân:
+- Lỗi logic trong ứng dụng hoặc mất kết nối DB.
+v Cách xử lý:
+- Sử dụng khối try-catch để bắt lỗi và ngăn ứng dụng bị crash. Phản hồi thân thiện.
+
+4.2. Bảo mật ứng dụng
+4.2.1. Mã hóa mật khẩu
+- Mục đích: Bảo mật thông tin nhạy cảm.
+- Phương pháp: Sử dụng thư viện bcryptjs để mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu. Lợi ích: Ngay cả khi rò rỉ dữ liệu, hacker cũng không thể đọc được mật khẩu.
+4.2.2. Bảo vệ route
+- Mục đích: Ngăn chặn truy cập trái phép.
+- Phương pháp: Sử dụng JWT. Middleware kiểm tra JWT hợp lệ mới cho qua. Cung cấp cách xác thực hiệu quả không cần lưu trạng thái trên server (stateless).
+
+==================================================
+
+Chương 5. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+
+5.1. Kết luận
+Dự án "Xây dựng hệ thống RESTful API bán xe máy và xét duyệt trả góp" đã hoàn thành đúng tiến độ và đáp ứng được các mục tiêu cốt lõi đã đề ra ban đầu. Qua quá trình nghiên cứu, phát triển và triển khai thực nghiệm bằng Postman, hệ thống đã chứng minh được tính ổn định, linh hoạt và bảo mật cao.
+
+v Kết luận đạt được
+- Kiến trúc hệ thống vững chắc: Đã xây dựng thành công một hệ thống API theo chuẩn RESTful, đảm bảo luồng dữ liệu thông suốt giữa Client và Database.
+- Xử lý nghiệp vụ phức tạp: Triển khai xuất sắc logic tự động tính toán ưu đãi phân cấp thành viên (VIP Tier) và hệ thống xét duyệt hồ sơ trả góp chặt chẽ thông qua việc phân tích điểm tín dụng (CIC) và nợ xấu.
+- Hệ thống bảo mật an toàn: Áp dụng thành công Json Web Token (JWT) cho việc cấp quyền và chứng thực, kết hợp với bcryptjs để mã hóa mật khẩu một chiều, ngăn chặn tối đa nguy cơ lộ lọt dữ liệu.
+- Công cụ kiểm thử trực quan: Bộ API được thiết kế rõ ràng, đi kèm đầy đủ bộ sưu tập (Collection) trên Postman giúp cho việc kiểm thử đầu vào/đầu ra (I/O) trở nên cực kỳ thuận tiện và minh bạch.
+
+v Lý thuyết, kỹ năng và kinh nghiệm thu được
+- Kỹ năng lập trình Backend thực tế: Nâng cao trình độ tư duy logic, cấu trúc thư mục chuẩn MVC (Models, Views, Controllers) trong Node.js.
+- Nắm vững công nghệ cơ sở dữ liệu NoSQL: Hiểu rõ nguyên lý hoạt động của MongoDB, cách xây dựng Schema, và tối ưu hóa các câu truy vấn thông qua thư viện Mongoose.
+- Xử lý lỗi và Middleware: Học được cách phân luồng lỗi (Error Handling) tập trung, nhận biết và xử lý các HTTP Status Code phổ biến (400, 401, 403, 404, 500) và viết các Middleware bảo vệ endpoint an toàn.
+
+v Khuyết điểm và hạn chế hiện tại
+- Tối ưu hóa truy vấn: Một số API lấy danh sách dữ liệu chưa được tối ưu hóa bộ nhớ đệm (Caching), có thể gây nghẽn cổ chai (bottleneck) nếu hệ thống phải xử lý lượng lớn dữ liệu truy cập cùng lúc (High Traffic).
+- Môi trường triển khai: Hiện tại hệ thống mới chỉ được chạy thực nghiệm trên môi trường Localhost (chạy cục bộ), chưa đưa lên các nền tảng máy chủ đám mây (Cloud Server) để đối mặt với môi trường mạng thực tế.
+- Chức năng tự động hóa: Hệ thống chưa có cron-job để tự động gửi thông báo nhắc nhở hạn đóng tiền trả góp hàng tháng qua Email cho người dùng.
+
+5.2. Hướng phát triển tương lai
+Nhằm khắc phục những hạn chế còn tồn tại và đưa dự án tiệm cận hơn với một sản phẩm thương mại thực tế, nhóm đã đề ra các phương hướng phát triển như sau:
+
+v Về phía hệ thống và đề tài
+- Tích hợp cổng thanh toán trực tuyến: Kết nối các API thanh toán điện tử uy tín như VNPay, MoMo, ZaloPay hoặc Stripe để tự động hóa hoàn toàn quy trình xác nhận đơn hàng khi khách hàng thanh toán trước.
+- Phát triển giao diện người dùng (Frontend): Xây dựng một ứng dụng Frontend chuyên nghiệp bằng React.js, Next.js hoặc Vue.js để kết nối trực tiếp vào bộ API này, tạo ra trải nghiệm mua sắm mượt mà nhất (SPA - Single Page Application) thay vì chỉ test qua Postman.
+- Mở rộng chức năng xét duyệt tín dụng: Tích hợp AI (Machine Learning) để phân tích hành vi người dùng, hoặc liên kết với các tổ chức tín dụng bên thứ 3 để tự động chấm điểm tín dụng một cách chính xác nhất.
+- Triển khai lên Cloud: Đưa toàn bộ cơ sở dữ liệu lên MongoDB Atlas và deploy mã nguồn Node.js lên các dịch vụ đám mây như AWS, Render, hoặc Vercel.
+
+v Về phía phát triển bản thân
+- Nâng cao kiến trúc hệ thống: Nghiên cứu và áp dụng Microservices Architecture thay cho Monolithic hiện tại nếu dự án mở rộng quy mô.
+- Tăng cường khả năng tối ưu (Performance): Tự học và áp dụng Redis để Caching các truy vấn thường xuyên, giảm tải cho Database. Sử dụng Docker để container hóa ứng dụng, giúp việc triển khai (deploy) trở nên đồng nhất trên mọi môi trường.
+- Bảo mật hệ thống sâu hơn: Cải thiện kiến thức về các lỗ hổng bảo mật web (OWASP Top 10) như XSS, CSRF, SQL/NoSQL Injection và cấu hình Rate Limiting để chống tấn công DDoS.

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Không Tìm Thấy - MotoZone</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  body {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .error-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .error-code {
+    font-size: 150px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(255,60,0,0.3);
+  }
+  .error-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 20px 0 10px;
+  }
+  .error-desc {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 500px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  .btn-home {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(255,60,0,0.2);
+  }
+  .btn-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255,60,0,0.4);
+  }
+  .motorcycle-icon {
+    font-size: 80px;
+    margin-bottom: -20px;
+    animation: drift 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes drift {
+    0% { transform: translateX(-15px) rotate(-5deg); }
+    100% { transform: translateX(15px) rotate(5deg); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+  </div>
+</nav>
+
+<div class="error-container">
+  <div class="motorcycle-icon">🏍️</div>
+  <h1 class="error-code">404</h1>
+  <h2 class="error-title">Ối! Lạc Đường Rồi Bạn Ơi</h2>
+  <p class="error-desc">Trang bạn đang tìm kiếm không tồn tại hoặc đã bị gỡ bỏ. Có vẻ như bạn đã lái xe đi quá xa khỏi đường đua của MotoZone rồi.</p>
+  <a href="/" class="btn-home">Quay Lại Trang Chủ</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh Toán An Toàn - SePay</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .sepay-container { max-width: 600px; margin: 40px auto; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 40px; text-align: center; }
+  .qr-box { background: #fff; padding: 20px; border-radius: 16px; display: inline-block; margin: 24px 0; border: 2px solid var(--accent); }
+  .qr-img { width: 250px; height: 250px; object-fit: contain; }
+  .instruction { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .amount-highlight { font-size: 32px; font-weight: 800; color: var(--accent); margin: 16px 0; }
+  .code-highlight { font-size: 24px; font-weight: 700; font-family: monospace; background: var(--surface); padding: 8px 16px; border-radius: 8px; letter-spacing: 2px; }
+  
+  .simulate-btn { margin-top: 40px; padding: 12px 24px; background: transparent; border: 1px dashed var(--muted); color: var(--muted); border-radius: 8px; cursor: pointer; transition: all .2s; }
+  .simulate-btn:hover { background: rgba(255,255,255,0.05); color: #fff; border-color: #fff; }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><span class="logo-icon">🏍️</span><span class="logo-text">Moto<span class="accent">Zone</span></span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="sepay-container">
+    <h2>Thanh Toán Chuyển Khoản</h2>
+    <p style="color:var(--accent); font-weight:600">Đơn hàng của bạn đã được khởi tạo thành công!</p>
+    
+    <div class="amount-highlight" id="lbl-amount">0 đ</div>
+    
+    <div class="instruction">
+      Mở ứng dụng ngân hàng và quét mã QR dưới đây.<br>
+      Hệ thống SePay sẽ <strong>tự động xác nhận</strong> đơn hàng của bạn trong vòng 3-5 giây sau khi chuyển khoản thành công.
+    </div>
+    
+    <div class="qr-box">
+      <!-- Dùng ảnh QR mẫu của SePay -->
+      <img src="https://qr.sepay.vn/assets/img/sepay-qr-logo.png" class="qr-img" id="qr-img" alt="QR Code">
+    </div>
+    
+    <div style="background:var(--surface); padding:16px; border-radius:12px; margin-bottom:24px; text-align:left; display:inline-block;">
+      <div style="margin-bottom:8px">Ngân hàng: <strong>MBBank (Ngân Hàng Quân Đội)</strong></div>
+      <div style="margin-bottom:8px">Số tài khoản: <strong>0333333333</strong> (STK test)</div>
+      <div>Chủ tài khoản: <strong>CÔNG TY TNHH MOTOZONE</strong></div>
+    </div>
+    
+    <div style="margin-bottom:16px">Nội dung chuyển khoản (Bắt buộc ghi đúng):</div>
+    <div class="code-highlight" id="lbl-code">MOTOZONE...</div>
+    
+    <button class="simulate-btn" onclick="simulatePayment()">[Dành cho Admin] Mô phỏng Khách đã chuyển khoản (Gọi Webhook SePay)</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/common.js"></script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const orderId = urlParams.get('orderId');
+  const amount = urlParams.get('amount');
+  
+  if(!orderId || !amount) {
+    window.location.href = '/';
+  }
+  
+  const shortId = orderId.substring(orderId.length - 8).toUpperCase();
+  const transferCode = `MOTOZONE${shortId}`;
+  
+  document.getElementById('lbl-amount').textContent = formatPrice(Number(amount));
+  document.getElementById('lbl-code').textContent = transferCode;
+  
+  // Dùng VietQR.io để mã QR hợp lệ và quét được bằng App Ngân hàng
+  const bankBin = 'MB'; // Ngân hàng MB
+  const bankAcc = '0333333333'; // Tài khoản ảo để test (hoặc điền STK của bạn)
+  const accountName = 'CÔNG TY TNHH MOTOZONE';
+  
+  const qrUrl = `https://img.vietqr.io/image/${bankBin}-${bankAcc}-compact2.jpg?amount=${amount}&addInfo=${transferCode}&accountName=${encodeURIComponent(accountName)}`;
+  document.getElementById('qr-img').src = qrUrl;
+
+  // Lắng nghe Socket để biết khi nào Webhook SePay báo tiền vào thành công
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = getUser();
+    if (user) {
+      const script = document.createElement('script');
+      script.src = 'http://localhost:3000/socket.io/socket.io.js';
+      script.onload = () => {
+        const socket = io('http://localhost:3000');
+        socket.emit('register', user._id);
+        
+        socket.on('notification', (data) => {
+          if (data.title.includes('SePay')) {
+            showToast('✅ Đã nhận được thanh toán! Chuyển hướng...', 'success');
+            setTimeout(() => {
+              window.location.href = '/orders.html';
+            }, 2000);
+          }
+        });
+      };
+      document.head.appendChild(script);
+    }
+  });
+  
+  // Hàm mô phỏng gọi Webhook (Dành cho việc test lúc code)
+  async function simulatePayment() {
+    try {
+      const res = await fetchAPI('/sepay/simulate', {
+        method: 'POST',
+        body: JSON.stringify({ orderId, amount })
+      });
+      if(res.success) {
+        showToast('Đã gửi tín hiệu Webhook mô phỏng thành công! Đang chờ Server xử lý...', 'info');
+      }
+    } catch(e) {
+      showToast('Lỗi: ' + e.message, 'error');
+    }
+  }
+</script>
+</body>
+</html>
